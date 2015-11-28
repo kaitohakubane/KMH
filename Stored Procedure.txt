@@ -138,17 +138,6 @@ AS
 	INSERT INTO Supplier(SupName,SupPhone,SupAddress,SupDept) VALUES(@SupName,@SupPhone,@SupAddress,@SupDept)
 GO
 ----------------------------DELETE----------------
-IF OBJECT_ID('sp_DeleteStaff', 'P') IS NOT NULL
-	DROP PROCEDURE sp_DeleteStaff
-GO
-
-CREATE PROCEDURE sp_DeleteStaff
-@StaffID
-AS
-DELETE FROM Staff
-WHERE StaffID=@StaffID
-GO
-
 
 IF OBJECT_ID('sp_DeleteProduct', 'P') IS NOT NULL
 	DROP PROCEDURE sp_DeleteProduct
