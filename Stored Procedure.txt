@@ -39,7 +39,6 @@ IF OBJECT_ID('sp_UpdateStaff', 'P') IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_UpdateStaff
-	@StaffID INT,
 	@StaffName nvarchar(50),
 	@StaffRole nvarchar(50),
 	@StaffAge INT,
@@ -48,8 +47,8 @@ CREATE PROCEDURE sp_UpdateStaff
 	@StaffPassword
 AS
 	UPDATE Staff
-	SET StaffName = @StaffName, StaffRole=@StaffRole, StaffAge=@StaffAge, StaffSalary=@StaffSalary, StaffUserName=@StaffUserName, StaffPassword=@StaffPassword
-	WHERE StaID=@StaID;
+	SET  StaffRole=@StaffRole, StaffAge=@StaffAge, StaffSalary=@StaffSalary, StaffName=@StaffName, StaffPassword=@StaffPassword
+	WHERE StaffUserName = @StaffUserName
 GO
 
 
@@ -59,7 +58,6 @@ IF OBJECT_ID('sp_InsertStaff', 'P') IS NOT NULL
 GO
 
 CREATE PROCEDURE sp_InsertStaff
-	@StaffID INT,
 	@StaffName nvarchar(50),
 	@StaffRole nvarchar(50),
 	@StaffAge INT,
@@ -67,7 +65,26 @@ CREATE PROCEDURE sp_InsertStaff
 	@StaffUserName,
 	@StaffPassword
 AS
-	INSERT INTO Staff(StaffID,StaffName,StaffRole,StaffAge,StaffSalary,StaffUserName,StaffPassword) values(@StaID,@StaName,@StaffRole,@StaffAge,@StaffSalary,@StaffUserName,@StaffPassword)
+	INSERT INTO Staff(StaffName,StaffRole,StaffAge,StaffSalary,StaffUserName,StaffPassword) values(@StaName,@StaffRole,@StaffAge,@StaffSalary,@StaffUserName,@StaffPassword)
 GO
 
+IF OBJECT_ID('sp_DeleteStaff', 'P') IS NOT NULL
+	DROP PROCEDURE sp_DeleteStaff
+GO
+
+CREATE PROCEDURE sp_DeleteStaff
+@StaffID
+AS
+DELETE FROM Staff
+WHERE StaffID=@StaffID
+GO
+
+
+IF OBJECT_ID('sp_DisplayAllStaff', 'P') IS NOT NULL
+	DROP PROCEDURE sp_DisplayAllStaff
+GO
+
+CREATE PROCEDURE sp_DisplayAllStaff
+SELECT * FROM Staff
+GO
 
