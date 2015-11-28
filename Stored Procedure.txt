@@ -1,0 +1,73 @@
+IF OBJECT_ID('sp_Login', 'P') IS NOT NULL
+	DROP PROCEDURE sp_Login
+GO
+
+CREATE PROCEDURE sp_Login
+@ID nvchar(50)
+AS
+	SELECT * FROM tbl WHERE ID=@ID;
+GO
+
+IF OBJECT_ID('sp_UpdateProduct', 'P') IS NOT NULL
+	DROP PROCEDURE sp_UpdateProduct
+GO
+
+CREATE PROCEDURE sp_UpdateProduct
+	@ProID INT,
+	@ProName nvarchar(50)
+AS
+	UPDATE Product
+	SET ProName = @ProName
+	WHERE ProID=@ProID;
+GO
+IF OBJECT_ID('sp_UpdateCustomer', 'P') IS NOT NULL
+	DROP PROCEDURE sp_UpdateCustomer
+GO
+
+CREATE PROCEDURE sp_UpdateCustomer
+	@CusID INT,
+	@CusName nvarchar(50),
+	@Phone nvarchar(50)
+AS
+	UPDATE Customer
+	SET CusName = @CusName, Phone=@Phone
+	WHERE CusID=@CusID;
+GO
+
+IF OBJECT_ID('sp_UpdateStaff', 'P') IS NOT NULL
+	DROP PROCEDURE sp_UpdateStaff
+GO
+
+CREATE PROCEDURE sp_UpdateStaff
+	@StaffID INT,
+	@StaffName nvarchar(50),
+	@StaffRole nvarchar(50),
+	@StaffAge INT,
+	@StaffSalary INT,
+	@StaffUserName,
+	@StaffPassword
+AS
+	UPDATE Staff
+	SET StaffName = @StaffName, StaffRole=@StaffRole, StaffAge=@StaffAge, StaffSalary=@StaffSalary, StaffUserName=@StaffUserName, StaffPassword=@StaffPassword
+	WHERE StaID=@StaID;
+GO
+
+
+
+IF OBJECT_ID('sp_InsertStaff', 'P') IS NOT NULL
+	DROP PROCEDURE sp_InsertStaff
+GO
+
+CREATE PROCEDURE sp_InsertStaff
+	@StaffID INT,
+	@StaffName nvarchar(50),
+	@StaffRole nvarchar(50),
+	@StaffAge INT,
+	@StaffSalary INT,
+	@StaffUserName,
+	@StaffPassword
+AS
+	INSERT INTO Staff(StaffID,StaffName,StaffRole,StaffAge,StaffSalary,StaffUserName,StaffPassword) values(@StaID,@StaName,@StaffRole,@StaffAge,@StaffSalary,@StaffUserName,@StaffPassword)
+GO
+
+

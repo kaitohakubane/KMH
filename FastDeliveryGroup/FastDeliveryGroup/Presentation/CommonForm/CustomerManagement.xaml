@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="FastDeliveryGroup.Presentation.StaffForm.CustomerManagement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FastDeliveryGroup.Presentation.StaffForm"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="620">
+    <Grid Loaded="Grid_Loaded">
+        <DataGrid x:Name="dtgCustomer" HorizontalAlignment="Left" Margin="60,15,0,0" VerticalAlignment="Top" Width="497" Height="236">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding CustomerID}" ClipboardContentBinding="{x:Null}" Header="CustomerID"/>
+                <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding Address}" ClipboardContentBinding="{x:Null}" Header="Address"/>
+                <DataGridTextColumn Binding="{Binding Phone}" ClipboardContentBinding="{x:Null}" Header="Phone"/>
+           
+                <DataGridTextColumn/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnAddCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="219,288,0,0" VerticalAlignment="Top" Width="138" FontFamily="Times New Roman" FontSize="16" Click="btnAddCustomer_Click"/>
+        <Button x:Name="btnDeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="382,288,0,0" VerticalAlignment="Top" Width="145" FontFamily="Times New Roman" FontSize="16" Click="btnDeleteCustomer_Click"/>
+
+    </Grid>
+</UserControl>

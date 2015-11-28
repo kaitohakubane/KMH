@@ -1,0 +1,18 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FastDeliveryGroup.Presentation.AdminForm"
+        xmlns:StaffForm="clr-namespace:FastDeliveryGroup.Presentation.StaffForm" x:Name="frmAdmin" x:Class="FastDeliveryGroup.Presentation.AdminForm.AdminForm"
+        mc:Ignorable="d"
+        Title="AdminForm" Height="400" Width="600">
+    <Grid Loaded="Grid_Loaded">
+        <ListBox x:Name="lbxTab" HorizontalAlignment="Left" Height="339" Margin="7,20,0,0" VerticalAlignment="Top" Width="137">
+            <ListBoxItem Content="Staff Management"/>
+            <ListBoxItem Content="Report"/>
+        </ListBox>
+        <StackPanel x:Name="pngText" HorizontalAlignment="Left" Height="313" Margin="184,19,0,0" VerticalAlignment="Top" Width="369"/>
+
+    </Grid>
+</Window>
