@@ -17,7 +17,10 @@ namespace Project.Entity
         private int mQuantity;
         private string mType;
         private int misActive;
+        public Product()
+        {
 
+        }
         public Product(int mProID, string mProName, int mSupID, string mProducer, string mOrigin, double mInPrice, double mOutPrice, int mQuantity, string mType, int misActive)
         {
             this.mProID = mProID;

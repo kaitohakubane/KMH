@@ -9,17 +9,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project
+namespace Project.Presentation
 {
     /// <summary>
-    /// Interaction logic for CustomerControl.xaml
+    /// Interaction logic for CustomerWindow.xaml
     /// </summary>
-    public partial class CustomerControl : UserControl
+    public partial class CustomerWindow : Window
     {
-        public CustomerControl()
+        public CustomerWindow()
         {
             InitializeComponent();
         }

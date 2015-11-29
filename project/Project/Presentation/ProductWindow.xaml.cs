@@ -9,27 +9,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project
+namespace Project.Presentation
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for ProductWindow.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class ProductWindow : Window
     {
-        public Page1()
+        public ProductWindow()
         {
             InitializeComponent();
-        }
-        private void LoadData()
-        {
-            dtgBill.AutoGenerateColumns = false;
-        }
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
-            LoadData();
         }
     }
 }

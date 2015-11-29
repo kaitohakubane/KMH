@@ -60,15 +60,17 @@
     <Compile Include="Access Data\ProductData.cs" />
     <Compile Include="Access Data\StaffData.cs" />
     <Compile Include="Access Data\SupplierData.cs" />
+    <Compile Include="Bussiness Layer\BillBL.cs" />
+    <Compile Include="Bussiness Layer\CustomerBL.cs" />
+    <Compile Include="Bussiness Layer\DiscountBL.cs" />
+    <Compile Include="Bussiness Layer\ProductBL.cs" />
     <Compile Include="Bussiness Layer\StaffBL.cs" />
+    <Compile Include="Bussiness Layer\SupplierBL.cs" />
+    <Compile Include="Presentation\BillWindow.xaml.cs">
+      <DependentUpon>BillWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\ButtonForm.xaml.cs">
       <DependentUpon>ButtonForm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\CustomerControl.xaml.cs">
-      <DependentUpon>CustomerControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Bill.xaml.cs">
-      <DependentUpon>Bill.xaml</DependentUpon>
     </Compile>
     <Compile Include="Entity\Bill.cs" />
     <Compile Include="Entity\Customer.cs" />
@@ -76,25 +78,35 @@
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\Staff.cs" />
     <Compile Include="Entity\Supplier.cs" />
-    <Compile Include="Presentation\ListForm.xaml.cs">
-      <DependentUpon>ListForm.xaml</DependentUpon>
+    <Compile Include="Presentation\CustomerWindow.xaml.cs">
+      <DependentUpon>CustomerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\ProductControl.xaml.cs">
-      <DependentUpon>ProductControl.xaml</DependentUpon>
+    <Compile Include="Presentation\ListWindow.xaml.cs">
+      <DependentUpon>ListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\NotificationWindow.xaml.cs">
+      <DependentUpon>NotificationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ProductWindow.xaml.cs">
+      <DependentUpon>ProductWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\StaffWindow.xaml.cs">
+      <DependentUpon>StaffWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Provider\DataProvider.cs" />
-    <Compile Include="Presentation\StaffControl.xaml.cs">
-      <DependentUpon>StaffControl.xaml</DependentUpon>
-    </Compile>
+    <Page Include="Presentation\BillWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\ButtonForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\CustomerControl.xaml">
+    <Page Include="Presentation\CustomerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\ListForm.xaml">
+    <Page Include="Presentation\ListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,27 +129,20 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Presentation\Notification.xaml">
+    <Page Include="Presentation\NotificationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\Bill.xaml">
+    <Page Include="Presentation\ProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\ProductControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Presentation\StaffControl.xaml">
+    <Page Include="Presentation\StaffWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presentation\Notification.xaml.cs">
-      <DependentUpon>Notification.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

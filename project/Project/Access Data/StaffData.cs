@@ -53,7 +53,7 @@ namespace Project.Access_Data
         public static Staff GetbyUserName(string username)
         {
             string sql = "sp_GetStaff";
-            SqlParameter Username = new SqlParameter("@StaffUsername", username);
+            SqlParameter Username = new SqlParameter("@StaffUserName", username);
             SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, Username);            
             if (dr.HasRows)
             {

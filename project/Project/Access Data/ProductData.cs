@@ -36,5 +36,44 @@ namespace Project.Access_Data
             string sql = "sp_DisplayAllProduct";
             return DataProvider.ExecuteQueryWithDataSet(sql, System.Data.CommandType.StoredProcedure).Tables[0];
         }
+        public static bool UpdateProduct(Product a)
+        {
+            string sql = "sp_UpdateProduct";
+            SqlParameter ProID      = new SqlParameter("@ProID", a.ProID);
+            SqlParameter ProName    = new SqlParameter("@ProName", a.ProName);
+            SqlParameter SupID      = new SqlParameter("@SupID", a.SupID);
+            SqlParameter Producer   = new SqlParameter("@Producer", a.Producer);
+            SqlParameter Origin     = new SqlParameter("@Origin", a.Origin);
+            SqlParameter InPrice    = new SqlParameter("@InPrice", a.InPrice);
+            SqlParameter OutPrice   = new SqlParameter("@OutPrice", a.OutPrice);
+            SqlParameter Quantity   = new SqlParameter("@Quantity", a.Quantity);
+            SqlParameter Type       = new SqlParameter("@Type", a.Type);
+
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, ProID, ProName, SupID, Producer, Origin, InPrice, OutPrice, Quantity, Type);
+        }
+        public static Product GetbyProductName(string name)
+        {
+            string sql = "sp_GetProduct";
+            SqlParameter Name = new SqlParameter("@ProName", name);
+            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, Name);
+            if (dr.HasRows)
+            {
+                dr.Read();
+                Product a = new Product();
+                a.ProID       = dr.GetInt32(0);
+                a.ProName     = dr.GetString(1);
+                a.SupID       = dr.GetInt32(2);
+                a.Producer    = dr.GetString(3);
+                a.Origin      = dr.GetString(4);
+                a.InPrice     = dr.GetInt32(5);
+                a.OutPrice    = dr.GetInt32(6);
+                a.Quantity    = dr.GetInt32(7);
+                a.Type        = dr.GetString(8);
+                return a;
+            }
+            else
+                return null;
+        }
+
     }
 }
