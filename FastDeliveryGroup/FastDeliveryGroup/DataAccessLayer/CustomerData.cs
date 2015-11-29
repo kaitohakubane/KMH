@@ -13,16 +13,17 @@ namespace FastDeliveryGroup.DataAccessLayer
     {
         public static DataTable SelectAllCustomer()
         {
-            
+                DataTable dt = new DataTable();
             string sql = "spGetAllCustomer";
-            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure);
-            DataTable dt = new DataTable();
-            dt.Load(rd);
+            using (SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure))
+            {
+                dt.Load(rd);
+            }
             return dt;
         }
         public static bool InsertCustomer(Customer cus)
         {
-            string sql = "AddCustomer";
+            string sql = "spAddCustomer";
             SqlParameter CustomerID = new SqlParameter("CustomerID",cus.CustomerID);
             SqlParameter Name = new SqlParameter("Name", cus.Name);
             SqlParameter Address = new SqlParameter("Address", cus.Address);
@@ -32,7 +33,7 @@ namespace FastDeliveryGroup.DataAccessLayer
         public static List<Customer> SelectAll()
         {
             List<Customer> cusList = new List<Customer>();
-            string SelectAllCus = "GetAllCustomer";
+            string SelectAllCus = "spGetAllCustomer";
             SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(SelectAllCus, CommandType.StoredProcedure);
             if (rd.HasRows)
             {
@@ -41,24 +42,20 @@ namespace FastDeliveryGroup.DataAccessLayer
                     Customer r = new Customer()
                     {
                         CustomerID = rd.GetString(0),
-                        Name = rd.GetName(1),
-                        Address = rd.GetName(2),
-                        Phone = rd.GetName(3)
-                        
+                        Name = rd.GetString(1),
+                        Address = rd.GetString(2),
+                        Phone = rd.GetString(3),
+                        Active = rd.GetBoolean(4)
                     };
                     cusList.Add(r);
                 }
             }
             return cusList.OrderBy(p => p.CustomerID).ToList();
         }
-        //public static DataTable SelectAllCus()
-        //{
-        //    return DataProvider.ExecuteQueryWithDataSet("GetAllCustomer", CommandType.StoredProcedure).Tables[0];
-        //    //nhan F10 nua no chay ra khoi ham nay, quay ve dong goi ham nay ben class kia   
-        //}
+ 
         public static bool DeleteCustomer(string CustomerID)
         {
-            string DeleteCustomer = "DeleteCustomer";
+            string DeleteCustomer = "spDeleteCustomer";
             SqlParameter ID = new SqlParameter("@CustomerID",CustomerID);
             try
             {

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\C#\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\
+D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\
 FastDeliveryGroup
 none
 false
 DEBUG;TRACE
-D:\C#\FastDeliveryGroup\FastDeliveryGroup\App.xaml
+D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\App.xaml
 191160194689
 
 46-1508628203
-241456407815
+24-665679587
 Login.xaml;MainWindow.xaml;Presentation\AdminForm\StaffAdding.xaml;Presentation\AdminForm\AdminForm.xaml;Presentation\AdminForm\ReportManagement.xaml;Presentation\AdminForm\StaffManagement.xaml;Presentation\CommonForm\CustomerAdding.xaml;Presentation\AdminForm\DistrictAdding.xaml;Presentation\AdminForm\ProductAdding.xaml;Presentation\StaffForm\ScheduleAdding.xaml;Presentation\CommonForm\CustomerManagement.xaml;Presentation\AdminForm\DistrictManagement.xaml;Presentation\AdminForm\ProductEditing.xaml;Presentation\StaffForm\ScheduleEditing.xaml;Presentation\AdminForm\ProductManagement.xaml;Presentation\StaffForm\ScheduleManagement.xaml;Presentation\AdminForm\ShipperManagement.xaml;Presentation\StaffForm\ShipperAdding.xaml;Presentation\StaffForm\StaffForm.xaml;
 
 False

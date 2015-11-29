@@ -59,10 +59,11 @@
     <Compile Include="Access Data\ProductData.cs" />
     <Compile Include="Access Data\StaffData.cs" />
     <Compile Include="Access Data\SupplierData.cs" />
+    <Compile Include="Bussiness Layer\StaffBL.cs" />
     <Compile Include="CustomerControl.xaml.cs">
       <DependentUpon>CustomerControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Bill.xaml.cs">
+    <Compile Include="Presentation\Bill.xaml.cs">
       <DependentUpon>Bill.xaml</DependentUpon>
     </Compile>
     <Compile Include="Entity\Bill.cs" />
@@ -71,32 +72,32 @@
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\Staff.cs" />
     <Compile Include="Entity\Supplier.cs" />
-    <Compile Include="ListControl.xaml.cs">
+    <Compile Include="Presentation\ListControl.xaml.cs">
       <DependentUpon>ListControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProductControl.xaml.cs">
+    <Compile Include="Presentation\ProductControl.xaml.cs">
       <DependentUpon>ProductControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Provider\DataProvider.cs" />
-    <Compile Include="StaffControl.xaml.cs">
+    <Compile Include="Presentation\StaffControl.xaml.cs">
       <DependentUpon>StaffControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TabControl.xaml.cs">
+    <Compile Include="Presentation\TabControl.xaml.cs">
       <DependentUpon>TabControl.xaml</DependentUpon>
     </Compile>
     <Page Include="CustomerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListControl.xaml">
+    <Page Include="Presentation\ListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login.xaml">
+    <Page Include="Presentation\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Presentation\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -104,36 +105,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="Presentation\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Presentation\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Notification.xaml">
+    <Page Include="Presentation\Notification.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Bill.xaml">
+    <Page Include="Presentation\Bill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProductControl.xaml">
+    <Page Include="Presentation\ProductControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StaffControl.xaml">
+    <Page Include="Presentation\StaffControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TabControl.xaml">
+    <Page Include="Presentation\TabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Notification.xaml.cs">
+    <Compile Include="Presentation\Notification.xaml.cs">
       <DependentUpon>Notification.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -153,6 +154,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

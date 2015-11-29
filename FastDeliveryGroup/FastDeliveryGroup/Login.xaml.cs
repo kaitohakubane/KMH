@@ -47,31 +47,36 @@ namespace FastDeliveryGroup
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string username = txtUserName.Text;
-            User user = UserBLL.GetUserByUName(username);
-            if (user != null && user.Password.Equals(txtPassword.Text))
-            {
-                if (!user.Role)
+            try {
+                string username = txtUserName.Text;
+                User user = UserBLL.GetUserByUName(username);
+                if (user != null && user.Password.Equals(txtPassword.Text))
                 {
-                    CurUser = user;
-                    StaffForm sf = new StaffForm(user);
-                    sf.Show();
-                    this.Close();
-              //      Application.Current.
+                    if (!user.Role)
+                    {
+                        CurUser = user;
+                        StaffForm sf = new StaffForm(user);
+                        sf.Show();
+                        this.Close();
+                        //      Application.Current.
+                    }
+                    else if (user.Role)
+                    {
+                        CurUser = user;
+                        AdminForm af = new AdminForm(user);
+                        af.Show();
+                        this.Close();
+                    }
                 }
-                else if (user.Role)
+                else
                 {
-                    CurUser = user;
-                    AdminForm af = new AdminForm(user);
-                    af.Show();
-                    this.Close();
-                }
-            }
-            else
+                    lblMessage.Visibility = Visibility.Visible;
+                    lblMessage.IsEnabled = true;
+                    lblMessage.Content = "Username/Password is wrong";
+                } }
+            catch(Exception g)
             {
-                lblMessage.Visibility = Visibility.Visible;
-                lblMessage.IsEnabled = true;
-                lblMessage.Content = "Username/Password is wrong";
+                System.Windows.Forms.MessageBox.Show(g.Message);
             }
         }
 

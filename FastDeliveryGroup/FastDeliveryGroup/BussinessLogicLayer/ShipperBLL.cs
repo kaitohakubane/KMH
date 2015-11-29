@@ -19,10 +19,7 @@ namespace FastDeliveryGroup.BussinessLogicLayer
         {
             return ShipperData.AddShipperName(shipper);
         }
-        public static DataTable GetShipper()
-        {
-            return ShipperData.SelectAll();
-        }
+
         public static bool DeleteShipper(int ID)
         {
             return ShipperData.DeleteShipper(ID);

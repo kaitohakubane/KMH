@@ -39,7 +39,7 @@ namespace FastDeliveryGroup.DataAccessLayer
         }
         public static bool DeleteInvoice(int InvoiceID)
         {
-            string DeleteInvoice = "DeleteInvoice";
+            string DeleteInvoice = "spDeleteInvoice";
             SqlParameter ID = new SqlParameter("@InvoiceID", InvoiceID);
             try
             {
@@ -50,6 +50,48 @@ namespace FastDeliveryGroup.DataAccessLayer
 
                 throw new Exception("Error: " + se.Message);
             }
+        }
+        public static DataTable SelectInvoiceByDay(DateTime d)
+        {
+            DataTable dt = new DataTable();
+            SqlParameter date = new SqlParameter("@date", d);
+            string sql = "spGetInvoiceByDay";
+            using (SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure, date))
+            {
+
+                if (rd.HasRows)
+                {
+                    dt.Load(rd);
+                }
+            }
+            return dt;
+        }
+
+        public static DataTable SelectInvoiceByMonth(string sql, int m, int y)
+        {
+            DataTable dt = new DataTable();
+            SqlParameter month = new SqlParameter("@month", m);
+            SqlParameter year = new SqlParameter("@year", y);
+            using (SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure, month, year))
+            {
+
+                if (rd.HasRows)
+                {
+                    dt.Load(rd);
+                }
+            }
+            return dt;
+        }
+
+        public static bool UpdateInvoice(Invoice inv)
+        {
+            string sql = "spUpdateInvoice";
+            SqlParameter InvoiceID = new SqlParameter("InvoiceID", inv.InvoiceID);
+            SqlParameter ShipperID = new SqlParameter("ShipperID", inv.ShipperID);
+            SqlParameter Description = new SqlParameter("Description", inv.Description);
+            SqlParameter ShipmentDate = new SqlParameter("ShipmentDate", inv.ShipmentDate);
+            return DataProvider.ExecuteNonQuery(sql, CommandType.StoredProcedure, InvoiceID, ShipperID, ShipmentDate, Description);
+
         }
     }
 }

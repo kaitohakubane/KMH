@@ -24,5 +24,27 @@ namespace FastDeliveryGroup.BussinessLogicLayer
         {
             return InvoiceData.DeleteInvoice(ID);
         }
+
+        public static bool UpdateInvoiceByID(Invoice inv)
+        {
+            return InvoiceData.UpdateInvoice(inv);
+        }
+
+        public static DataTable GetInvoiceByDay(DateTime d)
+        {
+            return InvoiceData.SelectInvoiceByDay(d);
+        }
+
+        public static DataTable GetScheduleByMonth(int month, int year)
+        {
+            string sql = "spSelectCustomerByMonth";
+            return InvoiceData.SelectInvoiceByMonth(sql, month, year);
+        }
+
+        public static DataTable GetShipperByMonth(int month, int year)
+        {
+            string sql = "spSelectShipperByMonth";
+            return InvoiceData.SelectInvoiceByMonth(sql, month, year);
+        }
     }
 }

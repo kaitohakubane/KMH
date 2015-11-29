@@ -17,7 +17,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnAddSchedule" Content="Add Schedule" HorizontalAlignment="Left" Margin="113,260,0,0" VerticalAlignment="Top" Width="141" FontFamily="Times New Roman" FontSize="16" Click="btnAddSchedule_Click"/>
-        <Button x:Name="btnEditSchedule" Content="Edit Schedule" HorizontalAlignment="Left" Margin="268,260,0,0" VerticalAlignment="Top" Width="132" FontFamily="Times New Roman" FontSize="16"/>
+        <Button x:Name="btnEditSchedule" Content="Edit Schedule" HorizontalAlignment="Left" Margin="268,260,0,0" VerticalAlignment="Top" Width="132" FontFamily="Times New Roman" FontSize="16" Click="btnEditSchedule_Click"/>
         <Button x:Name="btnDeleteSchedule" Content="Delete Schedule" HorizontalAlignment="Left" Margin="414,260,0,0" Width="147" FontFamily="Times New Roman" FontSize="16" Height="32" VerticalAlignment="Top" Click="btnDeleteSchedule_Click"/>
 
     </Grid>

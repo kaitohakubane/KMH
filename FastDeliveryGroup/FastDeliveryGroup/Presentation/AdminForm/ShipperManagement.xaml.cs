@@ -54,7 +54,7 @@ namespace FastDeliveryGroup.Presentation.StaffForm
         private void LoadData()
         {
             dtgShipper.AutoGenerateColumns = false;
-            dt = ShipperBLL.GetShipper();
+            //dt. = ShipperBLL.GetAllShipper();
             bs.DataSource = dt;
             dtgShipper.ItemsSource = bs;
         }

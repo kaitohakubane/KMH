@@ -21,7 +21,7 @@
             </Label.Background>
         </Label>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,100,0,0" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="30" Width="150"/>
-        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="123,0,0,25" FontSize="13.333" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="123,0,0,25" FontSize="13.333" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnLogin_Click_1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

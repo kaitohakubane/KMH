@@ -31,10 +31,11 @@ namespace FastDeliveryGroup.Presentation.StaffForm
         DataTable dt = new DataTable();
         BindingSource bs = new BindingSource();
       
-        public AddCustomer(User user)
+        public AddCustomer(User user,DataTable tt)
         {
             InitializeComponent();
             curU = user;
+            this.dt = tt;
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
@@ -46,13 +47,30 @@ namespace FastDeliveryGroup.Presentation.StaffForm
                 cus.Name= txtFullName.Text;
                 cus.Address =txtAddress.Text;
                 cus.Phone = txtFullName.Text;
-                CustomerBLL.AddCustomer(cus);
-                System.Windows.Forms.MessageBox.Show("Successfully");
-                if (AddFinished != null)
+                bool sameID = false;
+                var rows = dt.Rows;
+                foreach (DataRow datarow in rows)
                 {
-                    AddFinished(cus);
+                    if (datarow["CustomerID"].ToString().Equals(cus.CustomerID))
+                    {
+                        sameID = true;
+                        break;
+                    }
                 }
+                if (!sameID)
+                {
+                    CustomerBLL.AddCustomer(cus);
+                    System.Windows.Forms.MessageBox.Show("Successfully");
 
+                    if (AddFinished != null)
+                    {
+                        AddFinished(cus);
+                    }
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("This ID was existed!!");
+                }
             }
             catch (Exception g)
             {

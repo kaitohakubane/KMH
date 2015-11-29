@@ -13,14 +13,14 @@ namespace FastDeliveryGroup.DataAccessLayer
     {
         public static bool InsertDistrict(District dis)
         {
-            string sql = "AddDistrict";
+            string sql = "spAddDistrict";
             SqlParameter NameOfDistrict = new SqlParameter("Name", dis.NameOfDistrict);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, NameOfDistrict);
         }
         public static List<District> SelectAll()
         {
             List<District> list = new List<District>();
-            string spSelectAll = "GetAllDistrict";
+            string spSelectAll = "spGetAllDistrict";
             SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(spSelectAll, CommandType.StoredProcedure);
             if (rd.HasRows)
             {
@@ -38,12 +38,12 @@ namespace FastDeliveryGroup.DataAccessLayer
         }
         public static DataTable SelectAllDistrict()
         {
-            return DataProvider.ExecuteQueryWithDataSet("GetAllDistrict", CommandType.StoredProcedure).Tables[0];  
+            return DataProvider.ExecuteQueryWithDataSet("spGetAllDistrict", CommandType.StoredProcedure).Tables[0];  
             //nhan F10 nua no chay ra khoi ham nay, quay ve dong goi ham nay ben class kia   
         }
         public static bool DeleteDistrict(int DistrictID)
         {
-            string DeleteDistrict = "DeleteDistrict";
+            string DeleteDistrict = "spDeleteDistrict";
             SqlParameter ID = new SqlParameter("@PlaceID", DistrictID);
             try
             {

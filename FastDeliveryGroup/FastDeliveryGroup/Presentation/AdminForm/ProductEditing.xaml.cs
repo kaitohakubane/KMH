@@ -21,19 +21,16 @@ namespace FastDeliveryGroup.Presentation.StaffForm
     /// <summary>
     /// Interaction logic for Edit_Product.xaml
     /// </summary>
-    public delegate void Edit(Product pro);
+  
     public partial class Edit_Product : Window
     {
+        Product curPro;
 
-        public List<Product> ListPro = new List<Product>();
-        public event Edit AddFinished;
-        User curUser;
-        DataTable dt = new DataTable();
-        BindingSource bs = new BindingSource();
-          public Edit_Product(User u)
+        public event HD EditFinished;
+        public Edit_Product(Product u)
         {
             InitializeComponent();
-            curUser = u;
+            curPro = u;
         }
       
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -41,22 +38,19 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
             try
             {
-                Product pro = new Product();
-                pro.Name = txtNameProduct.Text;
-                pro.Price = float.Parse(txtPrice.Text);
-                ProductBLL.EditProduct(pro);
-                System.Windows.Forms.MessageBox.Show("Successfully");
-                if (AddFinished != null)
+                curPro.Name = txtNameProduct.Text;
+                curPro.Price = float.Parse(txtPrice.Text);
+                ProductBLL.UpdateProductByID(curPro);
+                System.Windows.Forms.MessageBox.Show("Updated Successfully!!!");
+                if (EditFinished != null)
                 {
-                    AddFinished(pro);
+                    EditFinished(curPro);
                 }
-
-
+                this.Close();
             }
             catch (Exception g)
             {
-
-                System.Windows.Forms.MessageBox.Show("Error: " + g.Message);
+                System.Windows.Forms.MessageBox.Show(g.Message);
             }
             finally
             {
@@ -69,6 +63,19 @@ namespace FastDeliveryGroup.Presentation.StaffForm
         {
             this.DialogResult = false;
             this.Close();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                txtNameProduct.Text = curPro.Name;
+                txtPrice.Text = curPro.Price.ToString();
+            }
+            catch (Exception g)
+            {
+                System.Windows.Forms.MessageBox.Show(g.Message);
+            }
         }
     }
 }

@@ -27,9 +27,9 @@ namespace FastDeliveryGroup.BussinessLogicLayer
         {
             return ProductData.DeleteProduct(ID);
         }
-        public static bool EditProduct(Product pro)
+        public static bool UpdateProductByID(Product pro)
         {
-            return ProductData.EditProduct(pro);
+            return ProductData.UpdateProduct(pro);
         }
     }
 }

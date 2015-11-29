@@ -71,22 +71,39 @@ namespace FastDeliveryGroup.Presentation.StaffForm
                 LoadData();
             }
         }
-        public delegate void sendProductID(int id);
+       
         private void btnEditProduct_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView row = (DataRowView)dtgProduct.SelectedItem;
-            if (row == null)
+     
+            try
             {
-
+                if (dtgProduct.SelectedIndex >= 0)
+                {
+                    DataRow dr = dt.Rows[dtgProduct.SelectedIndex];
+                    Product pro = new Product();
+                    pro.ProductID = (int)dr["ProductID"];
+                    pro.Name = dr["Name"].ToString();
+                    pro.Price = (double)dr["Price"];
+                    Edit_Product product = new Edit_Product(pro);
+                    product.EditFinished += new HD(EditCurRow);
+                    product.ShowDialog();
+              
+                }
             }
-            else
+            catch (Exception g)
             {
-                Edit_Product EditPro = new Edit_Product(user);
-                EditPro.AddFinished += new Edit(UpdateTable);
-                EditPro.ShowDialog();
-                LoadData();
+                System.Windows.Forms.MessageBox.Show(g.Message);
             }
-
         }
+       
+    
+    private void EditCurRow(Product a)
+    {
+        DataRow dr = dt.Rows.Find(a.ProductID);
+        dr["Name"] = a.Name;
+        dr["Price"] = a.Price;
+      
+
     }
+}
 }

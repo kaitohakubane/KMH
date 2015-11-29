@@ -28,3 +28,4 @@ D:\C#\Project\Project\Project\obj\Debug\TabControl.baml
 D:\C#\Project\Project\Project\obj\Debug\ListControl.g.cs
 D:\KMH\project\Project\obj\Debug\Project.exe
 D:\KMH\project\Project\obj\Debug\Project.pdb
+D:\KMH\project\Project\bin\Debug\Project.exe.config

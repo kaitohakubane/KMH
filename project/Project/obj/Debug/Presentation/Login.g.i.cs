@@ -156,6 +156,12 @@ namespace Project {
             return;
             case 5:
             this.btnLogin = ((System.Windows.Controls.Button)(target));
+            
+            #line 24 "..\..\..\Presentation\Login.xaml"
+            this.btnLogin.Click += new System.Windows.RoutedEventHandler(this.btnLogin_Click_1);
+            
+            #line default
+            #line hidden
             return;
             case 6:
             this.btnExit = ((System.Windows.Controls.Button)(target));

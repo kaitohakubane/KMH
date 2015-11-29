@@ -30,10 +30,10 @@ namespace FastDeliveryGroup.Presentation.StaffForm
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             //  pnlScheduleManagement.Children.Add(new ScheduleManagement(curUser));
-               pnlScheduleManagement.Children.Add(new DistrictManagement(curUser));
-            //  pnlScheduleManagement.Children.Add(new CustomerManagement(curUser));
-          //   pnlScheduleManagement.Children.Add(new ShipperManagement(curUser));
-         //pnlScheduleManagement.Children.Add(new ProductManagement(curUser));
+            //    pnlScheduleManagement.Children.Add(new DistrictManagement(curUser));
+            pnlScheduleManagement.Children.Add(new CustomerManagement(curUser));
+            //   pnlScheduleManagement.Children.Add(new ShipperManagement(curUser));
+            //pnlScheduleManagement.Children.Add(new ProductManagement(curUser));
         }
     }
 }

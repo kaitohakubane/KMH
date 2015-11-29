@@ -9,7 +9,7 @@ namespace Project.Entity
     {
         private int mStaffID;
         private string mStaffName;
-        private string mStaffRole;
+        private int mStaffRole;
         private int mStaffAge;
         private float mStaffSalary;
         private string mStaffUserName;
@@ -50,7 +50,7 @@ namespace Project.Entity
             }
         }
 
-        public string StaffRole
+        public int StaffRole
         {
             get
             {
@@ -59,8 +59,6 @@ namespace Project.Entity
 
             set
             {
-                if (value == string.Empty)
-                    throw new Exception("StaffRole invalid.");
                 mStaffRole = value;
             }
         }

@@ -13,12 +13,10 @@
                 <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Name"/>
                 <DataGridTextColumn Binding="{Binding Address}" ClipboardContentBinding="{x:Null}" Header="Address"/>
                 <DataGridTextColumn Binding="{Binding Phone}" ClipboardContentBinding="{x:Null}" Header="Phone"/>
-           
-                <DataGridTextColumn/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAddCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="219,288,0,0" VerticalAlignment="Top" Width="138" FontFamily="Times New Roman" FontSize="16" Click="btnAddCustomer_Click"/>
-        <Button x:Name="btnDeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="382,288,0,0" VerticalAlignment="Top" Width="145" FontFamily="Times New Roman" FontSize="16" Click="btnDeleteCustomer_Click"/>
+        <Button x:Name="btnAddCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="261,271,0,0" VerticalAlignment="Top" Width="138" FontFamily="Times New Roman" FontSize="16" Click="btnAddCustomer_Click"/>
+        <Button x:Name="btnDeleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="415,272,0,0" VerticalAlignment="Top" Width="148" FontFamily="Times New Roman" FontSize="16" Click="btnDeleteCustomer_Click"/>
 
     </Grid>
 </UserControl>

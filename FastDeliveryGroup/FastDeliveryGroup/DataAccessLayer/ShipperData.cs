@@ -13,7 +13,7 @@ namespace FastDeliveryGroup.DataAccessLayer
     {
         public static bool AddShipperName(Shipper shipper)
         {
-            string sql = "AddShipper";
+            string sql = "spAddShipper";
             SqlParameter Name = new SqlParameter("Name", shipper.Name);
             SqlParameter PlaceID = new SqlParameter("PlaceID", shipper.PlaceID);
             SqlParameter Phone = new SqlParameter("Phone", shipper.Phone);
@@ -38,13 +38,10 @@ namespace FastDeliveryGroup.DataAccessLayer
             }
             return list;
         }
-        public static DataTable SelectAll()
-        {
-            return DataProvider.ExecuteQueryWithDataSet("GetAllShipper", CommandType.StoredProcedure).Tables[0];
-        }
+
         public static bool DeleteShipper(int ShipperID)
         {
-            string DeleteShipper = "DeleteShipper";
+            string DeleteShipper = "spDeleteShipper";
             SqlParameter ID = new SqlParameter("@ShipperID", ShipperID);
             try
             {

@@ -33,24 +33,25 @@ namespace FastDeliveryGroup.Presentation.StaffForm
         public event ActionCompleted AddFinshed;
         DataTable dt = new DataTable();
         BindingSource bs = new BindingSource();
+        List<object> obja = new List<object>();
         User curUser;
-        public AddSchedule(User u)
+        public AddSchedule(User u, List<Shipper> sp)
         {
             InitializeComponent();
             curUser = u;
+            this.Shippers = sp;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            
-
-            try {
+            try
+            {
                 var p = (Product)cbbProduct.SelectedItem;
                 var index = txtQuantity.Text.IndexOf('_');
                 int quantity = 0;
                 if (index > 0)
                 {
-                    quantity = int.Parse(txtQuantity.Text.Substring(0,index));
+                    quantity = int.Parse(txtQuantity.Text.Substring(0, index));
                 }
                 else
                 {
@@ -64,11 +65,12 @@ namespace FastDeliveryGroup.Presentation.StaffForm
                 id.Product = ProductList.Where(q => q.ProductID == p.ProductID).FirstOrDefault().Name;
                 InvoiceDetails.Add(id);
                 dgdProduct.Items.Refresh();
-            }catch(Exception g)
+            }
+            catch (Exception g)
             {
                 System.Windows.Forms.MessageBox.Show(g.Message);
             }
-            
+
 
 
 
@@ -81,10 +83,9 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
             ProductList = ProductBLL.GetAllProduct();
             dt = CustomerBLL.GetAllCustomer();
-            Shippers = ShipperBLL.GetAllShipper();
+
             cbbShipper.DisplayMemberPath = "Name";
             foreach (Shipper sp in Shippers)
             {
@@ -114,16 +115,17 @@ namespace FastDeliveryGroup.Presentation.StaffForm
                 }
                 catch (Exception g)
                 {
-                    System.Windows.Forms.MessageBox.Show("Please choose right row!!!");
+                    System.Windows.Forms.MessageBox.Show("Error: " + g.Message);
                 }
             }
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
-            try {
+            try
+            {
                 Invoice newInv = new Invoice();
-                DataRowView cur =(DataRowView) dgdCustomer.SelectedItem;
+                DataRowView cur = (DataRowView)dgdCustomer.SelectedItem;
                 newInv.InvoiceID = nextIden;
                 newInv.CustomerID = cur[0].ToString();
                 newInv.Description = txtDescription.Text;
@@ -144,9 +146,9 @@ namespace FastDeliveryGroup.Presentation.StaffForm
                 {
                     AddFinshed(newInv);
                 }
-                
+
             }
-            catch(Exception g)
+            catch (Exception g)
             {
                 System.Windows.Forms.MessageBox.Show("Error: " + g.Message);
             }
@@ -158,27 +160,18 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void txtCustomer_GotFocus(object sender, RoutedEventArgs e)
         {
-            //if(txtFilter.Text == "ID filter")
-            //{
-            //    txtFilter.Text = "";
-            //}
+            lblFilter.Content = "";
         }
 
         private void txtCustomer_LostFocus(object sender, RoutedEventArgs e)
         {
-            //if (txtFilter.Text == "")
-            //{
-            //    txtFilter.Text = "ID filter";
-            //}
+            lblFilter.Content = "ID filter";
         }
 
         private void txtCustomer_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //if (!txtFilter.Text.Equals("ID Filter"))
-            //{
-            //    string filter = "CustomerID like '%" + txtFilter.Text + "%'";
-            //    bs.Filter = filter;
-            //}
+            string filter = "CustomerID like '%" + txtFilter.Text + "%'";
+            bs.Filter = filter;
         }
     }
 }

@@ -35,16 +35,48 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void btnAddCustomer_Click(object sender, RoutedEventArgs e)
         {
-            AddCustomer addcus = new AddCustomer(curU);
-            addcus.AddFinished += new ACT(updateTable);
-            addcus.ShowDialog();
+            try {
+                
+                AddCustomer addcus = new AddCustomer(curU, dt);
+                addcus.AddFinished += new ACT(updateTable);
+                addcus.ShowDialog();
+            }catch(Exception g)
+            {
+                System.Windows.Forms.MessageBox.Show(g.Message);
+            }
         }
         private void updateTable(Customer cus)
         {
-            dt.Rows.Add(cus.CustomerID,cus.Name,cus.Address,cus.Phone);
+            dt.Rows.Add(cus.CustomerID,cus.Name,cus.Address,cus.Phone, true);
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            LoadData();
+        }
+
+        //private void btnDeleteCustomer_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try {
+        //        DataRowView row = (DataRowView)dtgCustomer.SelectedItem;
+        //        if (row == null)
+        //        {
+        //            Console.WriteLine("Please chose a row");
+        //        }
+        //        else
+        //        {
+        //            string id = row["CustomerID"].ToString();
+        //            {
+        //                CustomerBLL.DeleteCustomer(id);
+        //                LoadData();
+        //            }
+        //        } }catch(Exception g)
+        //    {
+        //        System.Windows.Forms.MessageBox.Show(g.Message);
+        //    }
+        //}
+        public void LoadData()
         {
             dtgCustomer.AutoGenerateColumns = false;
             dt = CustomerBLL.GetAllCustomer();
@@ -55,26 +87,26 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void btnDeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView row = (DataRowView)dtgCustomer.SelectedItems;
-            if (row == null)
+            try
             {
-                Console.WriteLine("Please chose a row");
-            }
-            else
-            {
-                string id = row["CustomerID"].ToString();
+                DataRowView row = (DataRowView)dtgCustomer.SelectedItem;
+                if (row == null)
                 {
-                    CustomerBLL.DeleteCustomer(id);
-                    LoadData();
+                    Console.WriteLine("Please chose a row");
+                }
+                else
+                {
+                    string id = row["CustomerID"].ToString();
+                    {
+                        CustomerBLL.DeleteCustomer(id);
+                        LoadData();
+                    }
                 }
             }
-        }
-        public void LoadData()
-        {
-            dtgCustomer.ItemsSource = null;
-            dtgCustomer.ItemsSource = CustomerBLL.Loaddata().DefaultView;
-            dtgCustomer.Items.Refresh();
-
+            catch (Exception g)
+            {
+                System.Windows.Forms.MessageBox.Show(g.Message);
+            }
         }
     }
 }

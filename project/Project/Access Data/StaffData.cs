@@ -36,5 +36,46 @@ namespace Project.Access_Data
             //Lấy về 1 bảng nên Tables[0]
             return DataProvider.ExecuteQueryWithDataSet(sql, System.Data.CommandType.StoredProcedure).Tables[0];
         }
+        public static bool UpdateStaff(Staff a)
+        {
+            //sql này là trên procedure
+            string sql = "sp_UpdateStaff";
+            SqlParameter StaffID = new SqlParameter("@StaffID", a.StaffID);
+            SqlParameter StaffName = new SqlParameter("@StaffName", a.StaffName);
+            SqlParameter StaffRole = new SqlParameter("@StaffRole", a.StaffRole);
+            SqlParameter StaffAge = new SqlParameter("@StaffAge", a.StaffRole);
+            SqlParameter StaffSalary = new SqlParameter("@StaffSalary", a.StaffSalary);
+            SqlParameter StaffUserName = new SqlParameter("@StaffUserName", a.StaffUserName);
+            SqlParameter StaffPassword = new SqlParameter("@StaffPassword", a.StaffPassword);
+            //ExecuteNonQuery dung` cho insert update delete, thứ tự truyền tham số phải đúng với định nghĩa trong stored procedure
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure,StaffID, StaffName, StaffRole, StaffAge, StaffSalary, StaffUserName, StaffPassword);
+        }
+        public static Staff GetbyUserName(string username)
+        {
+            string sql = "sp_GetStaff";
+            SqlParameter Username = new SqlParameter("@StaffUsername", username);
+            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, Username);            
+            if (dr.HasRows)
+            {
+                dr.Read();
+                Staff a = new Staff();
+                a.isActive = dr.GetBoolean(6);
+                if (a.isActive)
+                {
+                    a.StaffID = dr.GetInt32(0);
+                    a.StaffName = dr.GetString(1);
+                    a.StaffRole = dr.GetInt32(2);
+                    a.StaffAge = dr.GetInt32(3);
+                    a.StaffUserName = dr.GetString(4);
+                    a.StaffPassword = dr.GetString(5);
+                    return a;
+                }
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
     }
 }

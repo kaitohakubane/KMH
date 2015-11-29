@@ -13,7 +13,7 @@ namespace FastDeliveryGroup.DataAccessLayer
     {
         public static bool InsertProduct(Product pro)
         {
-            string sql = "InsertProduct";
+            string sql = "spInsertProduct";
             SqlParameter Name = new SqlParameter("Name", pro.Name);
             SqlParameter Price = new SqlParameter("Price", pro.Price);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, Name, Price);
@@ -53,7 +53,7 @@ namespace FastDeliveryGroup.DataAccessLayer
 
         public static bool DeleteProduct(int ProductID)
         {
-            string DeleteProduct = "DeleteProduct";
+            string DeleteProduct = "spDeleteProduct";
             SqlParameter ID = new SqlParameter("@ProductID", ProductID);
             try
             {
@@ -65,12 +65,17 @@ namespace FastDeliveryGroup.DataAccessLayer
                 throw new Exception("Error: " + se.Message);
             }
         }
-        public static bool EditProduct(Product Pro)
+        public static bool UpdateProduct(Product Pro)
         {
-            string sql = "UpdateProduct";
+          
+            string sql = "spUpdateProduct";
+            SqlParameter ProID = new SqlParameter("ProductID", Pro.ProductID);
             SqlParameter Name = new SqlParameter("Name", Pro.Name);
             SqlParameter Price = new SqlParameter("Price", Pro.Price);
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, Name, Price);
+            
+            return DataProvider.ExecuteNonQuery(sql, CommandType.StoredProcedure, ProID,Name,Price);
+
         }
     }
-}
+    }
+

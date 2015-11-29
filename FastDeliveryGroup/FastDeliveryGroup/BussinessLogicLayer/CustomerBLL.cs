@@ -24,10 +24,7 @@ namespace FastDeliveryGroup.BussinessLogicLayer
         {
             return CustomerData.DeleteCustomer(ID);
         }
-        public static DataTable Loaddata()
-        {
-            return CustomerData.SelectAllCustomer();
-        }
+       
 
     }
 }
