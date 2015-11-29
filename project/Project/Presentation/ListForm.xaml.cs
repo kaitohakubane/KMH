@@ -9,17 +9,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project
+namespace Project.Presentation
 {
     /// <summary>
-    /// Interaction logic for ListControl.xaml
+    /// Interaction logic for ListForm.xaml
     /// </summary>
-    public partial class ListControl : UserControl
+    public partial class ListForm : Window
     {
-        public ListControl()
+        public ListForm()
         {
             InitializeComponent();
         }
