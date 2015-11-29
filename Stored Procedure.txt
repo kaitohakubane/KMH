@@ -1,3 +1,4 @@
+--------------------Login--------------------------
 IF OBJECT_ID('sp_Login', 'P') IS NOT NULL
 	DROP PROCEDURE sp_Login
 GO
@@ -7,6 +8,7 @@ CREATE PROCEDURE sp_Login
 AS
 	SELECT * FROM tbl WHERE ID=@ID;
 GO
+----------------Update----------------------
 
 IF OBJECT_ID('sp_UpdateProduct', 'P') IS NOT NULL
 	DROP PROCEDURE sp_UpdateProduct
@@ -14,10 +16,18 @@ GO
 
 CREATE PROCEDURE sp_UpdateProduct
 	@ProID INT,
-	@ProName nvarchar(50)
+	@SupID INT,
+	@ProName nvarchar(50),
+	@Type nvarchar(50),
+	@Origin nvarchar(50),
+	@Producer nvarchar(50),
+	@Quantity INT,
+	@InPrice FLOAT,
+	@OutPrice FLOAT
+
 AS
 	UPDATE Product
-	SET ProName = @ProName
+	SET ProName = @ProName, SupID=@SupID, ProName=@ProName,Type=@Type,Origin=@Origin,Producer=@Producer,Quantity=@Quantity,InPrice=@InPrice,OutPrice=@OutPrice
 	WHERE ProID=@ProID;
 GO
 IF OBJECT_ID('sp_UpdateCustomer', 'P') IS NOT NULL
@@ -27,10 +37,11 @@ GO
 CREATE PROCEDURE sp_UpdateCustomer
 	@CusID INT,
 	@CusName nvarchar(50),
-	@Phone nvarchar(50)
+	@CusPhone nvarchar(50),
+	@CusAddress nvachar(50)
 AS
 	UPDATE Customer
-	SET CusName = @CusName, Phone=@Phone
+	SET CusName = @CusName, CusPhone=@CusPhone, CusAddress=@CusAddress
 	WHERE CusID=@CusID;
 GO
 
@@ -48,10 +59,56 @@ CREATE PROCEDURE sp_UpdateStaff
 AS
 	UPDATE Staff
 	SET  StaffRole=@StaffRole, StaffAge=@StaffAge, StaffSalary=@StaffSalary, StaffName=@StaffName, StaffPassword=@StaffPassword
-	WHERE StaffUserName = @StaffUserName
+	WHERE StaffUserName LIKE @StaffUserName
 GO
 
+IF OBJECT_ID('sp_UpdateSupplier', 'P') IS NOT NULL
+	DROP PROCEDURE sp_UpdateSupplier
+GO
 
+CREATE PROCEDURE sp_UpdateSupplier
+	@SupID INT,
+	@SupName nvarchar(50),
+	@SupPhone nvarchar(50),
+	@SupAddress nvarchar(50),
+	@SupDept FLOAT
+AS
+	UPDATE Supplier
+	SET SupName = @SupName, SupPhone=@SupPhone, SupAddress=@SupAddress, SupDept=@Supdept
+	WHERE SupID=@SupID;
+GO
+---------------------------Insert------------------------
+
+
+IF OBJECT_ID('sp_InsertProduct', 'P') IS NOT NULL
+	DROP PROCEDURE sp_InsertProduct
+GO
+
+CREATE PROCEDURE sp_InsertProduct
+	@ProID
+	@SupID INT,
+	@ProName nvarchar(50),
+	@Type nvarchar(50),
+	@Origin nvarchar(50),
+	@Producer nvarchar(50),
+	@Quantity INT,
+	@InPrice FLOAT,
+	@OutPrice FLOAT
+AS
+	INSERT INTO Product(ProID,SupID,ProName,Type,Origin,Producer,Quantity,InPrice,OutPrice) VALUES(@ProID,@SupID,@ProName,@Origin,@Producer,@Quantity,@InPrice,@OutPrice)
+GO
+
+IF OBJECT_ID('sp_InsertCustomer', 'P') IS NOT NULL
+	DROP PROCEDURE sp_InsertCustomer
+GO
+
+CREATE PROCEDURE sp_InsertCustomer
+	@CusName nvarchar(50),
+	@CusPhone nvarchar(50),
+	@CusAddress nvachar(50)
+AS
+	INSERT INTO Supplier(SupName,SupPhone,SupAddress,SupDept) VALUES(@SupName,@SupPhone,@SupAddress,@SupDept)
+GO
 
 IF OBJECT_ID('sp_InsertStaff', 'P') IS NOT NULL
 	DROP PROCEDURE sp_InsertStaff
@@ -65,9 +122,22 @@ CREATE PROCEDURE sp_InsertStaff
 	@StaffUserName,
 	@StaffPassword
 AS
-	INSERT INTO Staff(StaffName,StaffRole,StaffAge,StaffSalary,StaffUserName,StaffPassword) values(@StaName,@StaffRole,@StaffAge,@StaffSalary,@StaffUserName,@StaffPassword)
+	INSERT INTO Staff(StaffName,StaffRole,StaffAge,StaffSalary,StaffUserName,StaffPassword) VALUES(@StaName,@StaffRole,@StaffAge,@StaffSalary,@StaffUserName,@StaffPassword)
 GO
 
+IF OBJECT_ID('sp_InsertSupplier', 'P') IS NOT NULL
+	DROP PROCEDURE sp_InsertSupplier
+GO
+
+CREATE PROCEDURE sp_InsertSupplier
+	@SupName nvarchar(50),
+	@SupPhone nvarchar(50),
+	@SupAddress nvarchar(50),
+	@SupDept FLOAT
+AS
+	INSERT INTO Supplier(SupName,SupPhone,SupAddress,SupDept) VALUES(@SupName,@SupPhone,@SupAddress,@SupDept)
+GO
+----------------------------DELETE----------------
 IF OBJECT_ID('sp_DeleteStaff', 'P') IS NOT NULL
 	DROP PROCEDURE sp_DeleteStaff
 GO
@@ -79,6 +149,18 @@ DELETE FROM Staff
 WHERE StaffID=@StaffID
 GO
 
+
+IF OBJECT_ID('sp_DeleteProduct', 'P') IS NOT NULL
+	DROP PROCEDURE sp_DeleteProduct
+GO
+
+CREATE PROCEDURE sp_DeleteStaff
+@StaffID
+AS
+DELETE FROM Staff
+WHERE StaffID=@StaffID
+GO
+-----------------------DisplayAll----------------------
 
 IF OBJECT_ID('sp_DisplayAllStaff', 'P') IS NOT NULL
 	DROP PROCEDURE sp_DisplayAllStaff

@@ -1,0 +1,28 @@
+﻿<Window x:Class="Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Background>
+        <ImageBrush ImageSource="ios_7_galaxy-wide.jpg"/>
+    </Window.Background>
+
+    <Grid>
+        <TabControl Margin="0,31,0.4,-0.2">
+            <TabControl.Background>
+                <ImageBrush/>
+            </TabControl.Background>
+            <TabItem Header="Payment" />
+            <TabItem Header="Product"/>
+            <TabItem Header="Staff"/>
+            <TabItem Header="Customer"/>
+            <TabItem Header="Suplier"/>
+            <TabItem Header="Report"/>            
+        </TabControl>
+        <Label x:Name="label" Content="HKM Software" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF39DFFF"/>
+    </Grid>
+    
+</Window>
