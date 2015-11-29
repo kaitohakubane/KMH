@@ -60,7 +60,7 @@
     <Compile Include="Access Data\StaffData.cs" />
     <Compile Include="Access Data\SupplierData.cs" />
     <Compile Include="Bussiness Layer\StaffBL.cs" />
-    <Compile Include="CustomerControl.xaml.cs">
+    <Compile Include="Presentation\CustomerControl.xaml.cs">
       <DependentUpon>CustomerControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Bill.xaml.cs">
@@ -85,7 +85,7 @@
     <Compile Include="Presentation\TabControl.xaml.cs">
       <DependentUpon>TabControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="CustomerControl.xaml">
+    <Page Include="Presentation\CustomerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

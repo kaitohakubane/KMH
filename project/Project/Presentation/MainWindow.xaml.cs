@@ -11,18 +11,39 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Project.Entity;
 namespace Project
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        public MainWindow()
+    {Staff curStaff;
+        public MainWindow(Staff inStaff)
         {
             InitializeComponent();
+            curStaff=inStaff;
+            if (Power == 1)
+            {
+                //Admin: Show cái j lên thì bỏ vào đây
+            }
+            if (Power == 2)
+            {
+                //StockManger: Show cái j lên thì bỏ vào đây
+            }
+            if (Power == 3)
+            {
+                //Dealer: Show cái j lên thì bỏ vào đây
+            }
         }
+        private int mPower;
+
+        public int Power
+        {
+            get { return mPower; }
+            set { mPower = value; }
+        }
+
         
     }
     

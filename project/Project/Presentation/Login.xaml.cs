@@ -23,12 +23,27 @@ namespace Project
         {
             InitializeComponent();
         }
+        public void ShowMainForm(int power,Staff curStaff)
+        {
+            MainWindow frm = new MainWindow(curStaff);
+            frm.Power = power;
+            frm.Show();
+        }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             string username = txtUsername.Text;
             Staff user = StaffBL.GefbyUserName(username);
-
+            if (user != null && user.StaffPassword.Equals(txtPassword.Password))
+            {
+                ShowMainForm(user.StaffRole, user);
+                this.Close();
+            }
+            else
+            {
+                //Mày tạo message hay xử lý khi sai password ở đây
+                //Cần thì làm try catch nguyên cái đăng nhập này
+            }
 
         }
     }

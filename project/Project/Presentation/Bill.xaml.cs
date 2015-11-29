@@ -23,5 +23,13 @@ namespace Project
         {
             InitializeComponent();
         }
+        private void LoadData()
+        {
+            dtgBill.AutoGenerateColumns = false;
+        }
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadData();
+        }
     }
 }
