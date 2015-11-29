@@ -14,7 +14,14 @@ namespace Project.Entity
         private float mStaffSalary;
         private string mStaffUserName;
         private string mStaffPassword;
+        private bool misActive;
 
+        public bool isActive
+        {
+            get { return misActive; }
+            set { misActive = value; }
+        }
+        
         public int StaffID
         {
             get

@@ -16,7 +16,14 @@ namespace Project.Entity
         private double mOutPrice;
         private int mQuantity;
         private string mType;
+        private int misActive;
 
+        public int isActive
+        {
+            get { return misActive; }
+            set { misActive = value; }
+        }
+        
         public int ProID
         {
             get
