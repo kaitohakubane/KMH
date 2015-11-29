@@ -29,3 +29,6 @@ D:\C#\Project\Project\Project\obj\Debug\ListControl.g.cs
 D:\KMH\project\Project\obj\Debug\Project.exe
 D:\KMH\project\Project\obj\Debug\Project.pdb
 D:\KMH\project\Project\bin\Debug\Project.exe.config
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\bin\Debug\Project.exe.config
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.exe
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.pdb

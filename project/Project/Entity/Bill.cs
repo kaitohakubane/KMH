@@ -14,6 +14,16 @@ namespace Project.Entity
         private DateTime mDateStart;
         private DateTime mDateEnd;
 
+        public Bill(int mBillID, int mCusID, int mCodeID, int mStaffID, DateTime mDateStart, DateTime mDateEnd)
+        {
+            this.mBillID = mBillID;
+            this.mCusID = mCusID;
+            this.mCodeID = mCodeID;
+            this.mStaffID = mStaffID;
+            this.mDateStart = mDateStart;
+            this.mDateEnd = mDateEnd;
+        }
+
         public int BillID
         {
             get

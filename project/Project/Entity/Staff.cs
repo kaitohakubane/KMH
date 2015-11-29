@@ -16,6 +16,18 @@ namespace Project.Entity
         private string mStaffPassword;
         private bool misActive;
 
+        public Staff(int mStaffID, string mStaffName, int mStaffRole, int mStaffAge, float mStaffSalary, string mStaffUserName, string mStaffPassword, bool misActive)
+        {
+            this.mStaffID = mStaffID;
+            this.mStaffName = mStaffName;
+            this.mStaffRole = mStaffRole;
+            this.mStaffAge = mStaffAge;
+            this.mStaffSalary = mStaffSalary;
+            this.mStaffUserName = mStaffUserName;
+            this.mStaffPassword = mStaffPassword;
+            this.misActive = misActive;
+        }
+
         public bool isActive
         {
             get { return misActive; }

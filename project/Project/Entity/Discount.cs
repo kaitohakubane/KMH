@@ -14,6 +14,16 @@ namespace Project.Entity
         private DateTime mDateStart;
         private DateTime mDateEnd;
 
+        public Discount(int mCodeID, string mType, float mRate, int mProIDGift, DateTime mDateStart, DateTime mDateEnd)
+        {
+            this.mCodeID = mCodeID;
+            this.mType = mType;
+            this.mRate = mRate;
+            this.mProIDGift = mProIDGift;
+            this.mDateStart = mDateStart;
+            this.mDateEnd = mDateEnd;
+        }
+
         public int CodeID
         {
             get

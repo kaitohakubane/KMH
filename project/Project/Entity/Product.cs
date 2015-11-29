@@ -18,6 +18,20 @@ namespace Project.Entity
         private string mType;
         private int misActive;
 
+        public Product(int mProID, string mProName, int mSupID, string mProducer, string mOrigin, double mInPrice, double mOutPrice, int mQuantity, string mType, int misActive)
+        {
+            this.mProID = mProID;
+            this.mProName = mProName;
+            this.mSupID = mSupID;
+            this.mProducer = mProducer;
+            this.mOrigin = mOrigin;
+            this.mInPrice = mInPrice;
+            this.mOutPrice = mOutPrice;
+            this.mQuantity = mQuantity;
+            this.mType = mType;
+            this.misActive = misActive;
+        }
+
         public int isActive
         {
             get { return misActive; }

@@ -13,7 +13,7 @@
         <Label x:Name="label_Copy" Content="Thời gian:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,81,0,0"/>
         <Label x:Name="label_Copy1" Content="Tên nhân viên:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,112,0,0"/>
         <Label x:Name="label_Copy2" Content="Tên khách hàng:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,143,0,0"/>
-        <DataGrid x:Name="dtgBill" Height="210" Width="508" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,58"/>
+        <DataGrid x:Name="dtgBill" Height="210" Width="518" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,-0.4,58"/>
         <Label x:Name="label_Copy3" Content="Tổng cộng:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="351,399,0,0"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,53,0,0"/>
         <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,84,0,0"/>

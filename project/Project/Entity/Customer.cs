@@ -12,6 +12,14 @@ namespace Project.Entity
         private string mCusAddress;
         private int mCusPhone;
 
+        public Customer(int mCusID, string mCusName, string mCusAddress, int mCusPhone)
+        {
+            this.mCusID = mCusID;
+            this.mCusName = mCusName;
+            this.mCusAddress = mCusAddress;
+            this.mCusPhone = mCusPhone;
+        }
+
         public int CusID
         {
             get

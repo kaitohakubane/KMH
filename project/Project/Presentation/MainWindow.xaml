@@ -11,18 +11,17 @@
     </Window.Background>
 
     <Grid>
-        <TabControl Margin="0,31,0.4,-0.2">
-            <TabControl.Background>
-                <ImageBrush/>
-            </TabControl.Background>
-            <TabItem Header="Payment" />
-            <TabItem Header="Product"/>
-            <TabItem Header="Staff"/>
-            <TabItem Header="Customer"/>
-            <TabItem Header="Suplier"/>
-            <TabItem Header="Report"/>            
-        </TabControl>
-        <Label x:Name="label" Content="HKM Software" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF39DFFF"/>
+        <Label x:Name="label" Content="HKM Software" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF39DFFF" FontSize="20"/>
+        <StackPanel HorizontalAlignment="Center" Height="135" VerticalAlignment="Center" Width="200">
+            <Button x:Name="btnStaff" Content="Staff"/>
+            <Button x:Name="btnProduct" Content="Product"/>
+            <Button x:Name="btnPayment" Content="Payment"/>
+            <Button x:Name="btnCustomer" Content="Customer"/>
+            <Button x:Name="btnReport" Content="Report"/>
+            <Button x:Name="btnDiscount" Content="Discount"/>
+            <Button x:Name="btnSupplier" Content="Supplier"/>
+        </StackPanel>
+        <Button x:Name="btnLogout" Content="LogOut" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="75" Margin="216,0,227.4,31.8"/>
     </Grid>
-    
+
 </Window>
