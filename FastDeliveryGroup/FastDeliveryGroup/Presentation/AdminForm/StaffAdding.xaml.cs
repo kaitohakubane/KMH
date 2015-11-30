@@ -45,7 +45,7 @@ namespace FastDeliveryGroup.Presentation.AdminForm
                 u.FullName = txtFullName.Text;
                 u.UserName = txtUserName.Text;
                 u.Password = txtPassWord.Text;
-                u.Role = Boolean.Parse(txtRole.Text);
+                u.Role = false;
                 u.Phone = txtPhone.Text;
                 UserBLL.AddUser(u);
                 System.Windows.Forms.MessageBox.Show("Successfully");

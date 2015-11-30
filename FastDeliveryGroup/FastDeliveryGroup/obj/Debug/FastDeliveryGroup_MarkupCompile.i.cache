@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\KMH\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\
+D:\C#\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\
 FastDeliveryGroup
 none
 false
 DEBUG;TRACE
-D:\KMH\FastDeliveryGroup\FastDeliveryGroup\App.xaml
-191160194689
+D:\C#\FastDeliveryGroup\FastDeliveryGroup\App.xaml
+19375818820
 
-50-83281852
-242098914354
-Login.xaml;MainWindow.xaml;Presentation\AdminForm\StaffAdding.xaml;Presentation\AdminForm\AdminForm.xaml;Presentation\AdminForm\ReportManagement.xaml;Presentation\AdminForm\StaffManagement.xaml;Presentation\CommonForm\CustomerAdding.xaml;Presentation\AdminForm\DistrictAdding.xaml;Presentation\AdminForm\ProductAdding.xaml;Presentation\StaffForm\ScheduleAdding.xaml;Presentation\CommonForm\CustomerManagement.xaml;Presentation\AdminForm\DistrictManagement.xaml;Presentation\AdminForm\ProductEditing.xaml;Presentation\StaffForm\ScheduleEditing.xaml;Presentation\AdminForm\ProductManagement.xaml;Presentation\StaffForm\ScheduleManagement.xaml;Presentation\AdminForm\ShipperManagement.xaml;Presentation\StaffForm\ShipperAdding.xaml;Presentation\StaffForm\StaffForm.xaml;
+52-1225031559
+241456407815
+Login.xaml;MainWindow.xaml;Presentation\AdminForm\StaffAdding.xaml;Presentation\AdminForm\AdminForm.xaml;Presentation\AdminForm\ReportManagement.xaml;Presentation\AdminForm\StaffManagement.xaml;Presentation\CommonForm\CustomerAdding.xaml;Presentation\AdminForm\DistrictAdding.xaml;Presentation\AdminForm\ProductAdding.xaml;Presentation\StaffForm\ScheduleAdding.xaml;Presentation\CommonForm\CustomerManagement.xaml;Presentation\AdminForm\DistrictManagement.xaml;Presentation\AdminForm\ProductEditing.xaml;Presentation\StaffForm\ScheduleEditing.xaml;Presentation\AdminForm\ProductManagement.xaml;Presentation\StaffForm\ScheduleManagement.xaml;Presentation\AdminForm\ShipperManagement.xaml;Presentation\AdminForm\ShipperAdding.xaml;Presentation\StaffForm\StaffForm.xaml;
 
 True
 

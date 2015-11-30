@@ -1,4 +1,5 @@
 ﻿using FastDeliveryGroup.Entities;
+using FastDeliveryGroup.Presentation.StaffForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,8 +30,46 @@ namespace FastDeliveryGroup.Presentation.AdminForm
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-           pngText.Children.Add(new StaffManagement(curUser));
+            pnlUserControl.Children.Add(new StaffManagement(curUser));
         }
 
+        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lbxTab_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            pnlUserControl.Children.Clear();
+            string option = ((ListBoxItem)lbxTab.SelectedItem).Content.ToString();
+            switch (option)
+            {
+                case "Staff Management":
+                    {
+                        pnlUserControl.Children.Add(new StaffManagement(curUser));
+                        break;
+                    }
+                case "Product Management":
+                    {
+                        pnlUserControl.Children.Add(new ProductManagement(curUser));
+                        break;
+                    }
+                case "District Management":
+                    {
+                        pnlUserControl.Children.Add(new DistrictManagement(curUser));
+                        break;
+                    }
+                case "Shipper Management":
+                    {
+                        pnlUserControl.Children.Add(new ShipperManagement(curUser));
+                        break;
+                    }
+                case "Report":
+                    {
+                        pnlUserControl.Children.Add(new ReportManagement());
+                        break;
+                    }
+            }
+        }
     }
 }

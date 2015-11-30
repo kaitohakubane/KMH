@@ -7,13 +7,16 @@
         xmlns:local="clr-namespace:FastDeliveryGroup.Presentation.AdminForm"
         xmlns:StaffForm="clr-namespace:FastDeliveryGroup.Presentation.StaffForm" x:Name="frmAdmin" x:Class="FastDeliveryGroup.Presentation.AdminForm.AdminForm"
         mc:Ignorable="d"
-        Title="AdminForm" Height="400" Width="600">
+        Title="AdminForm" Height="700" Width="1000">
     <Grid Loaded="Grid_Loaded">
-        <ListBox x:Name="lbxTab" HorizontalAlignment="Left" Height="339" Margin="7,20,0,0" VerticalAlignment="Top" Width="137">
+        <ListBox x:Name="lbxTab" HorizontalAlignment="Left" Height="339" Margin="7,20,0,0" VerticalAlignment="Top" Width="137" SelectionChanged="lbxTab_SelectionChanged">
             <ListBoxItem Content="Staff Management"/>
+            <ListBoxItem Content="Product Management"/>
+            <ListBoxItem Content="District Management"/>
+            <ListBoxItem Content="Shipper Management"/>
             <ListBoxItem Content="Report"/>
         </ListBox>
-        <StackPanel x:Name="pngText" HorizontalAlignment="Left" Height="313" Margin="184,19,0,0" VerticalAlignment="Top" Width="369"/>
+        <StackPanel x:Name="pnlUserControl" HorizontalAlignment="Left" Height="627" Margin="184,19,0,0" VerticalAlignment="Top" Width="741"/>
 
     </Grid>
 </Window>

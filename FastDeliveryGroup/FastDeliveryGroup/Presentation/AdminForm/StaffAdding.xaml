@@ -9,19 +9,15 @@
         Title="AddStaff" Height="400" Width="600">
     <Grid>
         <Label x:Name="label" Content="Register" HorizontalAlignment="Left" Margin="270,10,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="26.667" FontWeight="Bold"/>
-        <Label x:Name="label1" Content="Full Name" HorizontalAlignment="Left" Margin="30,50,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label1" Content="Full Name" HorizontalAlignment="Left" Margin="30,80,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
         <Label x:Name="label1_Copy" Content="UserName" HorizontalAlignment="Left" Margin="30,110,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
         <Label x:Name="label1_Copy1" Content="PassWord" HorizontalAlignment="Left" Margin="30,140,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
-        <Label x:Name="label1_Copy2" Content="Role" HorizontalAlignment="Left" Margin="30,170,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
-        <Label x:Name="label1_Copy4" Content="Phone" HorizontalAlignment="Left" Margin="30,200,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
-        <TextBox x:Name="txtFullName" HorizontalAlignment="Left" Height="27" Margin="194,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Times New Roman" FontSize="16"/>
+        <Label x:Name="label1_Copy4" Content="Phone" HorizontalAlignment="Left" Margin="30,170,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
+        <TextBox x:Name="txtFullName" HorizontalAlignment="Left" Height="27" Margin="194,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Times New Roman" FontSize="16"/>
         <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="27" Margin="194,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Times New Roman" FontSize="16"/>
         <TextBox x:Name="txtPassWord" HorizontalAlignment="Left" Height="27" Margin="194,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Times New Roman" FontSize="16"/>
-        <TextBox x:Name="txtRole" HorizontalAlignment="Left" Height="27" Margin="194,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Times New Roman" FontSize="16"/>
-        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="27" Margin="194,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Times New Roman" FontSize="16"/>
-        <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Margin="212,259,0,0" VerticalAlignment="Top" Width="75" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Click="btnOk_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="338,259,0,0" VerticalAlignment="Top" Width="98" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Click="btnCancel_Click"/>
-        <Label x:Name="label1_Copy3" Content="UserID" HorizontalAlignment="Left" Margin="30,80,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="16"/>
-        <TextBox x:Name="txtUserID" HorizontalAlignment="Left" Height="27" Margin="194,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Times New Roman" FontSize="16"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="27" Margin="194,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Times New Roman" FontSize="16"/>
+        <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Margin="254,217,0,0" VerticalAlignment="Top" Width="75" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Click="btnOk_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="343,217,0,0" VerticalAlignment="Top" Width="98" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Click="btnCancel_Click"/>
     </Grid>
 </Window>

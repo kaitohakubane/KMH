@@ -24,6 +24,7 @@ namespace FastDeliveryGroup.Presentation.StaffForm
     /// </summary>
     public partial class DistrictManagement : System.Windows.Controls.UserControl
     {
+        List<District> districts = new List<District>();
         User curUser;
         DataTable dt = new DataTable();
         BindingSource bs = new BindingSource();
@@ -35,6 +36,7 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void btnAddDistrict_Click(object sender, RoutedEventArgs e)
         {
+            
             AddDistrict dis = new AddDistrict(curUser);
             dis.AddFinshed += new ActionComplete(updateTable);
             dis.ShowDialog();
@@ -43,9 +45,10 @@ namespace FastDeliveryGroup.Presentation.StaffForm
         private void LoadData()
         {
             dtgRoute.AutoGenerateColumns = false;
-            dt = DistrictBLL.GetAllDistrict();
+            dt = DistrictBLL.GetAllDTDistrict();
             bs.DataSource = dt;
             dtgRoute.ItemsSource = bs;
+            dt.PrimaryKey = new DataColumn[] { dt.Columns["PlaceID"] };
         }
 
       
@@ -69,16 +72,26 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void btnDeleteDistrict_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView row = (DataRowView)dtgRoute.SelectedItem;
-            if (row == null)
+            try
             {
-                Console.WriteLine("Please chose a row");
-            }
-            else
+
+
+                DataRowView row = (DataRowView)dtgRoute.SelectedItem;
+                if (row == null)
+                {
+                    Console.WriteLine("Please chose a row");
+                }
+                else
+                {
+                    int id = int.Parse(row["PlaceID"].ToString());
+                    DataRow dr = dt.Rows.Find(id);
+                    dt.Rows.Remove(dr);
+                    DistrictBLL.DeleteDistrict(id);
+                    //LoadData();
+                }
+            }catch(Exception g)
             {
-                int id = int.Parse(row["PlaceID"].ToString());
-                DistrictBLL.DeleteDistrict(id);
-                LoadData();
+                System.Windows.Forms.MessageBox.Show(g.Message);
             }
         }
     }

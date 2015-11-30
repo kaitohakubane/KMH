@@ -40,6 +40,15 @@ namespace FastDeliveryGroup.Entities
             set { mPhone = value; }
         }
 
+        private bool mActive;
+
+        public bool Active
+        {
+            get { return mActive; }
+            set { mActive = value; }
+        }
+
+
 
     }
 }

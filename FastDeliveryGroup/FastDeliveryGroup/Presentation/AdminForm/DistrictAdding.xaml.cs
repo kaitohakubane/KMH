@@ -25,7 +25,6 @@ namespace FastDeliveryGroup.Presentation.StaffForm
     public delegate void ActionComplete(District dis);
     public partial class AddDistrict : Window
     {
-        public List<District> District = new List<District>();
         public event ActionComplete AddFinshed;
         DataTable dt = new DataTable();
         BindingSource bs = new BindingSource();
@@ -41,6 +40,7 @@ namespace FastDeliveryGroup.Presentation.StaffForm
             try
             {
                 District dis = new District();
+                dis.DistrictID = (DistrictBLL.GetCurrentIden() + 1);
                 dis.NameOfDistrict = txtNameOfDistrict.Text;
                 DistrictBLL.AddDistrict(dis);
                 System.Windows.Forms.MessageBox.Show("Successfully");

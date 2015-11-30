@@ -14,8 +14,8 @@
         <Label x:Name="label_Copy2" Content="Salary:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,172,0,0"/>
         <Label x:Name="label_Copy3" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,203,0,0"/>
         <Label x:Name="label_Copy4" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,234,0,0"/>
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="50,282,0,0"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="176,282,0,0"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="50,282,0,0" Click="btnOK_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="176,282,0,0" Click="btnCancel_Click"/>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="85,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="85,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="85,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>

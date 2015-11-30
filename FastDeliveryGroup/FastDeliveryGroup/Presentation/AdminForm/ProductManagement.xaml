@@ -12,7 +12,6 @@
                 <DataGridTextColumn Binding="{Binding ProductID}" ClipboardContentBinding="{x:Null}" Header="ProductID"/>
                 <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Name"/>
                 <DataGridTextColumn Binding="{Binding Price}" ClipboardContentBinding="{x:Null}" Header="Price"/>
-                <DataGridTextColumn/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnAddProduct" Content="Add Product" HorizontalAlignment="Left" Margin="121,236,0,0" VerticalAlignment="Top" Width="124" FontFamily="Times New Roman" FontSize="16" Click="btnAddProduct_Click"/>

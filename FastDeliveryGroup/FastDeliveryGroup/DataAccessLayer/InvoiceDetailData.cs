@@ -27,8 +27,6 @@ namespace FastDeliveryGroup.DataAccessLayer
             string sql = "spCurrentIden";
             SqlParameter para = new SqlParameter("@table", "Invoice");
             SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure, para);
-            
-            //System.Windows.Forms.MessageBox.Show(rd[0].GetType().ToString());
             if (rd.HasRows)
             {
                 rd.Read();

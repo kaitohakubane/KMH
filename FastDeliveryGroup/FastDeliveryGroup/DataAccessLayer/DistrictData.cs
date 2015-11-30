@@ -29,7 +29,7 @@ namespace FastDeliveryGroup.DataAccessLayer
                     District r = new District()
                     {
                         DistrictID = rd.GetInt32(0),
-                        NameOfDistrict = rd.GetName(1)
+                        NameOfDistrict = rd.GetString(1)
                     };
                     list.Add(r);
                 }
@@ -55,5 +55,23 @@ namespace FastDeliveryGroup.DataAccessLayer
                 throw new Exception("Error: " + se.Message);
             }
         }
+
+        public static int SelectCurrentIden()
+        {
+            string sql = "spCurrentIden";
+            SqlParameter para = new SqlParameter("@table", "Place");
+            SqlDataReader rd = DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure, para);
+            if (rd.HasRows)
+            {
+                rd.Read();
+                if (!rd.IsDBNull(0))
+                {
+                    return rd.GetInt32(0);
+                }
+
+            }
+            return 0;
+        }
+
     }
 }

@@ -268,8 +268,8 @@ D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\Presentatio
 D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\FastDeliveryGroup.g.resources
 D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\FastDeliveryGroup.Properties.Resources.resources
 D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\FastDeliveryGroup.csproj.GenerateResource.Cache
-D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\Presentation\StaffForm\ShipperAdding.g.cs
-D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\Presentation\StaffForm\ShipperAdding.baml
-D:\KMH\FastDeliveryGroup\FastDeliveryGroup\bin\Debug\FastDeliveryGroup.exe.config
-D:\KMH\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\FastDeliveryGroup.exe
-D:\KMH\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\FastDeliveryGroup.pdb
+D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\Presentation\AdminForm\ShipperAdding.g.cs
+D:\PhanMem\Ky4\Project\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\Presentation\AdminForm\ShipperAdding.baml
+D:\C#\FastDeliveryGroup\FastDeliveryGroup\bin\Debug\FastDeliveryGroup.exe.config
+D:\C#\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\FastDeliveryGroup.exe
+D:\C#\FastDeliveryGroup\FastDeliveryGroup\obj\Debug\FastDeliveryGroup.pdb

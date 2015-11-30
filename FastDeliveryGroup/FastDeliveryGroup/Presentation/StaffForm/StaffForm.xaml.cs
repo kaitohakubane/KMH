@@ -1,4 +1,5 @@
 ﻿using FastDeliveryGroup.Entities;
+using FastDeliveryGroup.Presentation.AdminForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,11 +30,15 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            //  pnlScheduleManagement.Children.Add(new ScheduleManagement(curUser));
-            //    pnlScheduleManagement.Children.Add(new DistrictManagement(curUser));
-            pnlScheduleManagement.Children.Add(new CustomerManagement(curUser));
-            //   pnlScheduleManagement.Children.Add(new ShipperManagement(curUser));
-            //pnlScheduleManagement.Children.Add(new ProductManagement(curUser));
+            pnlScheduleManagement.Children.Add(new ScheduleManagement(curUser));
+        }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            Login lg = new Login();
+            lg.Show();
+            this.Close();
+
         }
     }
 }

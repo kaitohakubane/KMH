@@ -16,7 +16,7 @@ namespace FastDeliveryGroup.BussinessLogicLayer
             return DistrictData.InsertDistrict(dis);
         }
 
-        public static DataTable GetAllDistrict()
+        public static DataTable GetAllDTDistrict()
         {
             return DistrictData.SelectAllDistrict();
         }
@@ -24,5 +24,16 @@ namespace FastDeliveryGroup.BussinessLogicLayer
         {
             return DistrictData.DeleteDistrict(ID);
         }
+
+        public static List<District> GetAllDistrict()
+        {
+            return DistrictData.SelectAll();
+        }
+
+        public static int GetCurrentIden()
+        {
+            return DistrictData.SelectCurrentIden();
+        }
+
     }
 }

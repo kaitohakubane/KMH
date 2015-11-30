@@ -15,6 +15,12 @@ namespace FastDeliveryGroup.BussinessLogicLayer
         {
             return ShipperData.SelectAllShipper();
         }
+
+        public static DataTable GetAllDTShipper()
+        {
+            return ShipperData.SelectAllDTShipper();
+        }
+
         public static bool AddShipper(Shipper shipper)
         {
             return ShipperData.AddShipperName(shipper);
@@ -24,5 +30,11 @@ namespace FastDeliveryGroup.BussinessLogicLayer
         {
             return ShipperData.DeleteShipper(ID);
         }
+
+        public static int GetCurrentIden()
+        {
+            return ShipperData.SelectCurrentIden();
+        }
+
     }
 }

@@ -43,6 +43,7 @@ namespace FastDeliveryGroup.Presentation.StaffForm
             dt = ProductBLL.getAllProduct();
             bs.DataSource = dt;
             dtgProduct.ItemsSource = bs;
+            dt.PrimaryKey = new DataColumn[] { dt.Columns["ProductID"] };
         }
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)

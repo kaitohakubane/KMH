@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="StaffForm" Height="400" Width="600">
     <Grid Loaded="Grid_Loaded">
-        <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="107" />
+        <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="107" Click="btnLogOut_Click" />
         <Label x:Name="lblStaff" Content="Label" HorizontalAlignment="Left" Margin="544,7,0,0" VerticalAlignment="Top"/>
         <StackPanel x:Name="pnlScheduleManagement" HorizontalAlignment="Left" Height="323" VerticalAlignment="Top" Width="572" Margin="10,37,0,0"/>
     </Grid>

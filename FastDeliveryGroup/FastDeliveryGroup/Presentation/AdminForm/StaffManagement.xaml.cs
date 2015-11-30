@@ -54,21 +54,36 @@ namespace FastDeliveryGroup.Presentation.AdminForm
             dt = UserBLL.GetAllUser();
             bs.DataSource = dt;
             dtgStaff.ItemsSource = bs;
+            dt.PrimaryKey = new DataColumn[] { dt.Columns["UserID"] };
         }
 
         private void btnDeleteStaff_Click(object sender, RoutedEventArgs e)
         {
-
-            DataRowView row = (DataRowView)dtgStaff.SelectedItem;
-            if (row == null)
+            try {
+                DataRowView row = (DataRowView)dtgStaff.SelectedItem;
+                if (row == null)
+                {
+                    Console.WriteLine("Please chose a row");
+                }
+                else
+                {
+                    int id = int.Parse(row["UserID"].ToString());
+                    
+                   
+                    
+                    if (id != curUser.UserID)
+                    {
+                        UserBLL.DeleteStaff(id);
+                        dt.Rows.Remove(dt.Rows.Find(id));
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Can not remove current account!!!");
+                    }
+                }
+            }catch(Exception g)
             {
-                Console.WriteLine("Please chose a row");
-            }
-            else
-            {
-                int id = int.Parse(row["UserID"].ToString());
-                UserBLL.DeleteStaff(id);
-                LoadData();
+                System.Windows.Forms.MessageBox.Show(g.Message);
             }
         }
     }

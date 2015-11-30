@@ -28,6 +28,7 @@ namespace FastDeliveryGroup.Presentation.StaffForm
         User curUser;
         DataTable dt = new DataTable();
         BindingSource bs = new BindingSource();
+        List<District> places = new List<District>();
         public ShipperManagement(User u)
         {
             InitializeComponent();
@@ -36,13 +37,13 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void btnAddShipper_Click(object sender, RoutedEventArgs e)
         {
-            ShipperAdding Ads = new ShipperAdding(curUser);
+            ShipperAdding Ads = new ShipperAdding(curUser, places);
             Ads.AddFinished += new Run(UpdateTable);
             Ads.ShowDialog();
         }
         public void UpdateTable(Shipper shipper)
         {
-            dt.Rows.Add(shipper.ShipperID, shipper.Name, shipper.PlaceID, shipper.Phone);
+            dt.Rows.Add(shipper.ShipperID, shipper.Name, shipper.PlaceID, shipper.Phone, true);
 
         }
 
@@ -54,7 +55,8 @@ namespace FastDeliveryGroup.Presentation.StaffForm
         private void LoadData()
         {
             dtgShipper.AutoGenerateColumns = false;
-            //dt. = ShipperBLL.GetAllShipper();
+            dt = ShipperBLL.GetAllDTShipper();
+            places = DistrictBLL.GetAllDistrict();
             bs.DataSource = dt;
             dtgShipper.ItemsSource = bs;
         }

@@ -1,4 +1,5 @@
 ﻿using FastDeliveryGroup.BussinessLogicLayer;
+using FastDeliveryGroup.DataAccessLayer;
 using FastDeliveryGroup.Entities;
 using System;
 using System.Collections.Generic;
@@ -25,15 +26,21 @@ namespace FastDeliveryGroup.Presentation.StaffForm
     public delegate void Run(Shipper shipper);
     public partial class ShipperAdding : Window
     {
-        public List<Shipper> ListShipper = new List<Shipper>();
+        public List<District> places = new List<District>();
         public event Run AddFinished;
         DataTable dt = new DataTable();
         BindingSource bs = new BindingSource();
         User curUser;
-        public ShipperAdding(User u)
+        public ShipperAdding(User u, List<District> dt)
         {
             InitializeComponent();
             curUser = u;
+            this.places = dt;
+            cbbPlace.DisplayMemberPath = "NameOfDistrict";
+            foreach (District dist in places)
+            {
+                cbbPlace.Items.Add(dist);
+            }
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
@@ -41,8 +48,11 @@ namespace FastDeliveryGroup.Presentation.StaffForm
             try
             {
                 Shipper shipper = new Shipper();
+                int nextIden = ShipperBLL.GetCurrentIden() + 1;
+                shipper.ShipperID = nextIden;
                 shipper.Name = txtName.Text;
-                shipper.PlaceID = int.Parse(txtPlaceID.Text);
+                int PlaceID = ((District)cbbPlace.SelectedItem).DistrictID;
+                shipper.PlaceID = PlaceID;
                 shipper.Phone = txtPhone.Text;
                 ShipperBLL.AddShipper(shipper);
                 System.Windows.Forms.MessageBox.Show("Successfully");

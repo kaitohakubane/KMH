@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FastDeliveryGroup.Entities
 {
-    class Place
+    public class Place
     {
         private int mPlaceID;
 

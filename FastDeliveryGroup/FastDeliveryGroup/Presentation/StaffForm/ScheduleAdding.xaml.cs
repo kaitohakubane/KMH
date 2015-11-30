@@ -165,7 +165,10 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         private void txtCustomer_LostFocus(object sender, RoutedEventArgs e)
         {
-            lblFilter.Content = "ID filter";
+            if (txtFilter.Text == "")
+            {
+                lblFilter.Content = "ID filter";
+            }
         }
 
         private void txtCustomer_TextChanged(object sender, TextChangedEventArgs e)

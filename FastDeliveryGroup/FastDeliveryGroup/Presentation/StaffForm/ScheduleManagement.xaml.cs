@@ -69,21 +69,7 @@ namespace FastDeliveryGroup.Presentation.StaffForm
 
         }
 
-        private void btnDeleteSchedule_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView row = (DataRowView)dgdInvoice.SelectedItem;
-            if (row == null)
-            {
-                Console.WriteLine("Please chose a row");
-            }
-            else
-            {
-                int id = int.Parse(row["InvoiceID"].ToString());
-                InvoiceBLL.DeleteInvoice(id);
-                LoadData();
-            }
-        }
-
+   
         private void btnEditSchedule_Click(object sender, RoutedEventArgs e)
         {
             try {
@@ -117,5 +103,7 @@ namespace FastDeliveryGroup.Presentation.StaffForm
             dr["Status"] = a.Status;
 
         }
+
+       
     }
 }

@@ -36,7 +36,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="De.TorstenMandelkow.MetroChart">
+    <Reference Include="De.TorstenMandelkow.MetroChart, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d5b8d1bbc99c4a2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\De.TorstenMandelkow.MetroChart.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=1.0.0.14576, Culture=neutral, processorArchitecture=MSIL">
@@ -112,6 +113,8 @@
     <Compile Include="BussinessLogicLayer\ProductBLL.cs" />
     <Compile Include="BussinessLogicLayer\ShipperBLL.cs" />
     <Compile Include="BussinessLogicLayer\UserBLL.cs" />
+    <Compile Include="Chart\Chart.cs" />
+    <Compile Include="Chart\MyChartSeries.cs" />
     <Compile Include="DataAccessLayer\CustomerData.cs" />
     <Compile Include="DataAccessLayer\DataProvider.cs" />
     <Compile Include="DataAccessLayer\DistrictData.cs" />
@@ -195,7 +198,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Presentation\StaffForm\ShipperAdding.xaml">
+    <Page Include="Presentation\AdminForm\ShipperAdding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,7 +253,7 @@
     <Compile Include="Presentation\AdminForm\ShipperManagement.xaml.cs">
       <DependentUpon>ShipperManagement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\StaffForm\ShipperAdding.xaml.cs">
+    <Compile Include="Presentation\AdminForm\ShipperAdding.xaml.cs">
       <DependentUpon>ShipperAdding.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\StaffForm\StaffForm.xaml.cs">

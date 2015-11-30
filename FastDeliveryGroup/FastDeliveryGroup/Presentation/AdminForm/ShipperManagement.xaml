@@ -9,11 +9,10 @@
     <Grid Loaded="Grid_Loaded">
         <DataGrid x:Name="dtgShipper" HorizontalAlignment="Left" Margin="71,36,0,0" VerticalAlignment="Top" Width="480" Height="207">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding ShipperID}" ClipboardContentBinding="{x:Null}" Header="NameID"/>
+                <DataGridTextColumn Binding="{Binding ShipperID}" ClipboardContentBinding="{x:Null}" Header="ShipperID"/>
                 <DataGridTextColumn Binding="{Binding Name}" ClipboardContentBinding="{x:Null}" Header="Name"/>
                 <DataGridTextColumn Binding="{Binding PlaceID}" ClipboardContentBinding="{x:Null}" Header="PlaceID"/>
                 <DataGridTextColumn Binding="{Binding Phone}" ClipboardContentBinding="{x:Null}" Header="Phone"/>
-                <DataGridTextColumn/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnAddShipper" Content="Add Shipper" HorizontalAlignment="Left" Margin="199,264,0,0" VerticalAlignment="Top" Width="123" FontFamily="Times New Roman" FontSize="16" Click="btnAddShipper_Click"/>
