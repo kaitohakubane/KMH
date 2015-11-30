@@ -9,21 +9,12 @@ Project
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 D:\KMH\project\Project\App.xaml
-9-1826249120
-
-28693706820
-13-535536061
-Presentation\CustomerControl.xaml;Presentation\ListControl.xaml;Presentation\Login.xaml;Presentation\MainWindow.xaml;Presentation\Notification.xaml;Presentation\Bill.xaml;Presentation\ProductControl.xaml;Presentation\StaffControl.xaml;Presentation\TabControl.xaml;
-=======
-C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\App.xaml
 9-1244335906
 
-28-757687325
-121654848548
+281145462083
+13-535536061
 Presentation\ButtonForm.xaml;Presentation\CustomerControl.xaml;Presentation\ListForm.xaml;Presentation\Login.xaml;Presentation\MainWindow.xaml;Presentation\Notification.xaml;Presentation\Bill.xaml;Presentation\ProductControl.xaml;Presentation\StaffControl.xaml;
->>>>>>> origin/master
 
-False
+True
 
