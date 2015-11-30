@@ -9,17 +9,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project
+namespace Project.Presentation
 {
     /// <summary>
-    /// Interaction logic for Notification.xaml
+    /// Interaction logic for NotificationWindow.xaml
     /// </summary>
-    public partial class Notification : UserControl
+    public partial class NotificationWindow : Window
     {
-        public Notification()
+        public NotificationWindow()
         {
             InitializeComponent();
         }

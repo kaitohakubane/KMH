@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\C#\Project\Project\Project\obj\Debug\
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\
 Project
 none
 false
 DEBUG;TRACE
-D:\C#\Project\Project\Project\App.xaml
-9-448458453
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\App.xaml
+9259813115
 
-261304275851
-121654848548
-CustomerControl.xaml;ListControl.xaml;Login.xaml;MainWindow.xaml;Notification.xaml;Bill.xaml;ProductControl.xaml;StaffControl.xaml;TabControl.xaml;
+32406781273
+14-1345534455
+Presentation\BillWindow.xaml;Presentation\ButtonForm.xaml;Presentation\CustomerWindow.xaml;Presentation\ListWindow.xaml;Presentation\Login.xaml;Presentation\MainWindow.xaml;Presentation\NotificationWindow.xaml;Presentation\ProductWindow.xaml;Presentation\StaffWindow.xaml;
 
-True
+False
 

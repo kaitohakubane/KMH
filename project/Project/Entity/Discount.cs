@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Project.Entity
 {
+    
     class Discount
     {
         private int mCodeID;
@@ -13,7 +14,10 @@ namespace Project.Entity
         private int mProIDGift;
         private DateTime mDateStart;
         private DateTime mDateEnd;
+        public Discount()
+        {
 
+        }
         public Discount(int mCodeID, string mType, float mRate, int mProIDGift, DateTime mDateStart, DateTime mDateEnd)
         {
             this.mCodeID = mCodeID;

@@ -36,11 +36,13 @@ namespace Project
             Staff user = StaffBL.GefbyUserName(username);
             if (user != null && user.StaffPassword.Equals(txtPassword.Password))
             {
+                System.Windows.Forms.MessageBox.Show("Test");
                 ShowMainForm(user.StaffRole, user);
                 this.Close();
             }
             else
             {
+                System.Windows.Forms.MessageBox.Show("lỗi");
                 //Mày tạo message hay xử lý khi sai password ở đây
                 //Cần thì làm try catch nguyên cái đăng nhập này
             }

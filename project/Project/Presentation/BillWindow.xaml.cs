@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Project.Presentation
 {
     /// <summary>
-    /// Interaction logic for ListForm.xaml
+    /// Interaction logic for BillWindow.xaml
     /// </summary>
-    public partial class ListForm : Window
+    public partial class BillWindow : Window
     {
-        public ListForm()
+        public BillWindow()
         {
             InitializeComponent();
         }

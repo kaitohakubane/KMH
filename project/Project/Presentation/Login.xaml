@@ -7,12 +7,10 @@
         mc:Ignorable="d"
         Title="Login" Height="315.312" Width="384.919">
     <Grid Margin="0,0,-6.6,-2.4">
-        <Grid.Background>
-            <ImageBrush ImageSource="ios_7_galaxy-wide.jpg"/>
-        </Grid.Background>
-        <Label x:Name="label" Content="Username:" VerticalAlignment="Top" Margin="50,100,0,0" FontSize="13.333" Foreground="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" HorizontalAlignment="Left" Cursor="None"/>
-        <Label x:Name="label1" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,150,0,0" FontSize="13.333" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch"/>
-        <Label x:Name="label2" Content="Login" VerticalAlignment="Top" FontSize="40" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontFamily="French Script MT" Margin="0,30,0,0">
+        
+        <Label x:Name="label" Content="Username:" VerticalAlignment="Top" Margin="50,100,0,0" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" HorizontalAlignment="Left" Cursor="None"/>
+        <Label x:Name="label1" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,150,0,0" FontSize="13.333" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch"/>
+        <Label x:Name="label2" Content="Login" VerticalAlignment="Top" FontSize="40" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="French Script MT" Margin="0,30,0,0">
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Offset="0"/>
@@ -21,7 +19,7 @@
             </Label.Background>
         </Label>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,100,0,0" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="30" Width="150"/>
-        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="123,0,0,25" FontSize="13.333" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnLogin_Click_1">
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="123,0,0,25" FontSize="13.333" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnLogin_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -50,8 +48,7 @@
             </Button.Foreground>
         </Button>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="150,158,0,0" VerticalAlignment="Top" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="30" Width="150"/>
-        <Label x:Name="label3" Content="Label" HorizontalAlignment="Left" Margin="152,130,0,0" VerticalAlignment="Top" Width="148"/>
-        <Label x:Name="label3_Copy" Content="Label" HorizontalAlignment="Left" Margin="152,193,0,0" VerticalAlignment="Top" Width="148"/>
-
+        <Label x:Name="label3" Content="Username not blank" HorizontalAlignment="Left" Margin="152,130,0,0" VerticalAlignment="Top" Width="148" Foreground="White"/>
+        <Label x:Name="label3_Copy" Content="Password not blank" HorizontalAlignment="Left" Margin="152,193,0,0" VerticalAlignment="Top" Width="148" Foreground="White"/>
     </Grid>
 </Window>

@@ -53,21 +53,22 @@ namespace Project.Access_Data
         public static Staff GetbyUserName(string username)
         {
             string sql = "sp_GetStaff";
-            SqlParameter Username = new SqlParameter("@StaffUsername", username);
+            SqlParameter Username = new SqlParameter("@UserName", username);
             SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, Username);            
             if (dr.HasRows)
             {
                 dr.Read();
                 Staff a = new Staff();
-                a.isActive = dr.GetBoolean(6);
+                a.isActive = dr.GetBoolean(7);
                 if (a.isActive)
                 {
                     a.StaffID = dr.GetInt32(0);
                     a.StaffName = dr.GetString(1);
                     a.StaffRole = dr.GetInt32(2);
                     a.StaffAge = dr.GetInt32(3);
-                    a.StaffUserName = dr.GetString(4);
-                    a.StaffPassword = dr.GetString(5);
+                    a.StaffSalary = dr.GetInt32(4);
+                    a.StaffUserName = dr.GetString(5);
+                    a.StaffPassword = dr.GetString(6);
                     return a;
                 }
                 else
