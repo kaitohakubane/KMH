@@ -12,10 +12,7 @@ namespace Project.Entity
         private string mSupAddress;
         private float mSupDept;
         private int mSupPhone;
-        public Supplier()
-        {
-                
-        }
+
         public Supplier(int mSupID, string mSupName, string mSupAddress, float mSupDept, int mSupPhone)
         {
             this.mSupID = mSupID;

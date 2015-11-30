@@ -33,36 +33,5 @@ namespace Project.Access_Data
             string sql = "sp_DisplayAllSupplier";
             return DataProvider.ExecuteQueryWithDataSet(sql, System.Data.CommandType.StoredProcedure).Tables[0];
         }
-        public static bool UpdateSupplier(Supplier a)
-        {
-            string sql = "sp_UpdateSupplier";
-            SqlParameter SupID      = new SqlParameter("@SupID", a.SupID);
-            SqlParameter SupName    = new SqlParameter("@SupName", a.SupName);
-            SqlParameter SupAddress = new SqlParameter("@SupAddress", a.SupAddress);
-            SqlParameter SupDept    = new SqlParameter("@SupDept", a.SupDept);
-            SqlParameter SupPhone   = new SqlParameter("@SupPhone", a.SupPhone);
-
-
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, SupID, SupName, SupAddress, SupDept, SupPhone);
-        }
-        public static Supplier GetbySupplierName(string name)
-        {
-            string sql = "sp_GetSupplier";
-            SqlParameter Name = new SqlParameter("@SupName", name);
-            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, Name);
-            if (dr.HasRows)
-            {
-                dr.Read();
-                Supplier a = new Supplier();
-                a.SupID = dr.GetInt32(0);
-                a.SupName = dr.GetString(1);
-                a.SupAddress = dr.GetString(2);
-                a.SupDept = dr.GetInt32(3);
-                a.SupPhone = dr.GetInt32(4);
-                return a;
-            }
-            else
-                return null;
-        }
     }
 }

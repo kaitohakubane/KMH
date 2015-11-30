@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\
+D:\KMH\project\Project\obj\Debug\
 Project
 none
 false
 DEBUG;TRACE
-C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\App.xaml
-9259813115
+<<<<<<< HEAD
+D:\KMH\project\Project\App.xaml
+9-1826249120
 
-33944404423
-131071118929
-Presentation\BillWindow.xaml;Presentation\ButtonForm.xaml;Presentation\CustomerWindow.xaml;Presentation\ListWindow.xaml;Presentation\Login.xaml;Presentation\MainWindow.xaml;Presentation\NotificationWindow.xaml;Presentation\ProductWindow.xaml;Presentation\StaffWindow.xaml;
+28693706820
+13-535536061
+Presentation\CustomerControl.xaml;Presentation\ListControl.xaml;Presentation\Login.xaml;Presentation\MainWindow.xaml;Presentation\Notification.xaml;Presentation\Bill.xaml;Presentation\ProductControl.xaml;Presentation\StaffControl.xaml;Presentation\TabControl.xaml;
+=======
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\App.xaml
+9-1244335906
+
+28-757687325
+121654848548
+Presentation\ButtonForm.xaml;Presentation\CustomerControl.xaml;Presentation\ListForm.xaml;Presentation\Login.xaml;Presentation\MainWindow.xaml;Presentation\Notification.xaml;Presentation\Bill.xaml;Presentation\ProductControl.xaml;Presentation\StaffControl.xaml;
+>>>>>>> origin/master
 
 False
 

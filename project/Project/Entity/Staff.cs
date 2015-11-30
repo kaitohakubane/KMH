@@ -15,10 +15,7 @@ namespace Project.Entity
         private string mStaffUserName;
         private string mStaffPassword;
         private bool misActive;
-        public Staff()
-        {
 
-        }
         public Staff(int mStaffID, string mStaffName, int mStaffRole, int mStaffAge, float mStaffSalary, string mStaffUserName, string mStaffPassword, bool misActive)
         {
             this.mStaffID = mStaffID;

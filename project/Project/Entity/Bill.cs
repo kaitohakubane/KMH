@@ -13,10 +13,7 @@ namespace Project.Entity
         private int mStaffID;
         private DateTime mDateStart;
         private DateTime mDateEnd;
-        public Bill()
-        {
 
-        }
         public Bill(int mBillID, int mCusID, int mCodeID, int mStaffID, DateTime mDateStart, DateTime mDateEnd)
         {
             this.mBillID = mBillID;

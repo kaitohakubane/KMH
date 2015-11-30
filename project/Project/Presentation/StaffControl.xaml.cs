@@ -1,6 +1,4 @@
-﻿using Project.Bussiness_Layer;
-using Project.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,23 +9,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-namespace Project.Presentation
+using Project.Entity;
+using Project.Bussiness_Layer;
+using System.Windows.Forms;
+namespace Project
 {
     /// <summary>
-    /// Interaction logic for StaffWindow.xaml
+    /// Interaction logic for StaffControl.xaml
     /// </summary>
-    /// 
-    public delegate void HD (Staff sta);
-    public partial class StaffWindow : Window
-    {
-        public event HD Finish;
-        public StaffWindow()
+    public delegate void HD(Staff sta);
+    public partial class StaffControl : Window
+    {   public event HD Finish;
+        public StaffControl()
         {
             InitializeComponent();
-        }       
-        
+        }
+
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -49,7 +48,7 @@ namespace Project.Presentation
             }
             catch (Exception h)
             {
-                System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                System.Windows.Forms.MessageBox.Show("Error "+h.Message);
             }
             finally
             {
@@ -62,5 +61,6 @@ namespace Project.Presentation
             this.DialogResult = false;
             this.Close();
         }
+        
     }
 }

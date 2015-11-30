@@ -50,8 +50,8 @@
             </Button.Foreground>
         </Button>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="150,158,0,0" VerticalAlignment="Top" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="30" Width="150"/>
-        <Label x:Name="label3" Content="Username not blank" HorizontalAlignment="Left" Margin="152,130,0,0" VerticalAlignment="Top" Width="148" Foreground="White"/>
-        <Label x:Name="label3_Copy" Content="Password not blank" HorizontalAlignment="Left" Margin="152,193,0,0" VerticalAlignment="Top" Width="148" Foreground="White"/>
+        <Label x:Name="label3" Content="Label" HorizontalAlignment="Left" Margin="152,130,0,0" VerticalAlignment="Top" Width="148"/>
+        <Label x:Name="label3_Copy" Content="Label" HorizontalAlignment="Left" Margin="152,193,0,0" VerticalAlignment="Top" Width="148"/>
 
     </Grid>
 </Window>

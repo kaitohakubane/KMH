@@ -11,10 +11,7 @@ namespace Project.Entity
         private string mCusName;
         private string mCusAddress;
         private int mCusPhone;
-        public Customer()
-        {
 
-        }
         public Customer(int mCusID, string mCusName, string mCusAddress, int mCusPhone)
         {
             this.mCusID = mCusID;
