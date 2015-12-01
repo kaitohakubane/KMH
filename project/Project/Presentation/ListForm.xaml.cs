@@ -18,9 +18,11 @@ namespace Project.Presentation
     /// </summary>
     public partial class ListForm : Window
     {
-        public ListForm()
+        public ListForm(string Order)
         {
             InitializeComponent();
+            lblTitle.Name = Order;
         }
+
     }
 }
