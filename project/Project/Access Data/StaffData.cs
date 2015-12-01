@@ -19,12 +19,12 @@ namespace Project.Access_Data
             SqlParameter StaffRole = new SqlParameter("@StaffRole", a.StaffRole);
             SqlParameter StaffAge = new SqlParameter("@StaffAge", a.StaffRole);
             SqlParameter StaffSalary = new SqlParameter("@StaffSalary", a.StaffSalary);
-            SqlParameter StaffUserName = new SqlParameter("@StaffUserName", a.StaffUserName);
+            //SqlParameter StaffUserName = new SqlParameter("@StaffUserName", a.StaffUserName);
             SqlParameter StaffPassword = new SqlParameter("@StaffPassword", a.StaffPassword);
             //ExecuteNonQuery dung` cho insert update delete, thứ tự truyền tham số phải đúng với định nghĩa trong stored procedure
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, StaffName, StaffRole, StaffAge, StaffSalary, StaffUserName, StaffPassword);
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, StaffName, StaffRole, StaffAge, StaffSalary, StaffPassword);
         }
-        public static bool DeleteStaff(int inStaffID)
+        public static bool DeleteStaff(string inStaffID)
         {
             string sql = "sp_DeleteStaff";
             SqlParameter StaffID = new SqlParameter("@StaffID", inStaffID);
@@ -45,16 +45,16 @@ namespace Project.Access_Data
             SqlParameter StaffRole = new SqlParameter("@StaffRole", a.StaffRole);
             SqlParameter StaffAge = new SqlParameter("@StaffAge", a.StaffRole);
             SqlParameter StaffSalary = new SqlParameter("@StaffSalary", a.StaffSalary);
-            SqlParameter StaffUserName = new SqlParameter("@StaffUserName", a.StaffUserName);
+            //SqlParameter StaffUserName = new SqlParameter("@StaffUserName", a.StaffUserName);
             SqlParameter StaffPassword = new SqlParameter("@StaffPassword", a.StaffPassword);
             //ExecuteNonQuery dung` cho insert update delete, thứ tự truyền tham số phải đúng với định nghĩa trong stored procedure
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure,StaffID, StaffName, StaffRole, StaffAge, StaffSalary, StaffUserName, StaffPassword);
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure,StaffID, StaffName, StaffRole, StaffAge, StaffSalary, StaffPassword);
         }
-        public static Staff GetbyUserName(string username)
+        public static Staff GetbyID(string id)
         {
             string sql = "sp_GetStaff";
-            SqlParameter Username = new SqlParameter("@UserName", username);
-            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, Username);            
+            SqlParameter ID = new SqlParameter("@UStaffID", id);
+            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, ID);            
             if (dr.HasRows)
             {
                 dr.Read();
@@ -62,13 +62,13 @@ namespace Project.Access_Data
                 a.isActive = dr.GetBoolean(7);
                 if (a.isActive)
                 {
-                    a.StaffID = dr.GetInt32(0);
+                    a.StaffID = dr.GetString(0);
                     a.StaffName = dr.GetString(1);
                     a.StaffRole = dr.GetInt32(2);
                     a.StaffAge = dr.GetInt32(3);
                     a.StaffSalary = dr.GetInt32(4);
-                    a.StaffUserName = dr.GetString(5);
-                    a.StaffPassword = dr.GetString(6);
+                    //a.StaffUserName = dr.GetString(5);
+                    a.StaffPassword = dr.GetString(5);
                     return a;
                 }
                 else

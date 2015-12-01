@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Project.Entity;
+
 namespace Project
 {
     /// <summary>
@@ -26,14 +27,17 @@ namespace Project
             if (Power == 1)
             {
                 //Admin: Show cái j lên thì bỏ vào đây
+                btnStaff.IsEnabled = false;
             }
             if (Power == 2)
             {
                 //StockManger: Show cái j lên thì bỏ vào đây
+                btnStaff.IsEnabled = false;
             }
             if (Power == 3)
             {
                 //Dealer: Show cái j lên thì bỏ vào đây
+                btnStaff.IsEnabled = false;
             }
         }
         private int mPower;
@@ -44,7 +48,10 @@ namespace Project
             set { mPower = value; }
         }
 
-        
+        private void btnStaff_Click(object sender, RoutedEventArgs e)
+        {
+            ListW
+        }
     }
     
 }

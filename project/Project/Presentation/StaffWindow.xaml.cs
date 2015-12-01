@@ -37,7 +37,7 @@ namespace Project.Presentation
                 sta.StaffAge = int.Parse(txtAge.Text);
                 sta.StaffRole = int.Parse(txtRole.Text);
                 sta.StaffSalary = float.Parse(txtSalary.Text);
-                sta.StaffUserName = txtUsername.Text;
+                //sta.StaffUserName = txtUsername.Text;
                 sta.StaffPassword = txtPassword.Text;
                 sta.isActive = true;
                 StaffBL.AddStaff(sta);

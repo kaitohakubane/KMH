@@ -58,3 +58,12 @@ C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.Propertie
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.csproj.GenerateResource.Cache
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.exe
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.pdb
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SearchWindow.g.cs
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\BillDetailsWindow.g.cs
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SearchWindow.baml
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\BillDetailsWindow.baml
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\DiscountWindow.g.cs
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SupplierWindow.g.cs
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\DiscountWindow.baml
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SupplierWindow.baml

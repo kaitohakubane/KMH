@@ -22,6 +22,13 @@ namespace Project
         public Login()
         {
             InitializeComponent();
+            btnLogin.IsEnabled = false;
+            if (txtUsername.Text == null)
+            {
+                lblUsername.Visibility = Visibility.Visible;
+                lblUsername.IsEnabled = true;                
+            }
+            
         }
         public void ShowMainForm(int power,Staff curStaff)
         {
@@ -32,21 +39,46 @@ namespace Project
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string username = txtUsername.Text;
-            Staff user = StaffBL.GefbyUserName(username);
-            if (user != null && user.StaffPassword.Equals(txtPassword.Password))
+            try
             {
-                System.Windows.Forms.MessageBox.Show("Test");
-                ShowMainForm(user.StaffRole, user);
-                this.Close();
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("lỗi");
-                //Mày tạo message hay xử lý khi sai password ở đây
-                //Cần thì làm try catch nguyên cái đăng nhập này
-            }
+                string StaffID = txtUsername.Text;
+                Staff user = StaffBL.GefbyID(StaffID);
+                
+                if (user != null && user.StaffPassword.Equals(txtPassword.Password))
+                {
+                    ShowMainForm(user.StaffRole, user);
+                    this.Close();
+                }
+                else
+                {
+                    
+                    if (user == null)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Username not exist!");
+                    }
+                    if (user != null && !user.StaffPassword.Equals(txtPassword.Password))
+                    {
+                        System.Windows.Forms.MessageBox.Show("Wrong password");
+                    }
+                }
 
+            }
+            catch (Exception g)
+            {
+
+                System.Windows.Forms.MessageBox.Show(g.Message);;
+            }
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtUsername_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            lblUsername.Visibility = Visibility.Hidden;
+            btnLogin.IsEnabled = true;
         }
     }
 }

@@ -49,17 +49,18 @@ namespace Project.Presentation
                 CustomerWindow frm3 = new CustomerWindow();
                 frm3.ShowDialog();
             }
-            //Mày thiếu 2 form này
-            //if (Order.Equals("Discount"))
-            //{
-            //    DiscountWindow frm4 = new DiscountWindow();
-            //    frm4.ShowDialog();
-            //}
-            //if (Order.Equals("Supplier"))
-            //{
-            //    SupplierWindow frm5 = new SupplierWindow();
-            //    frm5.ShowDialog();
-            //}
+            
+            if (Order.Equals("Discount"))
+            {
+                DiscountWindow frm4 = new DiscountWindow();
+                frm4.ShowDialog();
+            }
+
+            if (Order.Equals("Supplier"))
+            {
+                SupplierWindow frm5 = new SupplierWindow();
+                frm5.ShowDialog();
+            }
 
         }
         private void LoadListForm(string Order)

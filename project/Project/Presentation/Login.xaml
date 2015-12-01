@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Login" Height="315.312" Width="384.919">
     <Grid Margin="0,0,-6.6,-2.4">
-        
+
         <Label x:Name="label" Content="Username:" VerticalAlignment="Top" Margin="50,100,0,0" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" HorizontalAlignment="Left" Cursor="None"/>
         <Label x:Name="label1" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,150,0,0" FontSize="13.333" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch"/>
         <Label x:Name="label2" Content="Login" VerticalAlignment="Top" FontSize="40" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="French Script MT" Margin="0,30,0,0">
@@ -18,8 +18,8 @@
                 </LinearGradientBrush>
             </Label.Background>
         </Label>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,100,0,0" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="30" Width="150"/>
-        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="123,0,0,25" FontSize="13.333" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnLogin_Click">
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="150,100,0,0" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="30" Width="150" TextChanged="txtUsername_TextChanged"/>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="123,0,0,25" FontSize="13.333" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnLogin_Click" BorderBrush="Black">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -29,11 +29,8 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
-            <Button.BorderBrush>
-                <SolidColorBrush Color="#FF707070" Opacity="0.985"/>
-            </Button.BorderBrush>
         </Button>
-        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="224,0,0,25" FontSize="13.333" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="224,0,0,25" FontSize="13.333" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnExit_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF48EFFF" Offset="0"/>
@@ -48,7 +45,6 @@
             </Button.Foreground>
         </Button>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="150,158,0,0" VerticalAlignment="Top" FontSize="13.333" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Height="30" Width="150"/>
-        <Label x:Name="label3" Content="Username not blank" HorizontalAlignment="Left" Margin="152,130,0,0" VerticalAlignment="Top" Width="148" Foreground="White"/>
-        <Label x:Name="label3_Copy" Content="Password not blank" HorizontalAlignment="Left" Margin="152,193,0,0" VerticalAlignment="Top" Width="148" Foreground="White"/>
+        <Label x:Name="lblUsername" HorizontalAlignment="Left" Margin="152,130,0,0" VerticalAlignment="Top" Width="148" FontSize="14.667" Content="Username not blank!"/>
     </Grid>
 </Window>

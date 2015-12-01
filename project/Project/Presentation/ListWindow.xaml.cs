@@ -92,7 +92,7 @@ namespace Project.Presentation
             DataTable tmp=new DataTable();
             if(choice.Equals("Staff"))
                 //Cái này m` viết đễ sẵn mai t viết method. Nguyên tắc SearchStaff, SearchCustomer, SearchSupplier....
-                tmp = StaffBL.SearchStaff(txtSearch.Text);
+               // tmp = StaffBL.SearchStaff(txtSearch.Text);
             if (choice.Equals("Custommer"))
             {
 

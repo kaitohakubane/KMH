@@ -67,6 +67,15 @@
     <Compile Include="Bussiness Layer\ProductBL.cs" />
     <Compile Include="Bussiness Layer\StaffBL.cs" />
     <Compile Include="Bussiness Layer\SupplierBL.cs" />
+    <Compile Include="Presentation\DiscountWindow.xaml.cs">
+      <DependentUpon>DiscountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\SearchWindow.xaml.cs">
+      <DependentUpon>SearchWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\BillDetailsWindow.xaml.cs">
+      <DependentUpon>BillDetailsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\BillWindow.xaml.cs">
       <DependentUpon>BillWindow.xaml</DependentUpon>
     </Compile>
@@ -94,7 +103,22 @@
     <Compile Include="Presentation\StaffWindow.xaml.cs">
       <DependentUpon>StaffWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\SupplierWindow.xaml.cs">
+      <DependentUpon>SupplierWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Provider\DataProvider.cs" />
+    <Page Include="Presentation\DiscountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\SearchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\BillDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Presentation\BillWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\StaffWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\SupplierWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

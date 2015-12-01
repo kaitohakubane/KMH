@@ -7,26 +7,26 @@ namespace Project.Entity
 {
     public class Staff
     {
-        private int mStaffID;
+        private string mStaffID;
         private string mStaffName;
         private int mStaffRole;
         private int mStaffAge;
         private float mStaffSalary;
-        private string mStaffUserName;
+        //private string mStaffUserName;
         private string mStaffPassword;
         private bool misActive;
         public Staff()
         {
 
         }
-        public Staff(int mStaffID, string mStaffName, int mStaffRole, int mStaffAge, float mStaffSalary, string mStaffUserName, string mStaffPassword, bool misActive)
+        public Staff(string mStaffID, string mStaffName, int mStaffRole, int mStaffAge, float mStaffSalary, string mStaffPassword, bool misActive)
         {
             this.mStaffID = mStaffID;
             this.mStaffName = mStaffName;
             this.mStaffRole = mStaffRole;
             this.mStaffAge = mStaffAge;
             this.mStaffSalary = mStaffSalary;
-            this.mStaffUserName = mStaffUserName;
+            //this.mStaffUserName = mStaffUserName;
             this.mStaffPassword = mStaffPassword;
             this.misActive = misActive;
         }
@@ -37,7 +37,7 @@ namespace Project.Entity
             set { misActive = value; }
         }
         
-        public int StaffID
+        public string StaffID
         {
             get
             {
@@ -104,20 +104,20 @@ namespace Project.Entity
             }
         }
 
-        public string StaffUserName
-        {
-            get
-            {
-                return mStaffUserName;
-            }
+        //public string StaffUserName
+        //{
+        //    get
+        //    {
+        //        return mStaffUserName;
+        //    }
 
-            set
-            {
-                if (value == string.Empty)
-                    throw new Exception("StaffUsername invalid.");
-                mStaffUserName = value;
-            }
-        }
+        //    set
+        //    {
+        //        if (value == string.Empty)
+        //            throw new Exception("StaffUsername invalid.");
+        //        mStaffUserName = value;
+        //    }
+        //}
 
         public string   StaffPassword
         {

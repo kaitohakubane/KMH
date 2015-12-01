@@ -13,7 +13,7 @@ namespace Project.Bussiness_Layer
         {
             return StaffData.AddStaff(a);
         }
-        public static bool DeleteStaff(int StaID)
+        public static bool DeleteStaff(string StaID)
         {
             return StaffData.DeleteStaff(StaID);
         }
@@ -25,9 +25,9 @@ namespace Project.Bussiness_Layer
         {
             return StaffData.UpdateStaff(a);
         }
-        public static Staff GefbyUserName(string username)
+        public static Staff GefbyID(string ID)
         {
-            return StaffData.GetbyUserName(username);
+            return StaffData.GetbyID(ID);
         }
     }
 }

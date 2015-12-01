@@ -10,7 +10,7 @@
         <Label x:Name="label" Content="List" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="184,44,0,0" Click="btnDelete_Click"/>
         <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="47,44,0,0" Click="btnUpdate_Click"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="168" Width="300" Margin="0,78,0,0" Loaded="dataGrid_Loaded"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="168" Width="300" Margin="0,78,0,0"/>
         <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="23" Margin="10,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="209,267,0,0" Height="23" Click="btnSearch_Click"/>
 
