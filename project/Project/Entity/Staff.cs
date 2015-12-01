@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Project.Entity
 {
-    public class Staff
+    class Staff
     {
         private int mStaffID;
         private string mStaffName;
@@ -129,10 +129,6 @@ namespace Project.Entity
                     throw new Exception("StaffPassword invalid.");
                 mStaffPassword = value;
             }
-        }
-        public Staff()
-        {
-
         }
     }
 }

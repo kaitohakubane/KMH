@@ -22,7 +22,6 @@ namespace Project
         public Login()
         {
             InitializeComponent();
-            label.Name = "Con MEO";
         }
         public void ShowMainForm(int power,Staff curStaff)
         {

@@ -44,11 +44,6 @@ namespace Project
             set { mPower = value; }
         }
 
-        private void btnStaff_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         
     }
     

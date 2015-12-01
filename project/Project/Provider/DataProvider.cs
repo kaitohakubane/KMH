@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 namespace Project.Provider
 {
     class DataProvider

@@ -8,8 +8,8 @@
         Title="ButtonForm" Height="166.418" Width="281.343">
     <Grid>
         <Label x:Name="lblName" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="btnList" Content="List" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="145,59,28.8,58.8" Click="btnList_Click"/>
-        <Button x:Name="btnAdd" Content="Add" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="37,59,136.8,58.8" Click="btnAdd_Click"/>
+        <Button x:Name="btnList" Content="List" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="145,59,28.8,58.8"/>
+        <Button x:Name="btnAdd" Content="Add" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="37,59,136.8,58.8"/>
 
     </Grid>
 </Window>

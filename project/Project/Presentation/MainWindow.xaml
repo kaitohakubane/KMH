@@ -13,7 +13,7 @@
     <Grid>
         <Label x:Name="label" Content="HKM Software" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF39DFFF" FontSize="20"/>
         <StackPanel HorizontalAlignment="Center" Height="135" VerticalAlignment="Center" Width="200">
-            <Button x:Name="btnStaff" Content="Staff" Click="btnStaff_Click"/>
+            <Button x:Name="btnStaff" Content="Staff"/>
             <Button x:Name="btnProduct" Content="Product"/>
             <Button x:Name="btnPayment" Content="Payment"/>
             <Button x:Name="btnCustomer" Content="Customer"/>

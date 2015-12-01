@@ -17,7 +17,7 @@ namespace Project
     /// <summary>
     /// Interaction logic for ProductControl.xaml
     /// </summary>
-    public partial class ProductControl : Window
+    public partial class ProductControl : UserControl
     {
         public ProductControl()
         {
