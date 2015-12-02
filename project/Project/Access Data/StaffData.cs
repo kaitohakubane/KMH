@@ -15,6 +15,7 @@ namespace Project.Access_Data
         {
             //sql này là trên procedure
             string sql = "sp_InsertStaff";
+            SqlParameter StaffID = new SqlParameter("@StaffID", a.StaffID);
             SqlParameter StaffName = new SqlParameter("@StaffName", a.StaffName);
             SqlParameter StaffRole = new SqlParameter("@StaffRole", a.StaffRole);
             SqlParameter StaffAge = new SqlParameter("@StaffAge", a.StaffRole);
@@ -22,7 +23,7 @@ namespace Project.Access_Data
             //SqlParameter StaffUserName = new SqlParameter("@StaffUserName", a.StaffUserName);
             SqlParameter StaffPassword = new SqlParameter("@StaffPassword", a.StaffPassword);
             //ExecuteNonQuery dung` cho insert update delete, thứ tự truyền tham số phải đúng với định nghĩa trong stored procedure
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, StaffName, StaffRole, StaffAge, StaffSalary, StaffPassword);
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure,StaffID, StaffName, StaffRole, StaffAge, StaffSalary, StaffPassword);
         }
         public static bool DeleteStaff(string inStaffID)
         {
@@ -52,14 +53,14 @@ namespace Project.Access_Data
         }
         public static Staff GetbyID(string id)
         {
-            string sql = "sp_GetStaff";
+            string sql = "sp_Login";
             SqlParameter ID = new SqlParameter("@UStaffID", id);
             SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, ID);            
             if (dr.HasRows)
             {
                 dr.Read();
                 Staff a = new Staff();
-                a.isActive = dr.GetBoolean(7);
+                a.isActive = dr.GetBoolean(6);
                 if (a.isActive)
                 {
                     a.StaffID = dr.GetString(0);
@@ -77,6 +78,12 @@ namespace Project.Access_Data
             else
                 return null;
         }
-
+        public static DataTable SearchStaff(string StaffName)
+        {
+            string sql = "sp_SearchStaff";
+            StaffName = '%' + StaffName + '%';
+            SqlParameter inStaff = new SqlParameter("@StaffName", StaffName);
+            return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inStaff).Tables[0];
+        }
     }
 }

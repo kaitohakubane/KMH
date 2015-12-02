@@ -22,10 +22,10 @@ namespace Project.Presentation
     public delegate void HD(Staff sta);
     public partial class StaffWindow : Window
     {
-        public event HD Finish;
+       // public event HD Finish;
         public StaffWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
@@ -33,6 +33,7 @@ namespace Project.Presentation
             try
             {
                 Staff sta = new Staff();
+                sta.StaffID = txtID.Text;
                 sta.StaffName = txtName.Text;
                 sta.StaffAge = int.Parse(txtAge.Text);
                 sta.StaffRole = int.Parse(txtRole.Text);
@@ -42,10 +43,10 @@ namespace Project.Presentation
                 sta.isActive = true;
                 StaffBL.AddStaff(sta);
                 System.Windows.Forms.MessageBox.Show("Success");
-                if (Finish != null)
-                {
-                    Finish(sta);
-                }
+                //if (Finish != null)
+                //{
+                //    Finish(sta);
+                //}
             }
             catch (Exception h)
             {

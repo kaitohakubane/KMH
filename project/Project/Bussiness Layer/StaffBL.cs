@@ -29,5 +29,9 @@ namespace Project.Bussiness_Layer
         {
             return StaffData.GetbyID(ID);
         }
+        public static DataTable SearchStaff(string StaffName)
+        {
+            return StaffData.SearchStaff(StaffName);
+        }
     }
 }

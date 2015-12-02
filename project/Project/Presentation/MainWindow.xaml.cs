@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Project.Entity;
+using Project.Presentation;
 
 namespace Project
 {
@@ -27,7 +28,7 @@ namespace Project
             if (Power == 1)
             {
                 //Admin: Show cái j lên thì bỏ vào đây
-                btnStaff.IsEnabled = false;
+                btnStaff.IsEnabled = true;
             }
             if (Power == 2)
             {
@@ -50,7 +51,8 @@ namespace Project
 
         private void btnStaff_Click(object sender, RoutedEventArgs e)
         {
-            ListW
+            ButtonForm frm = new ButtonForm("Staff");
+            frm.ShowDialog();
         }
     }
     

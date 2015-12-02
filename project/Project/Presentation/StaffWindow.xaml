@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.Presentation"
         mc:Ignorable="d"
-        Title="StaffWindow" Height="352.239" Width="300">
+        Title="StaffWindow" Height="328.239" Width="300">
     <Grid>
         <Label x:Name="lblName" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="label" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,48,0,0"/>
@@ -13,13 +13,11 @@
         <Label x:Name="label_Copy" Content="Age:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,110,0,0"/>
         <Label x:Name="label_Copy1" Content="Role:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,141,0,0"/>
         <Label x:Name="label_Copy2" Content="Salary:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,172,0,0"/>
-        <Label x:Name="label_Copy3" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,203,0,0"/>
-        <Label x:Name="label_Copy4" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,234,0,0"/>
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="50,282,0,0" Click="btnOK_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="176,282,0,0" Click="btnCancel_Click"/>
+        <Label x:Name="label_Copy4" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,203,0,0"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="51,248,0,0" Click="btnOK_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="177,248,0,0" Click="btnCancel_Click"/>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="85,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="85,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="85,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="85,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtRole" HorizontalAlignment="Left" Height="23" Margin="85,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="85,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="85,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>

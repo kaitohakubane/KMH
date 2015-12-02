@@ -18,15 +18,15 @@ namespace Project.Presentation
     /// <summary>
     /// Interaction logic for ListForm.xaml
     /// </summary>
-    public partial class ListForm : Window
+    public partial class ListWindow : Window
     {
         string choice;
         DataTable dt = new DataTable();
         
-        public ListForm(string Order)
+        public ListWindow(string Order)
         {
             InitializeComponent();
-            label.Content = Order;
+            lblName2.Content = Order;
             choice = Order;
             //Cai loadData này mà k chạy thì ra tạo sự kiện LOADED cho cái Grid quăng cái loadData này vô
             loadData();
@@ -35,11 +35,11 @@ namespace Project.Presentation
         {
             if (choice.Equals("Staff"))
             {
-               
+                lblName.Content = "Search by Staff's name";
                 dt = StaffBL.DisplayAllStaff();
                 //Chỗ này cần gán datatable vào cái grid. Tao tìm mạng được cái này. Mày chạy test thử. K dc thì tìm cách load lên cho t
-                //dataGrid.ItemsSource = dt.DefaultView;
-                // dataGrid.AutoGenerateColumns = true;
+                dataGrid.ItemsSource = dt.DefaultView;
+                dataGrid.AutoGenerateColumns = true;
             }
             if (choice.Equals("Supplier"))
             {
@@ -54,25 +54,24 @@ namespace Project.Presentation
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-           
             try
             {
                 DataRowView row = (DataRowView)dataGrid.SelectedItem;
-                if(row==null)
+                if (row == null)
                     // cái này chạy test thử. Đéo hiểu sao bên thằng tùng lại dùng Console.Writeline
                     System.Windows.Forms.MessageBox.Show("Please select a Row");
                 else
-                {
-                    string id = row[0].ToString();
+                {                    
                     if (choice.Equals("Staff"))
-                        //Làm các if cho mấy cái loại khác như cái load phía trên. Gọi hàm truyền tham số cho phù hợp
-                        StaffBL.DeleteStaff(id);
-                }
+                    {
+                        dataGrid.Items.RemoveAt(dataGrid.SelectedIndex);
+                    }
+                    //Làm các if cho mấy cái loại khác như cái load phía trên. Gọi hàm truyền tham số cho phù hợp
+                }                     
             }
-            catch (Exception)
+            catch (Exception g)
             {
-                
-                throw;
+                System.Windows.Forms.MessageBox.Show(g.Message);
             }
         }
 
@@ -84,15 +83,20 @@ namespace Project.Presentation
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             dt = SearchData();
-            //dataGrid.ItemsSource = dt.DefaultView;
-            // dataGrid.AutoGenerateColumns = true;
+            dataGrid.ItemsSource = dt.DefaultView;
+            dataGrid.AutoGenerateColumns = true;
         }
         private DataTable SearchData()
         {
             DataTable tmp=new DataTable();
-            if(choice.Equals("Staff"))
+            if (choice.Equals("Staff"))
+            {
+                tmp = StaffBL.SearchStaff(txtSearch.Text);
+                if (txtSearch.Text == "")
+                    tmp = StaffBL.DisplayAllStaff();
+            }
                 //Cái này m` viết đễ sẵn mai t viết method. Nguyên tắc SearchStaff, SearchCustomer, SearchSupplier....
-               // tmp = StaffBL.SearchStaff(txtSearch.Text);
+                
             if (choice.Equals("Custommer"))
             {
 
@@ -100,5 +104,11 @@ namespace Project.Presentation
             return tmp;
         }
 
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {            
+            dt = SearchData();
+            dataGrid.ItemsSource = dt.DefaultView;
+            dataGrid.AutoGenerateColumns = true;
+        }
     }
 }

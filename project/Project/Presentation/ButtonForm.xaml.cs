@@ -65,7 +65,7 @@ namespace Project.Presentation
         }
         private void LoadListForm(string Order)
         {
-            ListForm frm = new ListForm(Order);
+            ListWindow frm = new ListWindow(Order);
             frm.ShowDialog();
         }
 
@@ -79,6 +79,14 @@ namespace Project.Presentation
             LoadListForm(choice);
         }
 
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
+        private void btn(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
