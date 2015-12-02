@@ -18,10 +18,12 @@ namespace Project.Presentation
     /// </summary>
     public partial class ButtonForm : Window
     {
+        string choice;
         public ButtonForm(string Order)
         {
             InitializeComponent();
-            lblName.Content = "Order";
+            lblName.Content = Order;
+            choice = Order;
         }
         private void LoadAddForm(string Order)
         {
@@ -60,21 +62,21 @@ namespace Project.Presentation
             //}
 
         }
-        //private void LoadListForm(string Order)
-        //{
-        //    ListForm frm = new ListForm(Order);
-        //    frm.ShowDialog();
-        //}
+        private void LoadListForm(string Order)
+        {
+            ListForm frm = new ListForm(Order);
+            frm.ShowDialog();
+        }
 
-        //private void btnAdd_Click(object sender, RoutedEventArgs e)
-        //{
-        //    LoadAddForm(lblName.Content);
-        //}
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            LoadAddForm(choice);
+        }
 
-        //private void btnList_Click(object sender, RoutedEventArgs e)
-        //{
-        //    LoadListForm(lblName.Content);
-        //}
+        private void btnList_Click(object sender, RoutedEventArgs e)
+        {
+            LoadListForm(choice);
+        }
 
 
     }
