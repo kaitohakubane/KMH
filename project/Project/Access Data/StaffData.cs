@@ -18,7 +18,7 @@ namespace Project.Access_Data
             SqlParameter StaffID = new SqlParameter("@StaffID", a.StaffID);
             SqlParameter StaffName = new SqlParameter("@StaffName", a.StaffName);
             SqlParameter StaffRole = new SqlParameter("@StaffRole", a.StaffRole);
-            SqlParameter StaffAge = new SqlParameter("@StaffAge", a.StaffRole);
+            SqlParameter StaffAge = new SqlParameter("@StaffAge", a.StaffAge);
             SqlParameter StaffSalary = new SqlParameter("@StaffSalary", a.StaffSalary);
             //SqlParameter StaffUserName = new SqlParameter("@StaffUserName", a.StaffUserName);
             SqlParameter StaffPassword = new SqlParameter("@StaffPassword", a.StaffPassword);
@@ -27,7 +27,7 @@ namespace Project.Access_Data
         }
         public static bool DeleteStaff(string inStaffID)
         {
-            string sql = "sp_DeleteStaff";
+            string sql = "sp_DeleleStaff";
             SqlParameter StaffID = new SqlParameter("@StaffID", inStaffID);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, StaffID);
         }
@@ -44,7 +44,7 @@ namespace Project.Access_Data
             SqlParameter StaffID = new SqlParameter("@StaffID", a.StaffID);
             SqlParameter StaffName = new SqlParameter("@StaffName", a.StaffName);
             SqlParameter StaffRole = new SqlParameter("@StaffRole", a.StaffRole);
-            SqlParameter StaffAge = new SqlParameter("@StaffAge", a.StaffRole);
+            SqlParameter StaffAge = new SqlParameter("@StaffAge", a.StaffAge);
             SqlParameter StaffSalary = new SqlParameter("@StaffSalary", a.StaffSalary);
             //SqlParameter StaffUserName = new SqlParameter("@StaffUserName", a.StaffUserName);
             SqlParameter StaffPassword = new SqlParameter("@StaffPassword", a.StaffPassword);

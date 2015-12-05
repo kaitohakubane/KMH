@@ -38,7 +38,7 @@ namespace Project.Presentation
                 pro.InPrice = int.Parse(txtInPrice.Text);
                 pro.OutPrice = int.Parse(txtOutPrice.Text);
                 pro.Quantity = int.Parse(txtQuantity.Text);
-                pro.Type =;
+               // pro.Type =;
                 ProductBL.AddProduct(pro);
                 System.Windows.Forms.MessageBox.Show("Success");
                 this.Close();

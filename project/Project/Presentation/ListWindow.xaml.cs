@@ -83,14 +83,16 @@ namespace Project.Presentation
             try
             {
                 DataRowView row = (DataRowView)dataGrid.SelectedItem;
-                if (row == null)
-                    // cái này chạy test thử. Đéo hiểu sao bên thằng tùng lại dùng Console.Writeline
+                if (row == null)                   
                     System.Windows.Forms.MessageBox.Show("Please select a Row");
                 else
                 {                    
                     if (choice.Equals("Staff"))
                     {
-                        dataGrid.Items.RemoveAt(dataGrid.SelectedIndex);
+                        StaffBL.DeleteStaff(row[0].ToString());
+                        loadData();
+                        //dt.Rows.RemoveAt(dataGrid.SelectedIndex);
+                        //dataGrid.Items.RemoveAt(dataGrid.SelectedIndex);
                     }
                     //Làm các if cho mấy cái loại khác như cái load phía trên. Gọi hàm truyền tham số cho phù hợp
                 }                     
@@ -103,7 +105,25 @@ namespace Project.Presentation
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-
+            DataRowView row = (DataRowView)dataGrid.SelectedItem;
+            if (row == null)
+                System.Windows.Forms.MessageBox.Show("Please select a Row");
+            else
+            {
+                if (choice.Equals("Staff"))
+                {
+                    StaffWindow sta = new StaffWindow(true);
+                    sta.lblName.Content = "Update Staff";
+                    sta.txtID.Text = row[0].ToString();
+                    sta.txtName.Text = row[1].ToString();
+                    sta.cbxRole.SelectedIndex = int.Parse(row[2].ToString())-1;
+                    sta.txtAge.Text = row[3].ToString();
+                    sta.txtSalary.Text=row[4].ToString();
+                    sta.txtPassword.Text=row[5].ToString();
+                    sta.ShowDialog();
+                    loadData();
+                }
+            }
         }
 
         //private void btnSearch_Click(object sender, RoutedEventArgs e)
@@ -120,8 +140,7 @@ namespace Project.Presentation
                 tmp = StaffBL.SearchStaff(txtSearch.Text);
                 if (txtSearch.Text == "")
                     tmp = StaffBL.DisplayAllStaff();
-            }
-                
+            }             
                 
             if (choice.Equals("Custommer"))
             {
@@ -156,6 +175,11 @@ namespace Project.Presentation
             dt = SearchData();
             dataGrid.ItemsSource = dt.DefaultView;
             dataGrid.AutoGenerateColumns = true;
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -88,6 +88,13 @@ namespace Project
             ButtonForm frm = new ButtonForm("Supplier");
             frm.ShowDialog();
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {           
+            Login l = new Login();
+            l.Show();
+            this.Close();
+        }
     }
     
 }

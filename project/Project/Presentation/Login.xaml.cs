@@ -29,6 +29,7 @@ namespace Project
             MainWindow frm = new MainWindow(curStaff);
             frm.Power = power;
             frm.Show();
+            //this.Visibility = Visibility.Hidden;
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)

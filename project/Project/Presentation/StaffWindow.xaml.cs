@@ -22,41 +22,74 @@ namespace Project.Presentation
     public delegate void HD(Staff sta);
     public partial class StaffWindow : Window
     {
-       // public event HD Finish;
-        public StaffWindow()
+        bool isUpdate;
+        public StaffWindow(bool Update)
         {
             InitializeComponent();
-            lblName.Content = "Add Staff";
+            isUpdate = Update;
+            loadData();
+            
+        }
+        public void loadData()
+        {
             cbxRole.Items.Add("Admin");
             cbxRole.Items.Add("Stock Manager");
             cbxRole.Items.Add("Saler");
+            if (isUpdate)
+            {
+                txtID.IsEnabled = false;
+            }
         }
-
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (isUpdate)
             {
-                Staff sta = new Staff();
-                sta.StaffID = txtID.Text;
-                sta.StaffName = txtName.Text;
-                sta.StaffAge = int.Parse(txtAge.Text);
-                sta.StaffRole = ;
-                sta.StaffSalary = float.Parse(txtSalary.Text);
-                //sta.StaffUserName = txtUsername.Text;
-                sta.StaffPassword = txtPassword.Text;
-                sta.isActive = true;
-                StaffBL.AddStaff(sta);
-                System.Windows.Forms.MessageBox.Show("Success");
-                this.Close();
-                //if (Finish != null)
-                //{
-                //    Finish(sta);
-                //}
+                lblName.Content = "Update Staff";
+                
+                try
+                {
+                    Staff sta = new Staff();
+                    sta.StaffID = txtID.Text;
+                    sta.StaffName = txtName.Text;
+                    sta.StaffAge = int.Parse(txtAge.Text);
+                    sta.StaffRole = cbxRole.SelectedIndex + 1;
+                    sta.StaffSalary = float.Parse(txtSalary.Text);
+                    //sta.StaffUserName = txtUsername.Text;
+                    sta.StaffPassword = txtPassword.Text;
+                    sta.isActive = true;
+                    StaffBL.UpdateStaff(sta);
+                    System.Windows.Forms.MessageBox.Show("Success");
+                    this.Close();
+                }
+                catch (Exception h)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                }
             }
-            catch (Exception h)
+            else
             {
-                System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                lblName.Content = "Add Staff";
+                try
+                {
+                    Staff sta = new Staff();
+                    sta.StaffID = txtID.Text;
+                    sta.StaffName = txtName.Text;
+                    sta.StaffAge = int.Parse(txtAge.Text);
+                    sta.StaffRole = cbxRole.SelectedIndex + 1;
+                    sta.StaffSalary = float.Parse(txtSalary.Text);
+                    //sta.StaffUserName = txtUsername.Text;
+                    sta.StaffPassword = txtPassword.Text;
+                    sta.isActive = true;
+                    StaffBL.AddStaff(sta);
+                    System.Windows.Forms.MessageBox.Show("Success");
+                    this.Close();
+                }
+                catch (Exception h)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                }
             }
+           
             
         }
 
@@ -66,9 +99,6 @@ namespace Project.Presentation
             this.Close();
         }
 
-        private void cbxRole_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
+
     }
 }

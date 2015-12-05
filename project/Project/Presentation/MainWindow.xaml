@@ -19,7 +19,7 @@
             <Button x:Name="btnDiscount" Content="Discount" Click="btnDiscount_Click"/>
             <Button x:Name="btnSupplier" Content="Supplier" Click="btnSupplier_Click"/>
         </StackPanel>
-        <Button x:Name="btnLogout" Content="LogOut" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="75" Margin="216,0,227.4,31.8"/>
+        <Button x:Name="btnLogout" Content="LogOut" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="75" Margin="216,0,227.4,31.8" Click="btnLogout_Click"/>
     </Grid>
 
 </Window>

@@ -29,7 +29,7 @@ namespace Project.Presentation
         {            
             if (Order.Equals("Staff"))
             {
-                StaffWindow frm = new StaffWindow();
+                StaffWindow frm = new StaffWindow(false);
                 frm.ShowDialog();
             }
             if (Order.Equals("Product"))

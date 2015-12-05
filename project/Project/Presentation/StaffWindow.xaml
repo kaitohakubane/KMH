@@ -21,7 +21,7 @@
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="85,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="85,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtSalary" HorizontalAlignment="Left" Height="23" Margin="85,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <ComboBox x:Name="cbxRole" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="85,144,0,0" SelectionChanged="cbxRole_SelectionChanged"/>
+        <ComboBox x:Name="cbxRole" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="85,144,0,0"/>
             
     </Grid>
 </Window>
