@@ -25,7 +25,7 @@ namespace Project.Access_Data
             SqlParameter CusID = new SqlParameter("@CusID", inCustomerID);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, CusID);
         }
-        public static DataTable DislayAllCus()
+        public static DataTable DisplayAllCus()
         {
             string sql = "sp_DisplayAllCus";
             return DataProvider.ExecuteQueryWithDataSet(sql, System.Data.CommandType.StoredProcedure).Tables[0];
@@ -56,6 +56,13 @@ namespace Project.Access_Data
             }
             else
                 return null;
+        }
+        public static DataTable SearchCustomer(string CustomerName)
+        {
+            string sql = "sp_SearchCustomer";
+            CustomerName = '%' + CustomerName + '%';
+            SqlParameter inCustomer = new SqlParameter("@CustomerName", CustomerName);
+            return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inCustomer).Tables[0];
         }
     }
 }

@@ -25,7 +25,11 @@ namespace Project.Presentation
        // public event HD Finish;
         public StaffWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            lblName.Content = "Add Staff";
+            cbxRole.Items.Add("Admin");
+            cbxRole.Items.Add("Stock Manager");
+            cbxRole.Items.Add("Saler");
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
@@ -36,13 +40,14 @@ namespace Project.Presentation
                 sta.StaffID = txtID.Text;
                 sta.StaffName = txtName.Text;
                 sta.StaffAge = int.Parse(txtAge.Text);
-                sta.StaffRole = int.Parse(txtRole.Text);
+                sta.StaffRole = ;
                 sta.StaffSalary = float.Parse(txtSalary.Text);
                 //sta.StaffUserName = txtUsername.Text;
                 sta.StaffPassword = txtPassword.Text;
                 sta.isActive = true;
                 StaffBL.AddStaff(sta);
                 System.Windows.Forms.MessageBox.Show("Success");
+                this.Close();
                 //if (Finish != null)
                 //{
                 //    Finish(sta);
@@ -52,16 +57,18 @@ namespace Project.Presentation
             {
                 System.Windows.Forms.MessageBox.Show("Error " + h.Message);
             }
-            finally
-            {
-                this.Close();
-            }
+            
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
             this.Close();
+        }
+
+        private void cbxRole_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

@@ -209,9 +209,21 @@ namespace Project.Presentation {
             return;
             case 12:
             this.btnOK = ((System.Windows.Controls.Button)(target));
+            
+            #line 21 "..\..\..\Presentation\SupplierWindow.xaml"
+            this.btnOK.Click += new System.Windows.RoutedEventHandler(this.btnOK_Click);
+            
+            #line default
+            #line hidden
             return;
             case 13:
             this.btnCancel = ((System.Windows.Controls.Button)(target));
+            
+            #line 22 "..\..\..\Presentation\SupplierWindow.xaml"
+            this.btnCancel.Click += new System.Windows.RoutedEventHandler(this.btnCancel_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

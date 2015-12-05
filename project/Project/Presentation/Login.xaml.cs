@@ -21,13 +21,7 @@ namespace Project
     {
         public Login()
         {
-            InitializeComponent();
-            btnLogin.IsEnabled = false;
-            if (txtUsername.Text == null)
-            {
-                lblUsername.Visibility = Visibility.Visible;
-                lblUsername.IsEnabled = true;                
-            }
+            InitializeComponent();    
             
         }
         public void ShowMainForm(int power,Staff curStaff)
@@ -76,9 +70,18 @@ namespace Project
         }
 
         private void txtUsername_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            lblUsername.Visibility = Visibility.Hidden;
-            btnLogin.IsEnabled = true;
+        {            
+            if (txtUsername.Text == "")
+            {
+                btnLogin.IsEnabled = false;
+                lblUsername.Visibility = Visibility.Visible;
+                lblUsername.IsEnabled = true;
+            }
+            else
+            {
+                lblUsername.Visibility = Visibility.Hidden;
+                btnLogin.IsEnabled = true;
+            }
         }
     }
 }

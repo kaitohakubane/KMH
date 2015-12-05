@@ -64,5 +64,12 @@ namespace Project.Access_Data
             else
                 return null;
         }
+        public static DataTable SearchSupplier(string SupplierName)
+        {
+            string sql = "sp_SearchSupplier";
+            SupplierName = '%' + SupplierName + '%';
+            SqlParameter inSupplier = new SqlParameter("@SupplierName", SupplierName);
+            return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inSupplier).Tables[0];
+        }
     }
 }

@@ -36,20 +36,46 @@ namespace Project.Presentation
             if (choice.Equals("Staff"))
             {
                 lblName.Content = "Search by Staff's name";
+                dt = StaffBL.DisplayAllStaff();                
+                dataGrid.ItemsSource = dt.DefaultView;
+                dataGrid.AutoGenerateColumns = true;
+            }
+            if (choice.Equals("Product"))
+            {
+                lblName.Content = "Search by Product's name";
+                dt = ProductBL.DisplayAllProduct();
+                dataGrid.ItemsSource = dt.DefaultView;
+                dataGrid.AutoGenerateColumns = true;
+            }
+            if (choice.Equals("Bill"))
+            {
+                lblName.IsEnabled=false;
+                txtSearch.Visibility = Visibility.Hidden;
                 dt = StaffBL.DisplayAllStaff();
-                //Chỗ này cần gán datatable vào cái grid. Tao tìm mạng được cái này. Mày chạy test thử. K dc thì tìm cách load lên cho t
+                dataGrid.ItemsSource = dt.DefaultView;
+                dataGrid.AutoGenerateColumns = true;
+            }
+            if (choice.Equals("Customer"))
+            {
+                lblName.Content = "Search by Customer's name";
+                dt = CustomerBL.DisplayAllCus();
+                dataGrid.ItemsSource = dt.DefaultView;
+                dataGrid.AutoGenerateColumns = true;
+            }
+            if (choice.Equals("Discount"))
+            {
+                lblName.Content = "Search by Discount's Date";
+                dt = DiscountBL.DisplayAllDiscount();
                 dataGrid.ItemsSource = dt.DefaultView;
                 dataGrid.AutoGenerateColumns = true;
             }
             if (choice.Equals("Supplier"))
             {
-
+                lblName.Content = "Search by Supplier's name";
+                dt = SupplierBL.DisplayAllSupplier();
+                dataGrid.ItemsSource = dt.DefaultView;
+                dataGrid.AutoGenerateColumns = true;
             }
-            if (choice.Equals("Bill"))
-            {
-
-            }
-            // Còn mấy cái mày làm như trên giúp tao cái
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -80,12 +106,12 @@ namespace Project.Presentation
 
         }
 
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
-        {
-            dt = SearchData();
-            dataGrid.ItemsSource = dt.DefaultView;
-            dataGrid.AutoGenerateColumns = true;
-        }
+        //private void btnSearch_Click(object sender, RoutedEventArgs e)
+        //{
+        //    dt = SearchData();
+        //    dataGrid.ItemsSource = dt.DefaultView;
+        //    dataGrid.AutoGenerateColumns = true;
+        //}
         private DataTable SearchData()
         {
             DataTable tmp=new DataTable();
@@ -95,11 +121,32 @@ namespace Project.Presentation
                 if (txtSearch.Text == "")
                     tmp = StaffBL.DisplayAllStaff();
             }
-                //Cái này m` viết đễ sẵn mai t viết method. Nguyên tắc SearchStaff, SearchCustomer, SearchSupplier....
+                
                 
             if (choice.Equals("Custommer"))
             {
+                tmp = CustomerBL.SearchCustomer(txtSearch.Text);
+                if (txtSearch.Text == "")
+                    tmp = CustomerBL.DisplayAllCus();
+            }
+            if (choice.Equals("Product"))
+            {
+                tmp = ProductBL.SearchProduct(txtSearch.Text);
+                if (txtSearch.Text == "")
+                    tmp = ProductBL.DisplayAllProduct();
 
+            }
+            //if (choice.Equals("Discount"))
+            //{
+            //    tmp = DiscountBL.SearchDiscount(txtSearch.Text);
+            //    if (txtSearch.Text == "")
+            //        tmp = DiscountBL.DisplayAllDiscount();
+            //}
+            if (choice.Equals("Supplier"))
+            {
+                tmp = SupplierBL.SearchSupplier(txtSearch.Text);
+                if (txtSearch.Text == "")
+                    tmp = SupplierBL.DisplayAllSupplier();
             }
             return tmp;
         }

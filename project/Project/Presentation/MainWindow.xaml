@@ -12,12 +12,12 @@
         <Label x:Name="label" Content="HKM Software" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF39DFFF" FontSize="20"/>
         <StackPanel HorizontalAlignment="Center" Height="135" VerticalAlignment="Center" Width="200">
             <Button x:Name="btnStaff" Content="Staff" Click="btnStaff_Click"/>
-            <Button x:Name="btnProduct" Content="Product"/>
-            <Button x:Name="btnPayment" Content="Payment"/>
-            <Button x:Name="btnCustomer" Content="Customer"/>
-            <Button x:Name="btnReport" Content="Report"/>
-            <Button x:Name="btnDiscount" Content="Discount"/>
-            <Button x:Name="btnSupplier" Content="Supplier"/>
+            <Button x:Name="btnProduct" Content="Product" Click="btnProduct_Click"/>
+            <Button x:Name="btnPayment" Content="Payment" Click="btnPayment_Click"/>
+            <Button x:Name="btnCustomer" Content="Customer" Click="btnCustomer_Click"/>
+            <Button x:Name="btnReport" Content="Report" Click="btnReport_Click"/>
+            <Button x:Name="btnDiscount" Content="Discount" Click="btnDiscount_Click"/>
+            <Button x:Name="btnSupplier" Content="Supplier" Click="btnSupplier_Click"/>
         </StackPanel>
         <Button x:Name="btnLogout" Content="LogOut" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="75" Margin="216,0,227.4,31.8"/>
     </Grid>

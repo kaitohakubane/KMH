@@ -26,5 +26,6 @@ namespace Project.Bussiness_Layer
         {
             return BillData.UpdateBill(a);
         }
+
     }
 }

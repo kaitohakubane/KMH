@@ -74,6 +74,12 @@ namespace Project.Access_Data
             else
                 return null;
         }
-
+        public static DataTable SearchProduct(string ProductName)
+        {
+            string sql = "sp_SearchProduct";
+            ProductName = '%' + ProductName + '%';
+            SqlParameter inProduct = new SqlParameter("@ProductName", ProductName);
+            return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inProduct).Tables[0];
+        }
     }
 }

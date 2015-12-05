@@ -54,6 +54,40 @@ namespace Project
             ButtonForm frm = new ButtonForm("Staff");
             frm.ShowDialog();
         }
+
+        private void btnProduct_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonForm frm = new ButtonForm("Product");
+            frm.ShowDialog();
+        }
+
+        private void btnPayment_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonForm frm = new ButtonForm("Customer");
+            frm.ShowDialog();
+        }
+
+        private void btnReport_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDiscount_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonForm frm = new ButtonForm("Discount");
+            frm.ShowDialog();
+        }
+
+        private void btnSupplier_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonForm frm = new ButtonForm("Supplier");
+            frm.ShowDialog();
+        }
     }
     
 }

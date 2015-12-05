@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project.Bussiness_Layer;
+using Project.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +23,34 @@ namespace Project.Presentation
         public SupplierWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Supplier sup = new Supplier();
+                sup.SupID = int.Parse(txtSupID.Text);
+                sup.SupName = txtSupName.Text;
+                sup.SupAddress = txtAddress.Text;
+                sup.SupDept = int.Parse(txtDebt.Text);
+                sup.SupPhone = int.Parse(txtPhone.Text);
+                SupplierBL.AddSupplier(sup);
+                System.Windows.Forms.MessageBox.Show("Success");
+                this.Close();
+            }
+            catch (Exception h)
+            {
+                System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+            }
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
+
         }
     }
 }

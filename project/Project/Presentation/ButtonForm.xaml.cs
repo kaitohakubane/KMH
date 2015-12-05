@@ -22,11 +22,11 @@ namespace Project.Presentation
         public ButtonForm(string Order)
         {
             InitializeComponent();
-            lblName.Content = Order;
+            lblName.Content = Order+"Management";
             choice = Order;
         }
         private void LoadAddForm(string Order)
-        {
+        {            
             if (Order.Equals("Staff"))
             {
                 StaffWindow frm = new StaffWindow();
@@ -72,6 +72,7 @@ namespace Project.Presentation
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             LoadAddForm(choice);
+
         }
 
         private void btnList_Click(object sender, RoutedEventArgs e)
@@ -82,11 +83,6 @@ namespace Project.Presentation
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void btn(object sender, RoutedEventArgs e)
-        {
-
-        }
+        }      
     }
 }

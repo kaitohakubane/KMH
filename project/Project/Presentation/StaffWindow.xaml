@@ -18,10 +18,10 @@
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="177,248,0,0" Click="btnCancel_Click"/>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="85,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="85,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox x:Name="txtRole" HorizontalAlignment="Left" Height="23" Margin="85,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="85,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="85,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtSalary" HorizontalAlignment="Left" Height="23" Margin="85,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-
+        <ComboBox x:Name="cbxRole" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="85,144,0,0" SelectionChanged="cbxRole_SelectionChanged"/>
+            
     </Grid>
 </Window>
