@@ -27,8 +27,7 @@ namespace Project.Presentation
         {
             InitializeComponent();
             lblName2.Content = Order;
-            choice = Order;
-            //Cai loadData này mà k chạy thì ra tạo sự kiện LOADED cho cái Grid quăng cái loadData này vô
+            choice = Order;            
             loadData();
         }
         private void loadData()
@@ -90,11 +89,28 @@ namespace Project.Presentation
                     if (choice.Equals("Staff"))
                     {
                         StaffBL.DeleteStaff(row[0].ToString());
-                        loadData();
-                        //dt.Rows.RemoveAt(dataGrid.SelectedIndex);
-                        //dataGrid.Items.RemoveAt(dataGrid.SelectedIndex);
+                        loadData();                        
                     }
-                    //Làm các if cho mấy cái loại khác như cái load phía trên. Gọi hàm truyền tham số cho phù hợp
+                    if (choice.Equals("Customer"))
+                    {
+                        CustomerBL.DeleteCustomer(row[0].GetHashCode());
+                        loadData();
+                    }
+                    if (choice.Equals("Product"))
+                    {
+                        ProductBL.DeleteProduct(row[0].GetHashCode());
+                        loadData();
+                    }
+                    if (choice.Equals("Supplier"))
+                    {
+                        SupplierBL.DeleteSupplier(row[0].GetHashCode());
+                        loadData();
+                    }
+                    if (choice.Equals("Discount"))
+                    {
+                        DiscountBL.DeleteDiscount(row[0].GetHashCode());
+                        loadData();
+                    }
                 }                     
             }
             catch (Exception g)
@@ -123,15 +139,59 @@ namespace Project.Presentation
                     sta.ShowDialog();
                     loadData();
                 }
+                if (choice.Equals("Customer"))
+                {
+                    CustomerWindow cus = new CustomerWindow(true);
+                    cus.lblName.Content = "Update Customer";
+                    cus.txtID.Text =row[0].ToString();
+                    cus.txtName.Text= row[1].ToString();
+                    cus.txtAddress.Text= row[2].ToString();
+                    cus.txtPhoneNo.Text= row[3].ToString();
+                    cus.ShowDialog();
+                    loadData();
+                }
+                if (choice.Equals("Product"))
+                {
+                    ProductWindow pro = new ProductWindow(true);
+                    pro.lblName.Content = "Update Product";
+                    pro.txtID.Text= row[0].ToString();
+                    pro.txtName.Text= row[1].ToString();
+                    pro.txtSupplierID.Text = row[2].ToString();
+                    pro.txtProducer.Text = row[3].ToString();
+                    pro.txtOrigin.Text = row[4].ToString();
+                    pro.txtInPrice.Text = row[5].ToString();
+                    pro.txtOutPrice.Text = row[6].ToString();
+                    pro.txtQuantity.Text = row[7].ToString();
+                    pro.cbbType.SelectedItem = row[8].ToString();
+                    pro.ShowDialog();
+                    loadData();
+                }
+                if (choice.Equals("Supplier"))
+                {
+                    SupplierWindow sup = new SupplierWindow(true);
+                    sup.lblName.Content = "Update Supplier";
+                    sup.txtSupID.Text = row[0].ToString();
+                    sup.txtSupName.Text = row[1].ToString();
+                    sup.txtAddress.Text = row[2].ToString();
+                    sup.txtDebt.Text = row[3].ToString();
+                    sup.txtPhone.Text = row[4].ToString();
+                    sup.ShowDialog();
+                    loadData();
+                }
+                if (choice.Equals("Discount"))
+                {
+                    DiscountWindow dis = new DiscountWindow(true);
+                    dis.lblName.Content = "Update Discount";
+                    dis.txtCodeID.Text = row[0].ToString();
+                    dis.txtType.Text = row[1].ToString();
+                    dis.txtRate.Text = row[2].ToString();
+                    dis.txtProIDGift.Text = row[3].ToString();
+                    dis.txtDateStart.Text = row[4].ToString();
+                    dis.txtDateEnd.Text = row[5].ToString();
+                    loadData();
+                }
             }
         }
-
-        //private void btnSearch_Click(object sender, RoutedEventArgs e)
-        //{
-        //    dt = SearchData();
-        //    dataGrid.ItemsSource = dt.DefaultView;
-        //    dataGrid.AutoGenerateColumns = true;
-        //}
         private DataTable SearchData()
         {
             DataTable tmp=new DataTable();
@@ -142,12 +202,13 @@ namespace Project.Presentation
                     tmp = StaffBL.DisplayAllStaff();
             }             
                 
-            if (choice.Equals("Custommer"))
+            if (choice.Equals("Customer"))
             {
                 tmp = CustomerBL.SearchCustomer(txtSearch.Text);
                 if (txtSearch.Text == "")
                     tmp = CustomerBL.DisplayAllCus();
             }
+
             if (choice.Equals("Product"))
             {
                 tmp = ProductBL.SearchProduct(txtSearch.Text);

@@ -11,16 +11,18 @@ namespace Project.Entity
         private string mCusName;
         private string mCusAddress;
         private int mCusPhone;
+        private bool misActive;
         public Customer()
         {
 
         }
-        public Customer(int mCusID, string mCusName, string mCusAddress, int mCusPhone)
+        public Customer(int mCusID, string mCusName, string mCusAddress, int mCusPhone,bool misActive)
         {
             this.mCusID = mCusID;
             this.mCusName = mCusName;
             this.mCusAddress = mCusAddress;
             this.mCusPhone = mCusPhone;
+            this.misActive = misActive;
         }
 
         public int CusID
@@ -76,6 +78,19 @@ namespace Project.Entity
             set
             {
                 mCusPhone = value;
+            }
+        }
+
+        public bool isActive
+        {
+            get
+            {
+                return misActive;
+            }
+
+            set
+            {
+                misActive = value;
             }
         }
     }

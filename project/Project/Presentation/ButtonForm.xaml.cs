@@ -34,7 +34,7 @@ namespace Project.Presentation
             }
             if (Order.Equals("Product"))
             {
-                ProductWindow frm1 = new ProductWindow();
+                ProductWindow frm1 = new ProductWindow(false);
                 frm1.ShowDialog();
             }
 
@@ -46,19 +46,19 @@ namespace Project.Presentation
 
             if (Order.Equals("Customer"))
             {
-                CustomerWindow frm3 = new CustomerWindow();
+                CustomerWindow frm3 = new CustomerWindow(false);
                 frm3.ShowDialog();
             }
             
             if (Order.Equals("Discount"))
             {
-                DiscountWindow frm4 = new DiscountWindow();
+                DiscountWindow frm4 = new DiscountWindow(false);
                 frm4.ShowDialog();
             }
 
             if (Order.Equals("Supplier"))
             {
-                SupplierWindow frm5 = new SupplierWindow();
+                SupplierWindow frm5 = new SupplierWindow(false);
                 frm5.ShowDialog();
             }
 

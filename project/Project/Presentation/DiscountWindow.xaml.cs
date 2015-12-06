@@ -20,31 +20,60 @@ namespace Project.Presentation
     /// </summary>
     public partial class DiscountWindow : Window
     {
-        public DiscountWindow()
+        bool isUpdate;
+        public DiscountWindow(bool Update)
         {
             InitializeComponent();
+            isUpdate = Update;
             lblName.Content = "Add Discount";
-
+            if (isUpdate)
+            {
+                txtCodeID.IsEnabled = false;
+            }    
         }        
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (isUpdate)
             {
-                Discount dis = new Discount();
-                dis.CodeID = int.Parse(txtCodeID.Text);
-                dis.Type = txtType.Text;
-                dis.Rate = int.Parse(txtRate.Text);
-                dis.ProIDGift = int.Parse(txtProIDGift.Text);
-                dis.DateStart = DateTime.Parse(txtDateStart.Text);
-                dis.DateEnd = DateTime.Parse(txtDateEnd.Text);
-                DiscountBL.AddDiscount(dis);
-                System.Windows.Forms.MessageBox.Show("Success");
-                this.Close();
+                lblName.Content = "Update Discount";
+                try
+                {
+                    Discount dis = new Discount();
+                    dis.CodeID = int.Parse(txtCodeID.Text);
+                    dis.Type = txtType.Text;
+                    dis.Rate = int.Parse(txtRate.Text);
+                    dis.ProIDGift = int.Parse(txtProIDGift.Text);
+                    dis.DateStart = DateTime.Parse(txtDateStart.Text);
+                    dis.DateEnd = DateTime.Parse(txtDateEnd.Text);
+                    DiscountBL.UpdateDiscount(dis);
+                    System.Windows.Forms.MessageBox.Show("Success");
+                    this.Close();
+                }
+                catch (Exception h)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                }
             }
-            catch (Exception h)
-            {
-                System.Windows.Forms.MessageBox.Show("Error " + h.Message);
-            }
+            else
+            {                
+                try
+                {
+                    Discount dis = new Discount();
+                    dis.CodeID = int.Parse(txtCodeID.Text);
+                    dis.Type = txtType.Text;
+                    dis.Rate = int.Parse(txtRate.Text);
+                    dis.ProIDGift = int.Parse(txtProIDGift.Text);
+                    dis.DateStart = DateTime.Parse(txtDateStart.Text);
+                    dis.DateEnd = DateTime.Parse(txtDateEnd.Text);
+                    DiscountBL.AddDiscount(dis);
+                    System.Windows.Forms.MessageBox.Show("Success");
+                    this.Close();
+                }
+                catch (Exception h)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                }
+            }               
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

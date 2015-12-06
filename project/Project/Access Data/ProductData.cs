@@ -78,7 +78,7 @@ namespace Project.Access_Data
         {
             string sql = "sp_SearchProduct";
             ProductName = '%' + ProductName + '%';
-            SqlParameter inProduct = new SqlParameter("@ProductName", ProductName);
+            SqlParameter inProduct = new SqlParameter("@ProName", ProductName);
             return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inProduct).Tables[0];
         }
     }

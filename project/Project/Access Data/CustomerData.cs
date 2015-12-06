@@ -61,7 +61,7 @@ namespace Project.Access_Data
         {
             string sql = "sp_SearchCustomer";
             CustomerName = '%' + CustomerName + '%';
-            SqlParameter inCustomer = new SqlParameter("@CustomerName", CustomerName);
+            SqlParameter inCustomer = new SqlParameter("@CusName", CustomerName);
             return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inCustomer).Tables[0];
         }
     }

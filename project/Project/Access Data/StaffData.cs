@@ -27,7 +27,7 @@ namespace Project.Access_Data
         }
         public static bool DeleteStaff(string inStaffID)
         {
-            string sql = "sp_DeleleStaff";
+            string sql = "sp_DeleteStaff";
             SqlParameter StaffID = new SqlParameter("@StaffID", inStaffID);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, StaffID);
         }

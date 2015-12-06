@@ -60,7 +60,7 @@
     <Compile Include="Access Data\DiscountData.cs" />
     <Compile Include="Access Data\ProductData.cs" />
     <Compile Include="Access Data\StaffData.cs" />
-    <Compile Include="Bussiness Layer\SupplierData.cs" />
+    <Compile Include="Access Data\SupplierData.cs" />
     <Compile Include="Bussiness Layer\BillBL.cs" />
     <Compile Include="Bussiness Layer\CustomerBL.cs" />
     <Compile Include="Bussiness Layer\DiscountBL.cs" />

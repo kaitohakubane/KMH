@@ -12,17 +12,24 @@ namespace Project.Entity
         private string mSupAddress;
         private float mSupDept;
         private int mSupPhone;
+        private bool misActive;
         public Supplier()
         {
 
         }
-        public Supplier(int mSupID, string mSupName, string mSupAddress, float mSupDept, int mSupPhone)
+        public Supplier(int mSupID, string mSupName, string mSupAddress, float mSupDept, int mSupPhone, bool misActive)
         {
             this.mSupID = mSupID;
             this.mSupName = mSupName;
             this.mSupAddress = mSupAddress;
             this.mSupDept = mSupDept;
             this.mSupPhone = mSupPhone;
+            this.misActive = misActive;
+        }
+        public bool isActive
+        {
+            get { return misActive; }
+            set { misActive = value; }
         }
 
         public int SupID

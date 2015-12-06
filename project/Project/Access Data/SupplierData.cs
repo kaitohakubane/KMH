@@ -68,7 +68,7 @@ namespace Project.Access_Data
         {
             string sql = "sp_SearchSupplier";
             SupplierName = '%' + SupplierName + '%';
-            SqlParameter inSupplier = new SqlParameter("@SupplierName", SupplierName);
+            SqlParameter inSupplier = new SqlParameter("@SupName", SupplierName);
             return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inSupplier).Tables[0];
         }
     }

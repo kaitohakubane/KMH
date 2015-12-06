@@ -28,7 +28,7 @@ namespace Project
             if (Power == 1)
             {
                 //Admin: Show cái j lên thì bỏ vào đây
-                btnStaff.IsEnabled = true;
+                btnStaff.IsEnabled = false;
             }
             if (Power == 2)
             {

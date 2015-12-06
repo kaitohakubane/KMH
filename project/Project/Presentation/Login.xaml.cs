@@ -21,7 +21,8 @@ namespace Project
     {
         public Login()
         {
-            InitializeComponent();    
+            InitializeComponent();
+            btnLogin.IsEnabled = false;   
             
         }
         public void ShowMainForm(int power,Staff curStaff)

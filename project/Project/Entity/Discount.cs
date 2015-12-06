@@ -14,11 +14,12 @@ namespace Project.Entity
         private int mProIDGift;
         private DateTime mDateStart;
         private DateTime mDateEnd;
+        private bool misActive;
         public Discount()
         {
 
         }
-        public Discount(int mCodeID, string mType, float mRate, int mProIDGift, DateTime mDateStart, DateTime mDateEnd)
+        public Discount(int mCodeID, string mType, float mRate, int mProIDGift, DateTime mDateStart, DateTime mDateEnd, bool misActive)
         {
             this.mCodeID = mCodeID;
             this.mType = mType;
@@ -26,8 +27,13 @@ namespace Project.Entity
             this.mProIDGift = mProIDGift;
             this.mDateStart = mDateStart;
             this.mDateEnd = mDateEnd;
+            this.misActive = misActive;
         }
-
+        public bool isActive
+        {
+            get { return misActive; }
+            set { misActive = value; }
+        }
         public int CodeID
         {
             get

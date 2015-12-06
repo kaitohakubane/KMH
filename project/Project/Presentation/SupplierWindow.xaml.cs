@@ -20,28 +20,58 @@ namespace Project.Presentation
     /// </summary>
     public partial class SupplierWindow : Window
     {
-        public SupplierWindow()
+        bool isUpdate;
+        public SupplierWindow(bool Update)
         {
             InitializeComponent();
+            isUpdate = Update;
+            lblName.Content = "Add Supplier";
+            if (isUpdate)
+            {
+                txtSupID.IsEnabled = false;
+            }
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (isUpdate)
             {
-                Supplier sup = new Supplier();
-                sup.SupID = int.Parse(txtSupID.Text);
-                sup.SupName = txtSupName.Text;
-                sup.SupAddress = txtAddress.Text;
-                sup.SupDept = int.Parse(txtDebt.Text);
-                sup.SupPhone = int.Parse(txtPhone.Text);
-                SupplierBL.AddSupplier(sup);
-                System.Windows.Forms.MessageBox.Show("Success");
-                this.Close();
+                lblName.Content = "Update Supplier";
+                try
+                {
+                    Supplier sup = new Supplier();
+                    sup.SupID = int.Parse(txtSupID.Text);
+                    sup.SupName = txtSupName.Text;
+                    sup.SupAddress = txtAddress.Text;
+                    sup.SupDept = int.Parse(txtDebt.Text);
+                    sup.SupPhone = int.Parse(txtPhone.Text);
+                    SupplierBL.UpdateSupplier(sup);
+                    System.Windows.Forms.MessageBox.Show("Success");
+                    this.Close();
+                }
+                catch (Exception h)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                }
             }
-            catch (Exception h)
-            {
-                System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+            else
+            {                
+                try
+                {
+                    Supplier sup = new Supplier();
+                    sup.SupID = int.Parse(txtSupID.Text);
+                    sup.SupName = txtSupName.Text;
+                    sup.SupAddress = txtAddress.Text;
+                    sup.SupDept = int.Parse(txtDebt.Text);
+                    sup.SupPhone = int.Parse(txtPhone.Text);
+                    SupplierBL.AddSupplier(sup);
+                    System.Windows.Forms.MessageBox.Show("Success");
+                    this.Close();
+                }
+                catch (Exception h)
+                {
+                    System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                }
             }
 
         }
@@ -50,7 +80,6 @@ namespace Project.Presentation
         {
             this.DialogResult = false;
             this.Close();
-
         }
     }
 }

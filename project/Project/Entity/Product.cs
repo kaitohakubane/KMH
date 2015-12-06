@@ -16,12 +16,12 @@ namespace Project.Entity
         private double mOutPrice;
         private int mQuantity;
         private string mType;
-        private int misActive;
+        private bool misActive;
         public Product()
         {
 
         }
-        public Product(int mProID, string mProName, int mSupID, string mProducer, string mOrigin, double mInPrice, double mOutPrice, int mQuantity, string mType, int misActive)
+        public Product(int mProID, string mProName, int mSupID, string mProducer, string mOrigin, double mInPrice, double mOutPrice, int mQuantity, string mType, bool misActive)
         {
             this.mProID = mProID;
             this.mProName = mProName;
@@ -35,7 +35,7 @@ namespace Project.Entity
             this.misActive = misActive;
         }
 
-        public int isActive
+        public bool isActive
         {
             get { return misActive; }
             set { misActive = value; }
