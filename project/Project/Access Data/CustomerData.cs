@@ -22,7 +22,7 @@ namespace Project.Access_Data
         public static bool DeleteCustomer(int inCustomerID)
         {
             string sql = "sp_DeleteCustomer";
-            SqlParameter CusID = new SqlParameter("@CusID", inCustomerID);
+            SqlParameter CusID = new SqlParameter("@CustomerID", inCustomerID);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, CusID);
         }
         public static DataTable DisplayAllCus()

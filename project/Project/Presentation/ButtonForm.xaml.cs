@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,12 +19,14 @@ namespace Project.Presentation
     /// </summary>
     public partial class ButtonForm : Window
     {
+        Staff curStaff;
         string choice;
-        public ButtonForm(string Order)
+        public ButtonForm(string Order,Staff sta)
         {
             InitializeComponent();
             lblName.Content = Order+"Management";
             choice = Order;
+            curStaff = sta;
         }
         private void LoadAddForm(string Order)
         {            
@@ -40,7 +43,7 @@ namespace Project.Presentation
 
             if (Order.Equals("Bill"))
             {
-                BillWindow frm2 = new BillWindow();
+                BillWindow frm2 = new BillWindow(curStaff);
                 frm2.ShowDialog();
             }
 

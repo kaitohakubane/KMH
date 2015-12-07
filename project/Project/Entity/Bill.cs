@@ -10,21 +10,28 @@ namespace Project.Entity
         private int mBillID;
         private int mCusID;
         private int mCodeID;
-        private int mStaffID;
-        private DateTime mDateStart;
-        private DateTime mDateEnd;
+        private string mStaffID;
+        private DateTime mDate;
+        private long mTotal;
+
+        public long Total
+        {
+            get { return mTotal; }
+            set { mTotal = value; }
+        }
+
         public Bill()
         {
 
         }
-        public Bill(int mBillID, int mCusID, int mCodeID, int mStaffID, DateTime mDateStart, DateTime mDateEnd)
+        public Bill(int mBillID, int mCusID, int mCodeID, string mStaffID, DateTime mDate,long mTotal)
         {
             this.mBillID = mBillID;
             this.mCusID = mCusID;
             this.mCodeID = mCodeID;
             this.mStaffID = mStaffID;
-            this.mDateStart = mDateStart;
-            this.mDateEnd = mDateEnd;
+            this.mDate = mDate;
+            this.mTotal = mTotal;
         }
 
         public int BillID
@@ -66,7 +73,7 @@ namespace Project.Entity
             }
         }
 
-        public int StaffID
+        public string StaffID
         {
             get
             {
@@ -79,30 +86,18 @@ namespace Project.Entity
             }
         }
 
-        public DateTime DateStart
+        public DateTime Date
         {
             get
             {
-                return mDateStart;
+                return mDate;
             }
 
             set
             {
-                mDateStart = value;
-            }
-        }
-
-        public DateTime DateEnd
-        {
-            get
-            {
-                return mDateEnd;
-            }
-
-            set
-            {
-                mDateEnd = value;
+                mDate = value;
             }
         }
     }
 }
+

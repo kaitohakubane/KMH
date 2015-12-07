@@ -25,7 +25,7 @@ namespace Project.Access_Data
         public static bool DeleteSupplier(int inSupID)
         {
             string sql = "sp_DeleteSupplier";
-            SqlParameter SupID = new SqlParameter("@SupID", inSupID);
+            SqlParameter SupID = new SqlParameter("@SupplierID", inSupID);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, SupID);
         }
         public static DataTable DisplayAllSupplier()

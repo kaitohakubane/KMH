@@ -85,7 +85,7 @@ namespace Project.Presentation
                         sta.StaffID = txtID.Text;
                         sta.StaffName = txtName.Text;
                         sta.StaffAge = int.Parse(txtAge.Text);
-                        sta.StaffRole = cbxRole.SelectedIndex + 1;
+                        sta.StaffRole = cbxRole.SelectedItem.ToString();
                         sta.StaffSalary = float.Parse(txtSalary.Text);
                         sta.StaffPassword = txtPassword.Text;
                         sta.isActive = true;
@@ -106,7 +106,7 @@ namespace Project.Presentation
                         sta.StaffID = txtID.Text;
                         sta.StaffName = txtName.Text;
                         sta.StaffAge = int.Parse(txtAge.Text);
-                        sta.StaffRole = cbxRole.SelectedIndex + 1;
+                        sta.StaffRole = cbxRole.SelectedItem.ToString();
                         sta.StaffSalary = float.Parse(txtSalary.Text);
                         sta.StaffPassword = txtPassword.Text;
                         sta.isActive = true;

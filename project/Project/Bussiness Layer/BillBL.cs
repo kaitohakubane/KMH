@@ -12,19 +12,19 @@ namespace Project.Bussiness_Layer
     {
         public static bool AddBill(Bill a)
         {
-            return BillData.AddBill(a);
+            return BillBL.AddBill(a);
         }
         public static bool DeleteBill(int StaID)
         {
-            return BillData.DeleteBill(StaID);
+            return BillBL.DeleteBill(StaID);
         }
         public static DataTable DisplayAllBill()
         {
-            return BillData.DisplayAllBill();
+            return BillBL.DisplayAllBill();
         }
         public static bool UpdateBill(Bill a)
         {
-            return BillData.UpdateBill(a);
+            return BillBL.UpdateBill(a);
         }
 
     }

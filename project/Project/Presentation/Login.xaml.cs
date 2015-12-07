@@ -27,8 +27,7 @@ namespace Project
         }
         public void ShowMainForm(int power,Staff curStaff)
         {
-            MainWindow frm = new MainWindow(curStaff);
-            frm.Power = power;
+            MainWindow frm = new MainWindow(curStaff,power);
             frm.Show();
             //this.Visibility = Visibility.Hidden;
         }
@@ -42,7 +41,18 @@ namespace Project
                 
                 if (user != null && user.StaffPassword.Equals(txtPassword.Password))
                 {
-                    ShowMainForm(user.StaffRole, user);
+                    if (user.StaffRole == "Admin") 
+                    {
+                        ShowMainForm(1, user);
+                    }
+                    if (user.StaffRole == "Stock Manager")
+                    {
+                        ShowMainForm(2, user);
+                    }
+                    if (user.StaffRole == "Saler")
+                    {
+                        ShowMainForm(3, user);
+                    }
                     this.Close();
                 }
                 else

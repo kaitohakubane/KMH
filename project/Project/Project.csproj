@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Access Data\BillData.cs" />
+    <Compile Include="Access Data\BillDetailsData.cs" />
     <Compile Include="Access Data\CustomerData.cs" />
     <Compile Include="Access Data\DiscountData.cs" />
     <Compile Include="Access Data\ProductData.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Bussiness Layer\ProductBL.cs" />
     <Compile Include="Bussiness Layer\StaffBL.cs" />
     <Compile Include="Bussiness Layer\SupplierBL.cs" />
+    <Compile Include="Entity\Bill.cs" />
     <Compile Include="Presentation\DiscountWindow.xaml.cs">
       <DependentUpon>DiscountWindow.xaml</DependentUpon>
     </Compile>
@@ -82,7 +84,7 @@
     <Compile Include="Presentation\ButtonForm.xaml.cs">
       <DependentUpon>ButtonForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Bill.cs" />
+    <Compile Include="Entity\BillDetail.cs" />
     <Compile Include="Entity\Customer.cs" />
     <Compile Include="Entity\Discount.cs" />
     <Compile Include="Entity\Product.cs" />

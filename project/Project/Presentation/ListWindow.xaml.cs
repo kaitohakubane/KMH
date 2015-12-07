@@ -132,7 +132,7 @@ namespace Project.Presentation
                     sta.lblName.Content = "Update Staff";
                     sta.txtID.Text = row[0].ToString();
                     sta.txtName.Text = row[1].ToString();
-                    sta.cbxRole.SelectedIndex = int.Parse(row[2].ToString())-1;
+                    sta.cbxRole.SelectedItem = row[2].ToString();
                     sta.txtAge.Text = row[3].ToString();
                     sta.txtSalary.Text=row[4].ToString();
                     sta.txtPassword.Text=row[5].ToString();
@@ -188,6 +188,7 @@ namespace Project.Presentation
                     dis.txtProIDGift.Text = row[3].ToString();
                     dis.txtDateStart.Text = row[4].ToString();
                     dis.txtDateEnd.Text = row[5].ToString();
+                    dis.ShowDialog();
                     loadData();
                 }
             }

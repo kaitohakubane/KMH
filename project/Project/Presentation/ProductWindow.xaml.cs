@@ -56,7 +56,7 @@ namespace Project.Presentation
                     pro.InPrice = int.Parse(txtInPrice.Text);
                     pro.OutPrice = int.Parse(txtOutPrice.Text);
                     pro.Quantity = int.Parse(txtQuantity.Text);
-                    pro.Type =cbbType.SelectedIndex.ToString();///////////////////
+                    pro.Type =cbbType.SelectedItem.ToString();///////////////////
                     ProductBL.UpdateProduct(pro);
                     System.Windows.Forms.MessageBox.Show("Success");
                     this.Close();
@@ -79,7 +79,7 @@ namespace Project.Presentation
                     pro.InPrice = int.Parse(txtInPrice.Text);
                     pro.OutPrice = int.Parse(txtOutPrice.Text);
                     pro.Quantity = int.Parse(txtQuantity.Text);
-                    pro.Type = cbbType.SelectedIndex.ToString();///////////////////
+                    pro.Type = cbbType.SelectedItem.ToString();///////////////////
                     ProductBL.AddProduct(pro);
                     System.Windows.Forms.MessageBox.Show("Success");
                     this.Close();

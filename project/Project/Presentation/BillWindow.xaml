@@ -9,17 +9,18 @@
     <Grid>
         <Label x:Name="lblName" Content="Hóa đơn" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="130.8,0"/>
         <Label x:Name="label" Content="Ngày:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,50,0,0"/>
-        <Label x:Name="label_Copy" Content="Thời gian:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,81,0,0"/>
+        <Label x:Name="label_Copy" Content="Discount" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,81,0,0"/>
         <Label x:Name="label_Copy1" Content="Tên nhân viên:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,112,0,0"/>
         <Label x:Name="label_Copy2" Content="Tên khách hàng:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,143,0,0"/>
         <DataGrid x:Name="dtgBill" Height="210" Width="518" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,-0.4,58"/>
         <Label x:Name="label_Copy3" Content="Tổng cộng:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="351,399,0,0"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,53,0,0"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,84,0,0"/>
-        <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,115,0,0"/>
-        <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,146,0,0"/>
-        <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Margin="433,402,0,0"/>
-        <Button x:Name="btnAdd" Content="AddProduct" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="85,406,0,0"/>
+        <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,53,0,0"/>
+        <TextBox x:Name="txtDiscount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,84,0,0"/>
+        <TextBox x:Name="txtStaff" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,115,0,0"/>
+        <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,146,0,0"/>
+        <TextBox x:Name="txtSum" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Margin="433,402,0,0"/>
+        <Button x:Name="btnAdd" Content="AddProduct" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="20,405,0,0" Click="btnAdd_Click"/>
+        <TextBox x:Name="txtAdd" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Margin="115,405,0,0"/>
 
     </Grid>
 </Window>

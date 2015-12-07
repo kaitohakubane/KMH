@@ -65,10 +65,9 @@ namespace Project.Access_Data
                 {
                     a.StaffID = dr.GetString(0);
                     a.StaffName = dr.GetString(1);
-                    a.StaffRole = dr.GetInt32(2);
+                    a.StaffRole = dr.GetString(2);
                     a.StaffAge = dr.GetInt32(3);
-                    a.StaffSalary = dr.GetInt32(4);
-                    //a.StaffUserName = dr.GetString(5);
+                    a.StaffSalary = dr.GetInt32(4);                   
                     a.StaffPassword = dr.GetString(5);
                     return a;
                 }

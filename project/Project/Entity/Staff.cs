@@ -9,7 +9,7 @@ namespace Project.Entity
     {
         private string mStaffID;
         private string mStaffName;
-        private int mStaffRole;
+        private string mStaffRole;
         private int mStaffAge;
         private float mStaffSalary;
         //private string mStaffUserName;
@@ -19,7 +19,7 @@ namespace Project.Entity
         {
 
         }
-        public Staff(string mStaffID, string mStaffName, int mStaffRole, int mStaffAge, float mStaffSalary, string mStaffPassword, bool misActive)
+        public Staff(string mStaffID, string mStaffName, string mStaffRole, int mStaffAge, float mStaffSalary, string mStaffPassword, bool misActive)
         {
             this.mStaffID = mStaffID;
             this.mStaffName = mStaffName;
@@ -65,7 +65,7 @@ namespace Project.Entity
             }
         }
 
-        public int StaffRole
+        public string StaffRole
         {
             get
             {

@@ -21,19 +21,21 @@ namespace Project
     /// </summary>
     public partial class MainWindow : Window
     {Staff curStaff;
-        public MainWindow(Staff inStaff)
+        public MainWindow(Staff inStaff,int Power)
         {
             InitializeComponent();
-            curStaff=inStaff;
+            curStaff=inStaff;            
             if (Power == 1)
             {
-                //Admin: Show cái j lên thì bỏ vào đây
-                btnStaff.IsEnabled = false;
+             
             }
             if (Power == 2)
             {
                 //StockManger: Show cái j lên thì bỏ vào đây
                 btnStaff.IsEnabled = false;
+                btnPayment.IsEnabled = false;
+                btnCustomer.IsEnabled = false;
+                btnDiscount.IsEnabled = false;                
             }
             if (Power == 3)
             {
@@ -41,34 +43,28 @@ namespace Project
                 btnStaff.IsEnabled = false;
             }
         }
-        private int mPower;
-
-        public int Power
-        {
-            get { return mPower; }
-            set { mPower = value; }
-        }
 
         private void btnStaff_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Staff");
+            ButtonForm frm = new ButtonForm("Staff",curStaff);
             frm.ShowDialog();
         }
 
         private void btnProduct_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Product");
+            ButtonForm frm = new ButtonForm("Product",curStaff);
             frm.ShowDialog();
         }
 
         private void btnPayment_Click(object sender, RoutedEventArgs e)
         {
-
+            BillWindow bill = new BillWindow(curStaff);
+            bill.ShowDialog();
         }
 
         private void btnCustomer_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Customer");
+            ButtonForm frm = new ButtonForm("Customer",curStaff);
             frm.ShowDialog();
         }
 
@@ -79,13 +75,13 @@ namespace Project
 
         private void btnDiscount_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Discount");
+            ButtonForm frm = new ButtonForm("Discount",curStaff);
             frm.ShowDialog();
         }
 
         private void btnSupplier_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Supplier");
+            ButtonForm frm = new ButtonForm("Supplier",curStaff);
             frm.ShowDialog();
         }
 
