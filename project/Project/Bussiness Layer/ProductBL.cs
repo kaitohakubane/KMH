@@ -34,5 +34,10 @@ namespace Project.Bussiness_Layer
         {
             return ProductData.SearchProduct(ProductName);
         }
+
+        public static bool GetbyProductID(int productID)
+        {
+            return ProductData.GetbyProductID(productID);
+        }
     }
 }

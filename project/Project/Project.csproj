@@ -49,6 +49,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -56,13 +57,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Access Data\BillData.cs" />
-    <Compile Include="Access Data\BillDetailsData.cs" />
+    <Compile Include="Access Data\BillDetailData.cs" />
     <Compile Include="Access Data\CustomerData.cs" />
     <Compile Include="Access Data\DiscountData.cs" />
     <Compile Include="Access Data\ProductData.cs" />
     <Compile Include="Access Data\StaffData.cs" />
     <Compile Include="Access Data\SupplierData.cs" />
     <Compile Include="Bussiness Layer\BillBL.cs" />
+    <Compile Include="Bussiness Layer\BillDetailBL.cs" />
     <Compile Include="Bussiness Layer\CustomerBL.cs" />
     <Compile Include="Bussiness Layer\DiscountBL.cs" />
     <Compile Include="Bussiness Layer\ProductBL.cs" />
@@ -71,6 +73,9 @@
     <Compile Include="Entity\Bill.cs" />
     <Compile Include="Presentation\DiscountWindow.xaml.cs">
       <DependentUpon>DiscountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GraphDay.xaml.cs">
+      <DependentUpon>GraphDay.xaml</DependentUpon>
     </Compile>
     <Compile Include="Presentation\SearchWindow.xaml.cs">
       <DependentUpon>SearchWindow.xaml</DependentUpon>
@@ -112,6 +117,10 @@
     <Page Include="Presentation\DiscountWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\GraphDay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Presentation\SearchWindow.xaml">
       <SubType>Designer</SubType>
@@ -200,6 +209,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ios_7_galaxy-wide.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\Pro.jpg" />
+    <Resource Include="Image\Bill.jpg" />
+    <Resource Include="Image\Staff.jpg" />
+    <Resource Include="Image\Report.png" />
+    <Resource Include="Image\Supplier.jpg" />
+    <Resource Include="Image\Discount.jpg" />
+    <Resource Include="Image\Customer.jpg" />
+    <Resource Include="Image\wallpaper02.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -25,6 +25,28 @@ namespace Project.Access_Data
             SqlParameter BillID = new SqlParameter("@BillID", inBillID);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, BillID);
         }
+        public static DataTable PrintDay(DateTime date1, DateTime date2)
+        {
+            string sql = "sp_PrintDay";
+            SqlParameter d1 = new SqlParameter("@Date1", date1);
+            SqlParameter d2 = new SqlParameter("@Date2", date2);
+            return DataProvider.ExecuteQueryWithDataSet(sql, System.Data.CommandType.StoredProcedure, d1, d2).Tables[0];
+        }
+        public static DataTable GetProductInBill(int v)
+        {
+            string sql = "sp_GetProductInBill";
+            SqlParameter BillID = new SqlParameter("@BillID", v);
+            return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, BillID).Tables[0];
+        }
+
+        public static int GetMaxID()
+        {
+            string sql = "sp_GetMaxID";
+            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure);
+            dr.Read();
+            return dr.GetInt32(0);
+        }
+
         public static DataTable DisplayAllBill()
         {
             string sql = "sp_DisplayAllBill";

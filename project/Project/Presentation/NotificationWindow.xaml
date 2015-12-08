@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Project.Presentation"
         mc:Ignorable="d"
         Title="NotificationWindow" Height="334.328" Width="349.253">
+    <Window.Background>
+        <ImageBrush ImageSource="/Project;component/Image/wallpaper02.jpg"/>
+    </Window.Background>
     <Grid>
         <Button x:Name="btnOk" Content="OK!" HorizontalAlignment="Center" Width="76" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Margin="116,0,108,20"/>
         <Label x:Name="label" Content="Notification!" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

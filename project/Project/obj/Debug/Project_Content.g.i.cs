@@ -8,6 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ios_7_galaxy-wide.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/asd.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/asdd.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/customeraccounts.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/icon-reporting-150x150.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/images.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/qwe.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/user-icon_jpg_410x270_upscale_q85.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/wallpaper02.jpg")]
 
 

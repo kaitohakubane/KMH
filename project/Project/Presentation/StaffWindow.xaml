@@ -5,17 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.Presentation"
         mc:Ignorable="d"
-        Title="StaffWindow" Height="328.239" Width="300">
+        Title="Staff" Height="328.239" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/Project;component/Image/wallpaper02.jpg"/>
+    </Window.Background>
     <Grid>
-        <Label x:Name="lblName" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label x:Name="label" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,48,0,0"/>
-        <Label x:Name="label1" Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,79,0,0"/>
-        <Label x:Name="label_Copy" Content="Age:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,110,0,0"/>
-        <Label x:Name="label_Copy1" Content="Role:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,141,0,0"/>
-        <Label x:Name="label_Copy2" Content="Salary:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,172,0,0"/>
-        <Label x:Name="label_Copy4" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,203,0,0"/>
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="51,248,0,0" Click="btnOK_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="177,248,0,0" Click="btnCancel_Click"/>
+        <Label x:Name="lblName" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="French Script MT" FontSize="33.333" Foreground="White"/>
+        <Label x:Name="label" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,48,0,0" Foreground="White"/>
+        <Label x:Name="label1" Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,79,0,0" Foreground="White"/>
+        <Label x:Name="label_Copy" Content="Age:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,110,0,0" Foreground="White"/>
+        <Label x:Name="label_Copy1" Content="Role:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,141,0,0" Foreground="White"/>
+        <Label x:Name="label_Copy2" Content="Salary:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,172,0,0" Foreground="White"/>
+        <Label x:Name="label_Copy4" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,203,0,0" Foreground="White"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="51,248,0,0" Click="btnOK_Click" Foreground="#FF0600FF">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00F1FF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="177,248,0,0" Click="btnCancel_Click" Foreground="#FF0600FF">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00F1FF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="85,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="85,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="85,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>

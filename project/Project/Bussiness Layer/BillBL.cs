@@ -12,20 +12,33 @@ namespace Project.Bussiness_Layer
     {
         public static bool AddBill(Bill a)
         {
-            return BillBL.AddBill(a);
+            return BillData.AddBill(a);
         }
         public static bool DeleteBill(int StaID)
         {
-            return BillBL.DeleteBill(StaID);
+            return BillData.DeleteBill(StaID);
         }
         public static DataTable DisplayAllBill()
         {
-            return BillBL.DisplayAllBill();
+            return BillData.DisplayAllBill();
         }
         public static bool UpdateBill(Bill a)
         {
-            return BillBL.UpdateBill(a);
+            return BillData.UpdateBill(a);
         }
 
+        public static int GetMaxID()
+        {
+            return BillData.GetMaxID();
+        }
+
+        public static DataTable GetProductInBill(int v)
+        {
+            return BillData.GetProductInBill(v);
+        }
+        public static DataTable PrintDay(DateTime d1, DateTime d2)
+        {
+            return BillData.PrintDay(d1, d2);
+        }
     }
 }

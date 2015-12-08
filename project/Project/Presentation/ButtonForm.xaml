@@ -5,12 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.Presentation"
         mc:Ignorable="d"
-        Title="ButtonForm" Height="197.984" Width="302.87">
+        Title="Management" Height="197.984" Width="302.87" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/Project;component/Image/wallpaper02.jpg"/>
+    </Window.Background>
     <Grid>
-        <Label x:Name="lblName" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button x:Name="btnList" Content="List" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="145,59,28.8,58.8" Click="btnList_Click"/>
-        <Button x:Name="btnAdd" Content="Add" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="37,59,136.8,58.8" Click="btnAdd_Click"/>
-        <Button x:Name="btnBack" Content="Back to Mainwindow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="183" Margin="61,115,0,0" Click="btnBack_Click"/>
+        <Label x:Name="lblName" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="33.333" FontFamily="French Script MT" Foreground="White"/>
+        <Button x:Name="btnList" Content="List" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="145,59,28.8,58.8" Click="btnList_Click" Foreground="#FF0031FF">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00F1FF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnAdd" Content="Add" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="37,59,136.8,58.8" Click="btnAdd_Click" Foreground="#FF0031FF">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00F1FF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnBack" Content="Back to Mainwindow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="183" Margin="61,115,0,0" Click="btnBack_Click" Foreground="#FF0031FF">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00F1FF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

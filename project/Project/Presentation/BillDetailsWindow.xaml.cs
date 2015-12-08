@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Project.Bussiness_Layer;
+using Project.Entity;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -18,9 +21,75 @@ namespace Project.Presentation
     /// </summary>
     public partial class BillDetails : Window
     {
-        public BillDetails()
+        int BillID;
+        DataTable dt = new DataTable();
+        public BillDetails(int inBillID)
         {
-            InitializeComponent();
+            InitializeComponent();            
+            loadData();
+            dgv.IsReadOnly = true;
+            BillID = inBillID;
+            txtQuantity.Text = "1";
         }
+        void loadData()
+        {
+            dt = ProductBL.DisplayAllProduct();
+            dgv.ItemsSource = dt.DefaultView;
+            dgv.AutoGenerateColumns = true;
+            txtProID.Text = "";
+            txtProID.IsEnabled = false;
+        }
+        private DataTable SearchData()
+        {
+            DataTable tmp = new DataTable();
+            tmp = ProductBL.SearchProduct(txtProName.Text);
+            if (txtProName.Text == "")
+                tmp = ProductBL.DisplayAllProduct();
+            return tmp;
+
+        }
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            txtProID.Text = "";
+            dt = SearchData();
+            dgv.ItemsSource = dt.DefaultView;
+            dgv.AutoGenerateColumns = true;
+        }
+
+        private void dgv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                int index = dgv.SelectedIndex;
+                if (index >= 0)
+                {
+                    DataRow dr = dt.Rows[index];
+                    txtProID.Text = dr[0].ToString();
+                    txtProName.Text = dr[1].ToString();
+                }
+
+            }
+            catch (Exception g)
+            {
+                System.Windows.Forms.MessageBox.Show(g.Message);
+            }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            BillDetail bill = new BillDetail(BillID, int.Parse(txtProID.Text), int.Parse(txtQuantity.Text));
+            if (BillDetailBL.isExist(bill))
+            {
+                BillDetailBL.AddQuantity(bill);
+            }
+            else
+                BillDetailBL.AddBillDetails(bill);            
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }       
     }
 }

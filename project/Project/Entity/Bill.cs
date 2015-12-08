@@ -98,6 +98,12 @@ namespace Project.Entity
                 mDate = value;
             }
         }
+        public Bill(string mStaffID,int mCodeID,DateTime mDate)
+        {
+            this.mCodeID = mCodeID;
+            this.mStaffID = mStaffID;
+            this.mDate = mDate;
+        }
     }
 }
 

@@ -12,11 +12,26 @@ namespace Project.Access_Data
     {
         public static bool AddBillDetails(BillDetail a)
         {
-            string sql = "sp_InsertBill";
-            SqlParameter BillID = new SqlParameter("@StaffID", a.BillID);
-            SqlParameter ProID = new SqlParameter("@CodeID", a.ProID);
-            SqlParameter Quantity = new SqlParameter("@Date", a.Quantity);
+            string sql = "sp_InsertBillDetails";
+            SqlParameter BillID = new SqlParameter("@BillID", a.BillID);
+            SqlParameter ProID = new SqlParameter("@ProID", a.ProID);
+            SqlParameter Quantity = new SqlParameter("@Quantity", a.Quantity);
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, BillID, ProID, Quantity);
         }
+        public static bool isExist(BillDetail a) {
+            string sql = "sp_CheckExist";
+            SqlParameter BillID = new SqlParameter("@BillID", a.BillID);
+            SqlParameter ProID = new SqlParameter("@ProID", a.ProID);
+            SqlDataReader dr= DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure, BillID, ProID);
+            return dr.HasRows;
+        }
+        public static bool AddQuantity(BillDetail a)
+        {
+            string sql = "sp_AddQuantity";
+            SqlParameter BillID = new SqlParameter("@BillID", a.BillID);
+            SqlParameter ProID = new SqlParameter("@ProID", a.ProID);
+            SqlParameter Quantity = new SqlParameter("@Quantity", a.Quantity);
+            return DataProvider.ExecuteNonQuery(sql, CommandType.StoredProcedure, BillID, ProID, Quantity);
+        }
     }
-}
+}   

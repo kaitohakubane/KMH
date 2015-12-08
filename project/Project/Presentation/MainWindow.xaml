@@ -5,21 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    
+        Title="HKM Software" Height="350" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Project;component/Image/wallpaper02.jpg"/>
+    </Window.Background>
+
 
     <Grid>
-        <Label x:Name="label" Content="HKM Software" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF39DFFF" FontSize="20"/>
-        <StackPanel HorizontalAlignment="Center" Height="135" VerticalAlignment="Center" Width="200">
-            <Button x:Name="btnStaff" Content="Staff" Click="btnStaff_Click"/>
-            <Button x:Name="btnProduct" Content="Product" Click="btnProduct_Click"/>
-            <Button x:Name="btnPayment" Content="Payment" Click="btnPayment_Click"/>
-            <Button x:Name="btnCustomer" Content="Customer" Click="btnCustomer_Click"/>
-            <Button x:Name="btnReport" Content="Report" Click="btnReport_Click"/>
-            <Button x:Name="btnDiscount" Content="Discount" Click="btnDiscount_Click"/>
-            <Button x:Name="btnSupplier" Content="Supplier" Click="btnSupplier_Click"/>
+        <Label x:Name="label" Content="HKM Software" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontSize="33.333" FontFamily="French Script MT" HorizontalContentAlignment="Center"/>
+        <StackPanel HorizontalAlignment="Center" Height="141" VerticalAlignment="Center" Width="200" Margin="159.3,92.7,159.3,86.7">
+            <Button x:Name="btnStaff" Content="Staff" Click="btnStaff_Click" Foreground="#FF0068FF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F1FF" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnProduct" Content="Product" Click="btnProduct_Click" Foreground="#FF0068FF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F1FF" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnPayment" Content="Payment" Click="btnPayment_Click" Foreground="#FF0068FF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F1FF" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnCustomer" Content="Customer" Click="btnCustomer_Click" Foreground="#FF0068FF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F1FF" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnReport" Content="Report" Click="btnReport_Click" Foreground="#FF0068FF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F1FF" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnDiscount" Content="Discount" Click="btnDiscount_Click" Foreground="#FF0068FF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F1FF" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnSupplier" Content="Supplier" Click="btnSupplier_Click" Foreground="#FF0068FF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F1FF" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </StackPanel>
-        <Button x:Name="btnLogout" Content="LogOut" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="75" Margin="216,0,227.4,31.8" Click="btnLogout_Click"/>
+        <Button x:Name="btnLogout" Content="LogOut" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="216,0,227.4,31.8" Click="btnLogout_Click" Foreground="#FF0068FF">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00F1FF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 
 </Window>

@@ -10,6 +10,16 @@ namespace Project.Entity
         private int mBillID;
         private int mProID;
         private int mQuantity;
+        public BillDetail()
+        {
+        }
+        
+        public BillDetail(int mBillID, int mProID, int mQuantity)
+        {
+            this.mBillID = mBillID;
+            this.mProID = mProID;
+            this.mQuantity = mQuantity;
+        }
 
         public int Quantity
         {

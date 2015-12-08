@@ -29,6 +29,7 @@ namespace Project.Presentation
             lblName2.Content = Order;
             choice = Order;            
             loadData();
+            dataGrid.IsReadOnly = true;
         }
         private void loadData()
         {
@@ -237,6 +238,7 @@ namespace Project.Presentation
             dt = SearchData();
             dataGrid.ItemsSource = dt.DefaultView;
             dataGrid.AutoGenerateColumns = true;
+            
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

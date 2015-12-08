@@ -25,6 +25,15 @@ namespace Project.Access_Data
 
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, ProID, ProName, SupID, Producer, Origin, InPrice,OutPrice,Quantity,Type);
         }
+
+        public static bool GetbyProductID(int productID)
+        {
+            string sql = "sp_GetByProID";
+            SqlParameter ProID = new SqlParameter("@ProID", productID);
+            SqlDataReader dr= DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, ProID);
+            return dr.HasRows;
+        }
+
         public static bool DeleteProduct(int inProID)
         {
             string sql = "sp_DeleteProduct";
@@ -81,5 +90,6 @@ namespace Project.Access_Data
             SqlParameter inProduct = new SqlParameter("@ProName", ProductName);
             return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inProduct).Tables[0];
         }
+        
     }
 }
