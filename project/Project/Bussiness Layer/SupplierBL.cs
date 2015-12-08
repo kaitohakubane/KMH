@@ -33,5 +33,10 @@ namespace Project.Bussiness_Layer
         {
             return SupplierData.SearchSupplier(SupplierName);
         }
+
+        public static bool GetSup(int mSupID)
+        {
+            return SupplierData.GetSup(mSupID);
+        }
     }
 }

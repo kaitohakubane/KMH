@@ -22,6 +22,10 @@ namespace Project.Bussiness_Layer
         {
             return BillDetailData.AddQuantity(a);
         }
+        public static DataTable GetSellQuantity(int a)
+        {
+            return BillDetailData.GetSellQuantity(a);
+        }
     }
 }
 

@@ -68,7 +68,7 @@ namespace Project.Presentation
         }
         private void LoadListForm(string Order)
         {
-            ListWindow frm = new ListWindow(Order);
+            ListWindow frm = new ListWindow(Order,curStaff);
             frm.ShowDialog();
         }
 

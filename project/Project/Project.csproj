@@ -216,9 +216,6 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ios_7_galaxy-wide.jpg" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Image\Pro.jpg" />

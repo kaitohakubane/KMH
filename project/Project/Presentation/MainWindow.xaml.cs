@@ -70,7 +70,8 @@ namespace Project
 
         private void btnReport_Click(object sender, RoutedEventArgs e)
         {
-
+            GraphDay gd = new GraphDay();
+            gd.Show();
         }
 
         private void btnDiscount_Click(object sender, RoutedEventArgs e)

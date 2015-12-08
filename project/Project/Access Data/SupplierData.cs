@@ -71,5 +71,13 @@ namespace Project.Access_Data
             SqlParameter inSupplier = new SqlParameter("@SupName", SupplierName);
             return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inSupplier).Tables[0];
         }
+
+        public static bool GetSup(int mSupID)
+        {
+            string sql = "sp_GetSup";
+            SqlParameter SupID = new SqlParameter("@SupID", mSupID);
+            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, SupID);
+            return dr.HasRows;
+        }
     }
 }

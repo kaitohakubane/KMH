@@ -43,8 +43,8 @@ namespace Project.Presentation
                     dis.Type = txtType.Text;
                     dis.Rate = int.Parse(txtRate.Text);
                     dis.ProIDGift = int.Parse(txtProIDGift.Text);
-                    dis.DateStart = DateTime.Parse(txtDateStart.Text);
-                    dis.DateEnd = DateTime.Parse(txtDateEnd.Text);
+                    dis.DateStart = (DateTime)dpStart.SelectedDate;
+                    dis.DateEnd = (DateTime)dpEnd.SelectedDate;
                     DiscountBL.UpdateDiscount(dis);
                     System.Windows.Forms.MessageBox.Show("Success");
                     this.Close();
@@ -63,8 +63,8 @@ namespace Project.Presentation
                     dis.Type = txtType.Text;
                     dis.Rate = int.Parse(txtRate.Text);
                     dis.ProIDGift = int.Parse(txtProIDGift.Text);
-                    dis.DateStart = DateTime.Parse(txtDateStart.Text);
-                    dis.DateEnd = DateTime.Parse(txtDateEnd.Text);
+                    dis.DateStart = (DateTime)dpStart.SelectedDate;
+                    dis.DateEnd = (DateTime)dpEnd.SelectedDate;
                     DiscountBL.AddDiscount(dis);
                     System.Windows.Forms.MessageBox.Show("Success");
                     this.Close();

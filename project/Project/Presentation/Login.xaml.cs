@@ -41,6 +41,7 @@ namespace Project
                 
                 if (user != null && user.StaffPassword.Equals(txtPassword.Password))
                 {
+                    //System.Windows.Forms.MessageBox.Show("Login Successfull!");
                     if (user.StaffRole == "Admin") 
                     {
                         ShowMainForm(1, user);
@@ -53,6 +54,7 @@ namespace Project
                     {
                         ShowMainForm(3, user);
                     }
+                    
                     this.Close();
                 }
                 else

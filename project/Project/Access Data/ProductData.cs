@@ -26,6 +26,12 @@ namespace Project.Access_Data
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, ProID, ProName, SupID, Producer, Origin, InPrice,OutPrice,Quantity,Type);
         }
 
+        public static DataTable Notification()
+        {
+            string sql = "sp_Notification";
+            return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure).Tables[0];
+        }
+
         public static bool GetbyProductID(int productID)
         {
             string sql = "sp_GetByProID";
@@ -91,5 +97,21 @@ namespace Project.Access_Data
             return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inProduct).Tables[0];
         }
         
+        public static bool UpdateQuantity(BillDetail a)
+        {
+            string sql = "sp_UpdateQuantity";
+            SqlParameter ProID = new SqlParameter("@ProID", a.ProID);
+            SqlParameter Quantity = new SqlParameter("@Quantity", a.Quantity);
+            return DataProvider.ExecuteNonQuery(sql,CommandType.StoredProcedure,ProID,Quantity);
+        }
+
+        public static bool CheckQuantity(BillDetail a)
+        {
+            string sql = "sp_CheckQuantity";
+            SqlParameter ProID = new SqlParameter("@ProID", a.ProID);
+            SqlParameter Quantity = new SqlParameter("@Quantity", a.Quantity);
+            SqlDataReader dr= DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, ProID, Quantity);
+            return dr.HasRows;
+        }
     }
 }

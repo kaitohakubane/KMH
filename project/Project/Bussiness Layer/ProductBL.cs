@@ -25,11 +25,17 @@ namespace Project.Bussiness_Layer
         public static bool UpdateProduct(Product a)
         {
             return ProductData.UpdateProduct(a);
-        }        
+        }
         public static Product GetbyProductName(string ProductName)
         {
             return ProductData.GetbyProductName(ProductName);
         }
+
+        public static DataTable Notification()
+        {
+            return ProductData.Notification();
+        }
+
         public static DataTable SearchProduct(string ProductName)
         {
             return ProductData.SearchProduct(ProductName);
@@ -38,6 +44,14 @@ namespace Project.Bussiness_Layer
         public static bool GetbyProductID(int productID)
         {
             return ProductData.GetbyProductID(productID);
+        }
+        public static bool UpdateQuantity(BillDetail a)
+        {
+            return ProductData.UpdateQuantity(a);
+        }
+        public static bool CheckQuantity(BillDetail a)
+        {
+            return ProductData.CheckQuantity(a);
         }
     }
 }

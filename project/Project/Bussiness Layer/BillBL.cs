@@ -40,5 +40,13 @@ namespace Project.Bussiness_Layer
         {
             return BillData.PrintDay(d1, d2);
         }
+        public static DataTable ReportMonth(int d1)
+        {
+            return BillData.ReportMonth(d1);
+        }
+        public static DataTable ReportYear()
+        {
+            return BillData.ReportYear();
+        }
     }
 }

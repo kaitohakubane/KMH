@@ -52,15 +52,15 @@ namespace Project.Access_Data
             string sql = "sp_DisplayAllBill";
             return DataProvider.ExecuteQueryWithDataSet(sql, System.Data.CommandType.StoredProcedure).Tables[0];
         }
-        public static bool UpdateBill(Bill a)
-        {
-            string sql = "sp_UpdateBill";
-            SqlParameter StaffID = new SqlParameter("@StaffID", a.StaffID);
-            SqlParameter CodeID = new SqlParameter("@CodeID", a.CodeID);
-            SqlParameter Date = new SqlParameter("@Date", a.Date);
-            SqlParameter CusID = new SqlParameter("@CusID", a.CusID);
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, StaffID, CodeID, Date, CusID);
-        }
+        //public static bool UpdateBill(Bill a)
+        //{
+        //    string sql = "sp_UpdateBill";
+        //    SqlParameter StaffID = new SqlParameter("@StaffID", a.StaffID);
+        //    SqlParameter CodeID = new SqlParameter("@CodeID", a.CodeID);
+        //    SqlParameter Date = new SqlParameter("@Date", a.Date);
+        //    SqlParameter CusID = new SqlParameter("@CusID", a.CusID);
+        //    return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, StaffID, CodeID, Date, CusID);
+        //}
         public static Bill GetbyDay(DateTime date)
         {
             string sql = "sp_GetBill";
@@ -79,6 +79,26 @@ namespace Project.Access_Data
             }
             else
                 return null;
+        }
+        public static DataTable ReportMonth(int date1)
+        {
+            string sql = "sp_ReportMonth";
+            SqlParameter d1 = new SqlParameter("@Date1", date1);
+            return DataProvider.ExecuteQueryWithDataSet(sql, System.Data.CommandType.StoredProcedure, d1).Tables[0];
+        }
+        public static DataTable ReportYear()
+        {
+            string sql = "sp_ReportYear";
+            return DataProvider.ExecuteQueryWithDataSet(sql, System.Data.CommandType.StoredProcedure).Tables[0];
+        }
+
+        public static bool UpdateBill(Bill a)
+        {
+            string sql = "sp_UpdateBill";
+            SqlParameter BillID = new SqlParameter("@BillID", a.BillID);
+            SqlParameter CusID = new SqlParameter("@CusID", a.CusID);
+            SqlParameter Total = new SqlParameter("@Total", a.Total);
+            return DataProvider.ExecuteNonQuery(sql, CommandType.StoredProcedure, BillID, CusID, Total);
         }
     }
 }

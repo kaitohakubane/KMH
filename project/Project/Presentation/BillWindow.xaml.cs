@@ -35,10 +35,12 @@ namespace Project.Presentation
         public void loadData()
         {
             txtDate.Text = date.ToShortDateString();
+            txtBillID.IsEnabled = false;
             txtDate.IsEnabled = false;
             txtStaff.Text = curStaff.StaffID.ToString();
             txtDiscount.Text = "1";
             txtCusName.Text = "Ban le";
+            txtStaff.IsEnabled = false;
             BillBL.AddBill(new Bill(txtStaff.Text,int.Parse(txtDiscount.Text),DateTime.Parse(txtDate.Text)));
             txtBillID.Text = BillBL.GetMaxID().ToString();
 
@@ -60,14 +62,21 @@ namespace Project.Presentation
             if (ProductBL.GetbyProductID(ProductID))
             {
                 BillDetail bill = new BillDetail(BillID, ProductID, Quantity);
-                if (BillDetailBL.isExist(bill))
+                if (ProductBL.CheckQuantity(bill))
                 {
-                    BillDetailBL.AddQuantity(bill);
+                    if (BillDetailBL.isExist(bill))
+                    {
+                        BillDetailBL.AddQuantity(bill);
+                    }
+                    else
+                        BillDetailBL.AddBillDetails(bill);
+                    txtQuantity.Text = "1";
+                    txtAdd.Text = "";
                 }
                 else
-                    BillDetailBL.AddBillDetails(bill);
-                txtQuantity.Text = "1";
-                txtAdd.Text = "";
+                {
+                    System.Windows.Forms.MessageBox.Show("Not enough quantity in stock");
+                }             
                 loadGrid();
                        
             }
@@ -86,7 +95,21 @@ namespace Project.Presentation
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            DataTable dt2 = new DataTable();
+            dt2=BillDetailBL.GetSellQuantity(int.Parse(txtBillID.Text));
+            if (dt2.Rows.Count == 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Bill has no product!");
+            }
+            else
+            {
+                for (int i = 0; i < dt2.Rows.Count; i++)
+                {
+                    ProductBL.UpdateQuantity(new BillDetail(int.Parse(txtBillID.Text), int.Parse(dt2.Rows[i][0].ToString()), int.Parse(dt2.Rows[i][1].ToString())));
 
+                }
+                this.Close();
+            }
         }
     }
 }

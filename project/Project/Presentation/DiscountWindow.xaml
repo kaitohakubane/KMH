@@ -21,8 +21,6 @@
         <TextBox x:Name="txtType" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Margin="72,76,0,0"/>
         <TextBox x:Name="txtRate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Margin="72,104,0,0"/>
         <TextBox x:Name="txtProIDGift" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Margin="72,132,0,0"/>
-        <TextBox x:Name="txtDateStart" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Margin="72,160,0,0"/>
-        <TextBox x:Name="txtDateEnd" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Margin="72,188,0,0"/>
         <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="60,228,0,0" Click="btnOK_Click" Foreground="#FF1800FF">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -39,6 +37,8 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <DatePicker x:Name="dpStart" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,159,0,0"/>
+        <DatePicker x:Name="dpEnd" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,194,0,0"/>
 
     </Grid>
 </Window>

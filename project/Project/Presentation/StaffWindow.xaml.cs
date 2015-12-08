@@ -41,35 +41,64 @@ namespace Project.Presentation
                 lblName.Content = "Update Staff";
                 txtID.IsEnabled = false;
             }
+            cbxRole.SelectedIndex = 0;
         }
         public bool isValid()
         {
-            if (txtID.Text.Length < 2)
+            int n=0;
+            long m=0;
+            if (txtID.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("ID is not null");
                 return false;
             }
-            if (txtName.Text.Length < 1)
+            if (txtID.Text.Trim().Length < 8)
+            {
+                System.Windows.Forms.MessageBox.Show("ID must be over 8 character!");
+                    return false;
+            }
+            if (txtName.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("Name is not null");
                 return false;
             }
-            if (txtAge.Text.Length < 1)
+            if (txtAge.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("Age is not null");
                 return false;
             }
-            if (int.Parse(txtAge.Text) < 0)
+            if (!int.TryParse(txtAge.Text, out n))
             {
-                System.Windows.Forms.MessageBox.Show("Age>0");
+                System.Windows.Forms.MessageBox.Show("Age must be number and not contain spaces!");
                 return false;
             }
-            if (long.Parse(txtSalary.Text) < 0)
+            
+            if (int.Parse(txtAge.Text) <= 0 || int.Parse(txtAge.Text)>=100)
+            {
+                System.Windows.Forms.MessageBox.Show("0<Age<100");
+                return false;
+            }
+            if (txtSalary.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Salary is not null");
+                return false;
+            }
+            if (!long.TryParse(txtSalary.Text, out m))
+            {
+                System.Windows.Forms.MessageBox.Show("Salary must be number and not contain spaces!");
+                return false;
+            }
+            
+            if (long.Parse(txtSalary.Text) <= 0)
             {
                 System.Windows.Forms.MessageBox.Show("Salary>0");
                 return false;
             }
-            
+            if (txtPassword.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Password is not null");
+                return false;
+            }           
             return true;
         }
         private void btnOK_Click(object sender, RoutedEventArgs e)
@@ -77,17 +106,16 @@ namespace Project.Presentation
             if (isValid())
             {
                 if (isUpdate)
-                {
-                    // Dong nay` bịnh quá              
+                {           
                     try
                     {
                         Staff sta = new Staff();
-                        sta.StaffID = txtID.Text;
-                        sta.StaffName = txtName.Text;
+                        sta.StaffID = txtID.Text.Trim().Replace(" ","");
+                        sta.StaffName = txtName.Text.Trim();
                         sta.StaffAge = int.Parse(txtAge.Text);
                         sta.StaffRole = cbxRole.SelectedItem.ToString();
                         sta.StaffSalary = float.Parse(txtSalary.Text);
-                        sta.StaffPassword = txtPassword.Text;
+                        sta.StaffPassword = txtPassword.Text.Trim();
                         sta.isActive = true;
                         StaffBL.UpdateStaff(sta);
                         System.Windows.Forms.MessageBox.Show("Success");
@@ -103,12 +131,12 @@ namespace Project.Presentation
                     try
                     {
                         Staff sta = new Staff();
-                        sta.StaffID = txtID.Text;
-                        sta.StaffName = txtName.Text;
+                        sta.StaffID = txtID.Text.Trim().Replace(" ","");
+                        sta.StaffName = txtName.Text.Trim();
                         sta.StaffAge = int.Parse(txtAge.Text);
                         sta.StaffRole = cbxRole.SelectedItem.ToString();
                         sta.StaffSalary = float.Parse(txtSalary.Text);
-                        sta.StaffPassword = txtPassword.Text;
+                        sta.StaffPassword = txtPassword.Text.Trim();
                         sta.isActive = true;
                         StaffBL.AddStaff(sta);
                         System.Windows.Forms.MessageBox.Show("Success");
@@ -119,8 +147,7 @@ namespace Project.Presentation
                         System.Windows.Forms.MessageBox.Show("Error " + h.Message);
                     }
                 }
-            }
-            
+            }            
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

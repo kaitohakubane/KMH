@@ -33,5 +33,11 @@ namespace Project.Access_Data
             SqlParameter Quantity = new SqlParameter("@Quantity", a.Quantity);
             return DataProvider.ExecuteNonQuery(sql, CommandType.StoredProcedure, BillID, ProID, Quantity);
         }
+        public static DataTable GetSellQuantity(int a)
+        {
+            string sql = "sp_GetSellQuantity";
+            SqlParameter BillID = new SqlParameter("@BillID", a);
+            return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, BillID).Tables[0];
+        }
     }
 }   

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Project.Bussiness_Layer;
+using Project.Entity;
 
 namespace Project.Presentation
 {
@@ -22,12 +23,13 @@ namespace Project.Presentation
     {
         string choice;
         DataTable dt = new DataTable();
-        
-        public ListWindow(string Order)
+        Staff curStaff;
+        public ListWindow(string Order,Staff sta)
         {
             InitializeComponent();
             lblName2.Content = Order;
-            choice = Order;            
+            choice = Order;
+            curStaff = sta;
             loadData();
             dataGrid.IsReadOnly = true;
         }
@@ -89,8 +91,16 @@ namespace Project.Presentation
                 {                    
                     if (choice.Equals("Staff"))
                     {
-                        StaffBL.DeleteStaff(row[0].ToString());
-                        loadData();                        
+                        if (StaffBL.GefbyID(row[0].ToString()).StaffID.Equals(curStaff.StaffID))
+                        {
+                            System.Windows.Forms.MessageBox.Show("Can not delete current user");
+                        }
+                        else
+                        {
+                            StaffBL.DeleteStaff(row[0].ToString());
+                        }
+
+                        loadData();
                     }
                     if (choice.Equals("Customer"))
                     {
@@ -112,6 +122,7 @@ namespace Project.Presentation
                         DiscountBL.DeleteDiscount(row[0].GetHashCode());
                         loadData();
                     }
+                    System.Windows.Forms.MessageBox.Show("Deleted!");
                 }                     
             }
             catch (Exception g)
@@ -187,8 +198,8 @@ namespace Project.Presentation
                     dis.txtType.Text = row[1].ToString();
                     dis.txtRate.Text = row[2].ToString();
                     dis.txtProIDGift.Text = row[3].ToString();
-                    dis.txtDateStart.Text = row[4].ToString();
-                    dis.txtDateEnd.Text = row[5].ToString();
+                    dis.dpStart.Text = row[4].ToString();
+                    dis.dpEnd.Text = row[5].ToString();
                     dis.ShowDialog();
                     loadData();
                 }
