@@ -10,7 +10,7 @@
                 <chartingToolkit:Chart Height="420" HorizontalAlignment="Left" 
             Margin="95,-56,0,936" Name="ColumnChart1" Title="ReportOfMonth"
             VerticalAlignment="Bottom" Width="800" LegendTitle="">
-                    <chartingToolkit:ColumnSeries Title="Magin" DependentValuePath="Value"  IndependentValuePath="Key" ItemsSource="{Binding}"
+                    <chartingToolkit:ColumnSeries Title="Revenue" DependentValuePath="Value"  IndependentValuePath="Key" ItemsSource="{Binding}"
             IsSelectionEnabled="True"></chartingToolkit:ColumnSeries>
                 </chartingToolkit:Chart>
                 <DatePicker Name="dpDateEnd" HorizontalAlignment="Left" Margin="425,485,0,0" VerticalAlignment="Top"/>
