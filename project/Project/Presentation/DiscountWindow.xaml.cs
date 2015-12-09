@@ -25,12 +25,14 @@ namespace Project.Presentation
         {
             InitializeComponent();
             isUpdate = Update;
-            lblName.Content = "Add Discount";
-            if (isUpdate)
-            {
-                txtCodeID.IsEnabled = false;
-            }    
+            lblName.Content = "Add Discount";            
         }        
+
+        public bool isValid()
+        {
+            return true;
+        }
+
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             if (isUpdate)
@@ -38,11 +40,8 @@ namespace Project.Presentation
                 lblName.Content = "Update Discount";
                 try
                 {
-                    Discount dis = new Discount();
-                    dis.CodeID = int.Parse(txtCodeID.Text);
-                    dis.Type = txtType.Text;
+                    Discount dis = new Discount();                   
                     dis.Rate = int.Parse(txtRate.Text);
-                    dis.ProIDGift = int.Parse(txtProIDGift.Text);
                     dis.DateStart = (DateTime)dpStart.SelectedDate;
                     dis.DateEnd = (DateTime)dpEnd.SelectedDate;
                     DiscountBL.UpdateDiscount(dis);
@@ -59,11 +58,8 @@ namespace Project.Presentation
                 try
                 {
                     Discount dis = new Discount();
-                    dis.CodeID = int.Parse(txtCodeID.Text);
-                    dis.Type = txtType.Text;
                     dis.Rate = int.Parse(txtRate.Text);
-                    dis.ProIDGift = int.Parse(txtProIDGift.Text);
-                    dis.DateStart = (DateTime)dpStart.SelectedDate;
+                    dis.DateStart = DateTime.Parse(dpStart.Text.ToString());
                     dis.DateEnd = (DateTime)dpEnd.SelectedDate;
                     DiscountBL.AddDiscount(dis);
                     System.Windows.Forms.MessageBox.Show("Success");

@@ -5,23 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.Presentation"
         mc:Ignorable="d"
-        Title="Supplier" Height="278.358" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Supplier" Height="223.958" Width="298.8" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="/Project;component/Image/wallpaper02.jpg"/>
     </Window.Background>
     <Grid>
         <Label x:Name="lblName" Content="Label" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" FontFamily="French Script MT" FontSize="20"/>
-        <Label x:Name="label" Content="SupplierID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,46,0,0" Foreground="White"/>
-        <Label x:Name="label_Copy" Content="SupplierName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,74,0,0" Foreground="White"/>
-        <Label x:Name="label_Copy1" Content="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0" Foreground="White"/>
-        <Label x:Name="label_Copy2" Content="Debt" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,130,0,0" Foreground="White"/>
-        <Label x:Name="label_Copy3" Content="Phone" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,156,0,0" Foreground="White"/>
-        <TextBox x:Name="txtSupID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="113,46,0,0"/>
-        <TextBox x:Name="txtSupName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="113,74,0,0"/>
-        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="113,102,0,0"/>
-        <TextBox x:Name="txtDebt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="113,130,0,0"/>
-        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="113,158,0,0"/>
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="50,210,0,0" Click="btnOK_Click" Foreground="#FF0003FF">
+        <Label x:Name="label_Copy" Content="SupplierName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,41,0,0" Foreground="White"/>
+        <Label x:Name="label_Copy1" Content="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,67,0,0" Foreground="White"/>
+        <Label x:Name="label_Copy3" Content="Phone" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,99,0,0" Foreground="White"/>
+        <TextBox x:Name="txtSupName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="114,41,0,0"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="114,70,0,0"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Margin="115,102,0,0"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="53,153,0,0" Click="btnOK_Click" Foreground="#FF0003FF">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00F1FF" Offset="0"/>
@@ -29,7 +25,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="163,210,0,0" Click="btnCancel_Click" Foreground="#FF0003FF">
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="166,153,0,0" Click="btnCancel_Click" Foreground="#FF0003FF">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00F1FF" Offset="0"/>

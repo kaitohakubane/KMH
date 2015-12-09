@@ -59,9 +59,7 @@ C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.csproj.Ge
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.exe
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.pdb
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SearchWindow.g.cs
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\BillDetailsWindow.g.cs
-C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SearchWindow.baml
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\BillDetailsWindow.baml
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\DiscountWindow.g.cs
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SupplierWindow.g.cs
@@ -89,3 +87,5 @@ C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\bin\Debug\WPFToolkit.Design
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\bin\Debug\WPFToolkit.VisualStudio.Design.pdb
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\GraphDay.baml
 C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\GraphDay.g.cs
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SearchCustomer.g.cs
+C:\Users\Admin\Desktop\ShengShin\KMH\project\Project\obj\Debug\Presentation\SearchCustomer.baml

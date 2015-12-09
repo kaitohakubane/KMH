@@ -12,15 +12,12 @@ namespace Project.Access_Data
     {
         public static bool AddDiscount(Discount a)
         {
-            string sql = "sp_InsertDiscount";
-            SqlParameter CodeID = new SqlParameter("@CodeID", a.CodeID);
-            SqlParameter Type = new SqlParameter("@Type", a.Type);
+            string sql = "sp_InsertDiscount";       
             SqlParameter Rate = new SqlParameter("@Rate", a.Rate);
-            SqlParameter ProIDGift = new SqlParameter("@ProIDGift", a.ProIDGift);
             SqlParameter DateStart = new SqlParameter("@DateStart", a.DateStart);
             SqlParameter DateEnd = new SqlParameter("@DateEnd", a.DateEnd);
 
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, CodeID, Type, Rate, ProIDGift, DateStart, DateEnd);
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, Rate, DateStart, DateEnd);
         }
         public static bool DeleteDiscount(int inCodeID)
         {
@@ -36,14 +33,11 @@ namespace Project.Access_Data
         public static bool UpdateDiscount(Discount a)
         {
             string sql = "sp_UpdateDiscount";
-            SqlParameter CodeID = new SqlParameter("@CodeID", a.CodeID);
-            SqlParameter Type = new SqlParameter("@Type", a.Type);
             SqlParameter Rate = new SqlParameter("@Rate", a.Rate);
-            SqlParameter ProIDGift = new SqlParameter("@ProIDGift", a.ProIDGift);
             SqlParameter DateStart = new SqlParameter("@DateStart", a.DateStart);
             SqlParameter DateEnd = new SqlParameter("@DateEnd", a.DateEnd);
 
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, CodeID, Type, Rate, ProIDGift, DateStart, DateEnd);
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, Rate,DateStart, DateEnd);
         }
         public static Discount GetbyDay(DateTime dayStart, DateTime dayEnd)
         {
@@ -57,11 +51,9 @@ namespace Project.Access_Data
                 dr.Read();
                 Discount a = new Discount();
                 a.CodeID = dr.GetInt32(0);
-                a.Type = dr.GetString(1);
-                a.Rate = dr.GetInt32(2);
-                a.ProIDGift = dr.GetInt32(3);
-                a.DateStart = dr.GetDateTime(4);
-                a.DateEnd = dr.GetDateTime(5);
+                a.Rate = dr.GetInt32(1);
+                a.DateStart = dr.GetDateTime(2);
+                a.DateEnd = dr.GetDateTime(3);
                 return a;
             }
             else

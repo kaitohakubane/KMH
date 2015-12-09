@@ -10,19 +10,17 @@ namespace Project.Entity
         private int mSupID;
         private string mSupName;
         private string mSupAddress;
-        private float mSupDept;
-        private int mSupPhone;
+        private string mSupPhone;
         private bool misActive;
         public Supplier()
         {
 
         }
-        public Supplier(int mSupID, string mSupName, string mSupAddress, float mSupDept, int mSupPhone, bool misActive)
+        public Supplier(int mSupID, string mSupName, string mSupAddress, string mSupPhone, bool misActive)
         {
             this.mSupID = mSupID;
             this.mSupName = mSupName;
-            this.mSupAddress = mSupAddress;
-            this.mSupDept = mSupDept;
+            this.mSupAddress = mSupAddress;            
             this.mSupPhone = mSupPhone;
             this.misActive = misActive;
         }
@@ -73,22 +71,9 @@ namespace Project.Entity
                     throw new Exception("SupAddress invalid.");
                 mSupAddress = value;
             }
-        }
+        }       
 
-        public float SupDept
-        {
-            get
-            {
-                return mSupDept;
-            }
-
-            set
-            {
-                mSupDept = value;
-            }
-        }
-
-        public int SupPhone
+        public string SupPhone
         {
             get
             {
@@ -97,6 +82,9 @@ namespace Project.Entity
 
             set
             {
+
+                if (value == string.Empty)
+                    throw new Exception("Supplier Phone invalid.");
                 mSupPhone = value;
             }
         }

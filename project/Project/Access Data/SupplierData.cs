@@ -13,14 +13,10 @@ namespace Project.Access_Data
         public static bool AddSupplier(Supplier a)
         {
             string sql = "sp_InsertSupplier";
-            SqlParameter SupID = new SqlParameter("@SupID", a.SupID);
             SqlParameter SupName = new SqlParameter("@SupName", a.SupName);
             SqlParameter SupAddress = new SqlParameter("@SupAddress", a.SupAddress);
-            SqlParameter SupDept = new SqlParameter("@SupDept", a.SupDept);
             SqlParameter SupPhone = new SqlParameter("@SupPhone", a.SupPhone);
-            
-
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, SupID, SupName, SupAddress, SupDept, SupPhone);
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, SupName, SupAddress, SupPhone);
         }
         public static bool DeleteSupplier(int inSupID)
         {
@@ -39,11 +35,8 @@ namespace Project.Access_Data
             SqlParameter SupID = new SqlParameter("@SupID", a.SupID);
             SqlParameter SupName = new SqlParameter("@SupName", a.SupName);
             SqlParameter SupAddress = new SqlParameter("@SupAddress", a.SupAddress);
-            SqlParameter SupDept = new SqlParameter("@SupDept", a.SupDept);
             SqlParameter SupPhone = new SqlParameter("@SupPhone", a.SupPhone);
-
-
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, SupID, SupName, SupAddress, SupDept, SupPhone);
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, SupID, SupName, SupPhone,SupAddress);
         }
         public static Supplier GetbySupplierName(string name)
         {
@@ -57,8 +50,7 @@ namespace Project.Access_Data
                 a.SupID = dr.GetInt32(0);
                 a.SupName = dr.GetString(1);
                 a.SupAddress = dr.GetString(2);
-                a.SupDept = dr.GetInt32(3);
-                a.SupPhone = dr.GetInt32(4);
+                a.SupPhone = dr.GetString(3);
                 return a;
             }
             else

@@ -25,55 +25,80 @@ namespace Project.Presentation
         {
             InitializeComponent();
             isUpdate = Update;
-            lblName.Content = "Add Supplier";
-            if (isUpdate)
+            lblName.Content = "Add Supplier";            
+        }
+
+        public bool isValid()
+        {
+            long n;
+            if (txtSupName.Text.Trim() == "")
             {
-                txtSupID.IsEnabled = false;
+                System.Windows.Forms.MessageBox.Show("Name is not null");
+                txtSupName.Focus();
+                return false;
             }
+
+            if (txtAddress.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Address is not null");
+                txtAddress.Focus();
+                return false;
+            }
+            if (txtPhone.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Phone number is not null");
+                txtPhone.Focus();
+                return false;
+            }
+            if(!long.TryParse(txtPhone.Text,out n))
+            {
+                System.Windows.Forms.MessageBox.Show("Phone number not contain Character and Spaces!");
+                txtPhone.Focus();
+                return false;
+            }
+            return true;
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            if (isUpdate)
+            if (isValid())
             {
-                lblName.Content = "Update Supplier";
-                try
+                if (isUpdate)
                 {
-                    Supplier sup = new Supplier();
-                    sup.SupID = int.Parse(txtSupID.Text);
-                    sup.SupName = txtSupName.Text;
-                    sup.SupAddress = txtAddress.Text;
-                    sup.SupDept = int.Parse(txtDebt.Text);
-                    sup.SupPhone = int.Parse(txtPhone.Text);
-                    SupplierBL.UpdateSupplier(sup);
-                    System.Windows.Forms.MessageBox.Show("Success");
-                    this.Close();
+                    lblName.Content = "Update Supplier";
+                    try
+                    {
+                        Supplier sup = new Supplier();
+                        sup.SupName = txtSupName.Text;
+                        sup.SupAddress = txtAddress.Text;
+                        sup.SupPhone = txtPhone.Text;
+                        SupplierBL.UpdateSupplier(sup);
+                        System.Windows.Forms.MessageBox.Show("Success");
+                        this.Close();
+                    }
+                    catch (Exception h)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                    }
                 }
-                catch (Exception h)
+                else
                 {
-                    System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                    try
+                    {
+                        Supplier sup = new Supplier();
+                        sup.SupName = txtSupName.Text;
+                        sup.SupAddress = txtAddress.Text;
+                        sup.SupPhone = txtPhone.Text;
+                        SupplierBL.AddSupplier(sup);
+                        System.Windows.Forms.MessageBox.Show("Success");
+                        this.Close();
+                    }
+                    catch (Exception h)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                    }
                 }
             }
-            else
-            {                
-                try
-                {
-                    Supplier sup = new Supplier();
-                    sup.SupID = int.Parse(txtSupID.Text);
-                    sup.SupName = txtSupName.Text;
-                    sup.SupAddress = txtAddress.Text;
-                    sup.SupDept = int.Parse(txtDebt.Text);
-                    sup.SupPhone = int.Parse(txtPhone.Text);
-                    SupplierBL.AddSupplier(sup);
-                    System.Windows.Forms.MessageBox.Show("Success");
-                    this.Close();
-                }
-                catch (Exception h)
-                {
-                    System.Windows.Forms.MessageBox.Show("Error " + h.Message);
-                }
-            }
-
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

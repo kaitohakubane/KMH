@@ -158,7 +158,7 @@ namespace Project.Presentation
             {
                 if (!CustomerBL.GetByID(CusID))
                 {
-                    SearchWindow frm = new SearchWindow();
+                    SearchCustomer frm = new SearchCustomer();
                     frm.ShowDialog();
                 }
             }

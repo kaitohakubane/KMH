@@ -181,11 +181,9 @@ namespace Project.Presentation
                 {
                     SupplierWindow sup = new SupplierWindow(true);
                     sup.lblName.Content = "Update Supplier";
-                    sup.txtSupID.Text = row[0].ToString();
                     sup.txtSupName.Text = row[1].ToString();
                     sup.txtAddress.Text = row[2].ToString();
-                    sup.txtDebt.Text = row[3].ToString();
-                    sup.txtPhone.Text = row[4].ToString();
+                    sup.txtPhone.Text = row[3].ToString();
                     sup.ShowDialog();
                     loadData();
                 }
@@ -193,12 +191,9 @@ namespace Project.Presentation
                 {
                     DiscountWindow dis = new DiscountWindow(true);
                     dis.lblName.Content = "Update Discount";
-                    dis.txtCodeID.Text = row[0].ToString();
-                    dis.txtType.Text = row[1].ToString();
-                    dis.txtRate.Text = row[2].ToString();
-                    dis.txtProIDGift.Text = row[3].ToString();
-                    dis.dpStart.Text = row[4].ToString();
-                    dis.dpEnd.Text = row[5].ToString();
+                    dis.txtRate.Text = row[1].ToString();
+                    dis.dpStart.Text = row[2].ToString();
+                    dis.dpEnd.Text = row[3].ToString();
                     dis.ShowDialog();
                     loadData();
                 }

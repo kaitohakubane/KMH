@@ -8,10 +8,8 @@ namespace Project.Entity
     
     class Discount
     {
-        private int mCodeID;
-        private string mType;
-        private float mRate;
-        private int mProIDGift;
+        private int mCodeID;        
+        private int mRate;        
         private DateTime mDateStart;
         private DateTime mDateEnd;
         private bool misActive;
@@ -19,12 +17,10 @@ namespace Project.Entity
         {
 
         }
-        public Discount(int mCodeID, string mType, float mRate, int mProIDGift, DateTime mDateStart, DateTime mDateEnd, bool misActive)
+        public Discount(int mCodeID, int mRate, DateTime mDateStart, DateTime mDateEnd, bool misActive)
         {
-            this.mCodeID = mCodeID;
-            this.mType = mType;
-            this.mRate = mRate;
-            this.mProIDGift = mProIDGift;
+            this.mCodeID = mCodeID;            
+            this.mRate = mRate;            
             this.mDateStart = mDateStart;
             this.mDateEnd = mDateEnd;
             this.misActive = misActive;
@@ -45,24 +41,9 @@ namespace Project.Entity
             {
                 mCodeID = value;
             }
-        }
+        }        
 
-        public string Type
-        {
-            get
-            {
-                return mType;
-            }
-
-            set
-            {
-                if (value == string.Empty)
-                    throw new Exception("Type invalid.");
-                mType = value;
-            }
-        }
-
-        public float Rate
+        public int Rate
         {
             get
             {
@@ -73,24 +54,7 @@ namespace Project.Entity
             {
                 mRate = value;
             }
-        }
-
-        public int ProIDGift
-        {
-            get
-            {
-                return mProIDGift;
-            }
-
-            set
-            {
-                mProIDGift = value;
-            }
-        }
-
-        
-
-        
+        }    
 
         public DateTime DateStart
         {
