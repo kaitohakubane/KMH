@@ -34,5 +34,9 @@ namespace Project.Bussiness_Layer
         {
             return CustomerData.SearchCustomer(CustomerName);
         }
+        public static bool GetByID(int cusID)
+        {
+            return CustomerData.GetByID(cusID);
+        }
     }
 }

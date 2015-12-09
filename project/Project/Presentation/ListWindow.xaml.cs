@@ -154,8 +154,7 @@ namespace Project.Presentation
                 if (choice.Equals("Customer"))
                 {
                     CustomerWindow cus = new CustomerWindow(true);
-                    cus.lblName.Content = "Update Customer";
-                    cus.txtID.Text =row[0].ToString();
+                    cus.lblName.Content = "Update Customer";                    
                     cus.txtName.Text= row[1].ToString();
                     cus.txtAddress.Text= row[2].ToString();
                     cus.txtPhoneNo.Text= row[3].ToString();

@@ -25,11 +25,7 @@ namespace Project.Presentation
         {
             InitializeComponent();
             isUpdate = Update;
-            lblName.Content = "Add Customer";
-            if (isUpdate)
-            {
-                txtID.IsEnabled = false;
-            }                  
+            lblName.Content = "Add Customer";                           
         }
         public bool isValid()
         {
@@ -90,8 +86,7 @@ namespace Project.Presentation
                     lblName.Content = "Update Customer";
                     try
                     {
-                        Customer cus = new Customer();
-                        cus.CusID = int.Parse(txtID.Text);
+                        Customer cus = new Customer();                        
                         cus.CusName = txtName.Text;
                         cus.CusAddress = txtAddress.Text;
                         cus.CusPhone = int.Parse(txtPhoneNo.Text);
@@ -108,8 +103,7 @@ namespace Project.Presentation
                 {
                     try
                     {
-                        Customer cus = new Customer();
-                        cus.CusID = int.Parse(txtID.Text);
+                        Customer cus = new Customer();                        
                         cus.CusName = txtName.Text;
                         cus.CusAddress = txtAddress.Text;
                         cus.CusPhone = int.Parse(txtPhoneNo.Text);

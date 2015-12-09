@@ -26,6 +26,10 @@ namespace Project.Bussiness_Layer
         {
             return BillDetailData.GetSellQuantity(a);
         }
+        public static bool DeleteBillDetail(BillDetail a)
+        {
+            return BillDetailData.DeleteBillDetail(a);
+        }
     }
 }
 

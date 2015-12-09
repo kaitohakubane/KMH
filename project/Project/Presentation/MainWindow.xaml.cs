@@ -42,6 +42,8 @@ namespace Project
                 //Dealer: Show cái j lên thì bỏ vào đây
                 btnStaff.IsEnabled = false;
             }
+            NotificationWindow noti = new NotificationWindow();
+
         }
 
         private void btnStaff_Click(object sender, RoutedEventArgs e)

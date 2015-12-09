@@ -86,9 +86,6 @@
     <Compile Include="Presentation\GraphDay.xaml.cs">
       <DependentUpon>GraphDay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\SearchWindow.xaml.cs">
-      <DependentUpon>SearchWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\BillDetailsWindow.xaml.cs">
       <DependentUpon>BillDetailsWindow.xaml</DependentUpon>
     </Compile>
@@ -116,6 +113,9 @@
     <Compile Include="Presentation\ProductWindow.xaml.cs">
       <DependentUpon>ProductWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\SearchCustomer.xaml.cs">
+      <DependentUpon>SearchCustomer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\StaffWindow.xaml.cs">
       <DependentUpon>StaffWindow.xaml</DependentUpon>
     </Compile>
@@ -130,10 +130,6 @@
     <Page Include="Presentation\GraphDay.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Presentation\SearchWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\BillDetailsWindow.xaml">
       <SubType>Designer</SubType>
@@ -179,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Presentation\ProductWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\SearchCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

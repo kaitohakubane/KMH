@@ -45,6 +45,30 @@ namespace Project.Presentation
             txtBillID.Text = BillBL.GetMaxID().ToString();
 
         }
+        public bool isValid()
+        {
+            int n;
+            if (txtQuantity.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Quantity is not null");
+                txtQuantity.Focus();
+                return false;
+            }
+            if (!int.TryParse(txtQuantity.Text, out n))
+            {
+                System.Windows.Forms.MessageBox.Show("Quantity must be number and not contain spaces!");
+                txtQuantity.Focus();
+                return false;
+            }
+
+            if (int.Parse(txtQuantity.Text) <= 0)
+            {
+                System.Windows.Forms.MessageBox.Show("0<Quantity");
+                txtQuantity.Focus();
+                return false;
+            }
+            return true;
+        }
         public void loadGrid()
         {
             dt = BillBL.GetProductInBill(int.Parse(txtBillID.Text));
@@ -53,44 +77,46 @@ namespace Project.Presentation
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
-            int ProductID = 0;
-            int.TryParse(txtAdd.Text, out ProductID);
-            int Quantity = int.Parse(txtQuantity.Text);
-            int BillID = int.Parse(txtBillID.Text);
-            long m = 0;
-            if (ProductBL.GetbyProductID(ProductID))
+            if (isValid())
             {
-                BillDetail bill = new BillDetail(BillID, ProductID, Quantity);
-                if (ProductBL.CheckQuantity(bill))
+                int ProductID = 0;
+                int.TryParse(txtAdd.Text, out ProductID);
+                int Quantity = int.Parse(txtQuantity.Text);
+                int BillID = int.Parse(txtBillID.Text);
+                long m = 0;
+                if (ProductBL.GetbyProductID(ProductID))
                 {
-                    if (BillDetailBL.isExist(bill))
+                    BillDetail bill = new BillDetail(BillID, ProductID, Quantity);
+                    if (ProductBL.CheckQuantity(bill))
                     {
-                        BillDetailBL.AddQuantity(bill);
+                        if (BillDetailBL.isExist(bill))
+                        {
+                            BillDetailBL.AddQuantity(bill);
+                        }
+                        else
+                            BillDetailBL.AddBillDetails(bill);
+                        txtQuantity.Text = "1";
+                        txtAdd.Text = "";
                     }
                     else
-                        BillDetailBL.AddBillDetails(bill);
-                    txtQuantity.Text = "1";
-                    txtAdd.Text = "";
+                    {
+                        System.Windows.Forms.MessageBox.Show("Not enough quantity in stock");
+                    }
+                    loadGrid();
+
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("Not enough quantity in stock");
-                }             
-                loadGrid();
-                       
-            }
-            else
-            {
-                BillDetails frm = new BillDetails(BillID);
-                frm.ShowDialog();
-                loadGrid();
-            }
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                m += long.Parse(dt.Rows[i][4].ToString());
-            }
-            txtSum.Text = m.ToString();
+                    BillDetails frm = new BillDetails(BillID);
+                    frm.ShowDialog();
+                    loadGrid();
+                }
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    m += long.Parse(dt.Rows[i][4].ToString());
+                }
+                txtSum.Text = m.ToString();
+            }            
         }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
@@ -102,14 +128,41 @@ namespace Project.Presentation
                 System.Windows.Forms.MessageBox.Show("Bill has no product!");
             }
             else
-            {
+                {
                 for (int i = 0; i < dt2.Rows.Count; i++)
                 {
-                    ProductBL.UpdateQuantity(new BillDetail(int.Parse(txtBillID.Text), int.Parse(dt2.Rows[i][0].ToString()), int.Parse(dt2.Rows[i][1].ToString())));
-
+                    if (ProductBL.CheckQuantity(new BillDetail(int.Parse(txtBillID.Text), int.Parse(dt2.Rows[i][0].ToString()),
+                        int.Parse(dt2.Rows[i][1].ToString()))))
+                    {
+                        ProductBL.UpdateQuantity(new BillDetail(int.Parse(txtBillID.Text),
+                            int.Parse(dt2.Rows[i][0].ToString()),
+                            int.Parse(dt2.Rows[i][1].ToString())));
+                        BillBL.UpdateBill(new Bill(int.Parse(txtBillID.ToString()), int.Parse(txtCusName.ToString()), int.Parse(txtSum.ToString())));                   
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Not enough product");
+                        return;
+                    }
                 }
+                System.Windows.Forms.MessageBox.Show("Success");
                 this.Close();
+
             }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            int CusID = 0;
+            if(int.TryParse(txtCusName.ToString(),out CusID))
+            {
+                if (!CustomerBL.GetByID(CusID))
+                {
+                    SearchWindow frm = new SearchWindow();
+                    frm.ShowDialog();
+                }
+            }
+
         }
     }
 }

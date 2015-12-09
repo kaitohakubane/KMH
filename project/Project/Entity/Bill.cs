@@ -104,6 +104,12 @@ namespace Project.Entity
             this.mStaffID = mStaffID;
             this.mDate = mDate;
         }
+        public Bill(int inBillID,int inCusID,int inTotal)
+        {
+            BillID = inBillID;
+            CusID = inCusID;
+            Total = inTotal;
+        }
     }
 }
 

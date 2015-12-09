@@ -63,13 +63,14 @@ namespace Project
                     if (user == null)
                     {
                         System.Windows.Forms.MessageBox.Show("Username not exist!");
+                        txtUsername.Focus();
                     }
                     if (user != null && !user.StaffPassword.Equals(txtPassword.Password))
                     {
                         System.Windows.Forms.MessageBox.Show("Wrong password");
+                        txtPassword.Focus();
                     }
                 }
-
             }
             catch (Exception g)
             {

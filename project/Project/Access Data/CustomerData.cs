@@ -12,12 +12,11 @@ namespace Project.Access_Data
     {
         public static bool AddCustomer(Customer a)
         {
-            string sql = "sp_InsertCustomer";
-            SqlParameter CusID = new SqlParameter("@CusID", a.CusID);
+            string sql = "sp_InsertCustomer";            
             SqlParameter CusName = new SqlParameter("@CusName", a.CusName);
             SqlParameter CusAddress = new SqlParameter("@CusAddress", a.CusAddress);
             SqlParameter CusPhone = new SqlParameter("@CusPhone", a.CusPhone);
-            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, CusID, CusName, CusAddress, CusPhone);
+            return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, CusName, CusAddress, CusPhone);
         }
         public static bool DeleteCustomer(int inCustomerID)
         {
@@ -63,6 +62,20 @@ namespace Project.Access_Data
             CustomerName = '%' + CustomerName + '%';
             SqlParameter inCustomer = new SqlParameter("@CusName", CustomerName);
             return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, inCustomer).Tables[0];
+        }
+
+        public static bool GetByID(int cusID)
+        {
+            string sql = "sp_GetCusbyID";
+            SqlParameter CusID = new SqlParameter("@CusID", cusID);
+            SqlDataReader dr= DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, CusID);
+            return dr.HasRows;
+        }
+        public static DataTable GetCusByID(int cusID)
+        {
+            string sql = "sp_GetCusbyID";
+            SqlParameter CusID = new SqlParameter("@CusID", cusID);
+            return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, CusID).Tables[0];
         }
     }
 }

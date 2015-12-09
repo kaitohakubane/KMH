@@ -47,97 +47,121 @@ namespace Project.Presentation
             if (txtID.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("ID is not null");
+                txtID.Focus();
                 return false;
             }
             if (!int.TryParse(txtID.Text, out n))
             {
                 System.Windows.Forms.MessageBox.Show("ID must be number and not contain spaces!");
+                txtID.Focus();
                 return false;
             }
 
             if (int.Parse(txtID.Text) <= 0 )
             {
                 System.Windows.Forms.MessageBox.Show("0<ID");
+                txtID.Focus();
                 return false;
             }
             if (txtName.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("Name is not null");
+                txtName.Focus();
                 return false;
             }
             if (txtSupplierID.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("SupplierID is not null");
+                txtSupplierID.Focus();
                 return false;
             }
             if (!int.TryParse(txtSupplierID.Text, out n))
             {
                 System.Windows.Forms.MessageBox.Show("SupplierID must be number and not contain spaces!");
+                txtSupplierID.Focus();
                 return false;
             }
 
             if (int.Parse(txtSupplierID.Text) <= 0)
             {
                 System.Windows.Forms.MessageBox.Show("0<SupplierID");
+                txtSupplierID.Focus();
                 return false;
             }
             if (txtProducer.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("Producer is not null");
+                txtProducer.Focus();
                 return false;
             }
             if (txtOrigin.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("Origin is not null");
+                txtOrigin.Focus();
                 return false;
             }
 
             if (txtInPrice.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("InPrice is not null");
+                txtInPrice.Focus();
                 return false;
             }
             if (!int.TryParse(txtInPrice.Text, out n))
             {
                 System.Windows.Forms.MessageBox.Show("InPrice must be number and not contain spaces!");
+                txtInPrice.Focus();
                 return false;
             }
 
             if (int.Parse(txtInPrice.Text) <= 0)
             {
                 System.Windows.Forms.MessageBox.Show("txtInPrice<ID");
+                txtInPrice.Focus();
                 return false;
             }
             if (txtOutPrice.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("OutPrice is not null");
+                txtOutPrice.Focus();
                 return false;
             }
             if (!int.TryParse(txtOutPrice.Text, out n))
             {
                 System.Windows.Forms.MessageBox.Show("OutPrice must be number and not contain spaces!");
+                txtOutPrice.Focus();
                 return false;
             }
 
             if (int.Parse(txtOutPrice.Text) <= 0)
             {
                 System.Windows.Forms.MessageBox.Show("0<OutPrice");
+                txtOutPrice.Focus();
+                return false;
+            }
+            if (int.Parse(txtOutPrice.Text) < int.Parse(txtInPrice.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("InPrice have to smaller than OutPrice!");
+                txtOutPrice.Focus();
                 return false;
             }
             if (txtQuantity.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("Quantity is not null");
+                txtQuantity.Focus();
                 return false;
             }
             if (!int.TryParse(txtQuantity.Text, out n))
             {
                 System.Windows.Forms.MessageBox.Show("Quantity must be number and not contain spaces!");
+                txtQuantity.Focus();
                 return false;
             }
 
             if (int.Parse(txtQuantity.Text) <= 0)
             {
                 System.Windows.Forms.MessageBox.Show("0<Quantity");
+                txtQuantity.Focus();
                 return false;
             }
 

@@ -22,7 +22,7 @@ namespace Project.Access_Data
             string sql = "sp_CheckExist";
             SqlParameter BillID = new SqlParameter("@BillID", a.BillID);
             SqlParameter ProID = new SqlParameter("@ProID", a.ProID);
-            SqlDataReader dr= DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure, BillID, ProID);
+            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, System.Data.CommandType.StoredProcedure, BillID, ProID);
             return dr.HasRows;
         }
         public static bool AddQuantity(BillDetail a)
@@ -39,5 +39,13 @@ namespace Project.Access_Data
             SqlParameter BillID = new SqlParameter("@BillID", a);
             return DataProvider.ExecuteQueryWithDataSet(sql, CommandType.StoredProcedure, BillID).Tables[0];
         }
-    }
+        public static bool DeleteBillDetail(BillDetail a)
+        {
+            string sql = "sp_DeleteBillDetail";
+            SqlParameter BillID = new SqlParameter("@BillID", a.BillID);
+            SqlParameter ProID = new SqlParameter("@ProID", a.ProID);
+            return DataProvider.ExecuteNonQuery(sql, CommandType.StoredProcedure, BillID, ProID);
+        }
+
+    }   
 }   
