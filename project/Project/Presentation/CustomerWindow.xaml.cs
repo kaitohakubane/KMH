@@ -20,12 +20,14 @@ namespace Project.Presentation
     /// </summary>
     public partial class CustomerWindow : Window
     {
-        bool isUpdate;
-        public CustomerWindow(bool Update)
+        bool isUpdate; int CusID;
+        Customer CurCus=null;
+        public CustomerWindow(bool Update,int ID)
         {
             InitializeComponent();
             isUpdate = Update;
-            lblName.Content = "Add Customer";                           
+            lblName.Content = "Add Customer";
+            CusID = ID; 
         }
         public bool isValid()
         {
@@ -86,7 +88,8 @@ namespace Project.Presentation
                     lblName.Content = "Update Customer";
                     try
                     {
-                        Customer cus = new Customer();                        
+                        Customer cus = new Customer();
+                        cus.CusID = CusID;
                         cus.CusName = txtName.Text;
                         cus.CusAddress = txtAddress.Text;
                         cus.CusPhone = int.Parse(txtPhoneNo.Text);

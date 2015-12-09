@@ -26,9 +26,9 @@ namespace Project.Bussiness_Layer
         {
             return DiscountData.UpdateDiscount(a);
         }
-        public static Discount GetbyDay(DateTime dateStart, DateTime dateEnd)
+        public static Discount GetbyDay(DateTime date)
         {
-            return DiscountData.GetbyDay(dateStart, dateEnd);
+            return DiscountData.GetbyDay(date);
         }
     }
 }

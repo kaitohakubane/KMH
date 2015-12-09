@@ -74,17 +74,38 @@ namespace Project.Presentation
                 System.Windows.Forms.MessageBox.Show(g.Message);
             }
         }
-
+        public Boolean isvalid()
+        {int ProID;
+        if (!int.TryParse(txtProID.Text,out ProID) || txtProID.Text == "")
+        {
+            System.Windows.Forms.MessageBox.Show("Please choose a Product");
+            return false;
+        }
+        return true;
+        }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            BillDetail bill = new BillDetail(BillID, int.Parse(txtProID.Text), int.Parse(txtQuantity.Text));
-            if (BillDetailBL.isExist(bill))
+            if (isvalid())
             {
-                BillDetailBL.AddQuantity(bill);
+                BillDetail bill = new BillDetail(BillID, int.Parse(txtProID.Text), int.Parse(txtQuantity.Text));
+                if (ProductBL.CheckQuantity(bill))
+                {
+                    if (BillDetailBL.isExist(bill))
+                    {
+                        BillDetailBL.AddQuantity(bill);
+                    }
+                    else
+                        BillDetailBL.AddBillDetails(bill);
+                    this.Close();
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Not enough quantity in stock");
+                }
+                
+                
             }
-            else
-                BillDetailBL.AddBillDetails(bill);            
-            this.Close();
+            
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

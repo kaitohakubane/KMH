@@ -20,12 +20,13 @@ namespace Project.Presentation
     /// </summary>
     public partial class SupplierWindow : Window
     {
-        bool isUpdate;
-        public SupplierWindow(bool Update)
+        bool isUpdate; int SupID;
+        public SupplierWindow(bool Update,int ID)
         {
             InitializeComponent();
             isUpdate = Update;
-            lblName.Content = "Add Supplier";            
+            lblName.Content = "Add Supplier";
+            SupID = ID;
         }
 
         public bool isValid()
@@ -69,6 +70,7 @@ namespace Project.Presentation
                     try
                     {
                         Supplier sup = new Supplier();
+                        sup.SupID = SupID;
                         sup.SupName = txtSupName.Text;
                         sup.SupAddress = txtAddress.Text;
                         sup.SupPhone = txtPhone.Text;

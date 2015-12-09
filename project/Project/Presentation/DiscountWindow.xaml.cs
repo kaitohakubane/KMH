@@ -20,12 +20,19 @@ namespace Project.Presentation
     /// </summary>
     public partial class DiscountWindow : Window
     {
-        bool isUpdate;
-        public DiscountWindow(bool Update)
+        bool isUpdate; int DisID; DateTime DisEnd;
+        public DiscountWindow(bool Update,int ID,DateTime End)
         {
             InitializeComponent();
             isUpdate = Update;
-            lblName.Content = "Add Discount";            
+            lblName.Content = "Add Discount";
+            DisID = ID;
+            DisEnd = End;
+            if (Update)
+            {
+                dpStart.IsEnabled = false;
+                txtRate.IsEnabled = false;
+            }
         }        
 
         public bool isValid()
@@ -39,8 +46,9 @@ namespace Project.Presentation
             {
                 lblName.Content = "Update Discount";
                 try
-                {
-                    Discount dis = new Discount();                   
+                {                                       
+                    Discount dis = new Discount();
+                    dis.CodeID = DisID;
                     dis.Rate = int.Parse(txtRate.Text);
                     dis.DateStart = (DateTime)dpStart.SelectedDate;
                     dis.DateEnd = (DateTime)dpEnd.SelectedDate;

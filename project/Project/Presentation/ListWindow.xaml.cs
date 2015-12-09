@@ -28,6 +28,7 @@ namespace Project.Presentation
         {
             InitializeComponent();
             lblName2.Content = Order;
+            dpSearch.Visibility = Visibility.Hidden;
             choice = Order;
             curStaff = sta;
             loadData();
@@ -153,7 +154,8 @@ namespace Project.Presentation
                 }
                 if (choice.Equals("Customer"))
                 {
-                    CustomerWindow cus = new CustomerWindow(true);
+                    int ID = int.Parse(row[0].ToString());
+                    CustomerWindow cus = new CustomerWindow(true,ID);
                     cus.lblName.Content = "Update Customer";                    
                     cus.txtName.Text= row[1].ToString();
                     cus.txtAddress.Text= row[2].ToString();
@@ -179,7 +181,8 @@ namespace Project.Presentation
                 }
                 if (choice.Equals("Supplier"))
                 {
-                    SupplierWindow sup = new SupplierWindow(true);
+                    int ID = int.Parse(row[0].ToString());
+                    SupplierWindow sup = new SupplierWindow(true,ID);
                     sup.lblName.Content = "Update Supplier";
                     sup.txtSupName.Text = row[1].ToString();
                     sup.txtAddress.Text = row[2].ToString();
@@ -189,7 +192,8 @@ namespace Project.Presentation
                 }
                 if (choice.Equals("Discount"))
                 {
-                    DiscountWindow dis = new DiscountWindow(true);
+                    int ID = int.Parse(row[0].ToString());
+                    DiscountWindow dis = new DiscountWindow(true,ID,DateTime.Parse(row[3].ToString()));
                     dis.lblName.Content = "Update Discount";
                     dis.txtRate.Text = row[1].ToString();
                     dis.dpStart.Text = row[2].ToString();
@@ -223,12 +227,13 @@ namespace Project.Presentation
                     tmp = ProductBL.DisplayAllProduct();
 
             }
-            //if (choice.Equals("Discount"))
-            //{
-            //    tmp = DiscountBL.SearchDiscount(txtSearch.Text);
-            //    if (txtSearch.Text == "")
-            //        tmp = DiscountBL.DisplayAllDiscount();
-            //}
+            if (choice.Equals("Discount"))
+            {   DateTime day=DateTime.Today;
+                DateTime.TryParse(dpSearch.Text,out day);
+                tmp = DiscountBL.SearchbyDay(day);
+              if (txtSearch.Text == "")
+                    tmp = DiscountBL.DisplayAllDiscount();
+            }
             if (choice.Equals("Supplier"))
             {
                 tmp = SupplierBL.SearchSupplier(txtSearch.Text);

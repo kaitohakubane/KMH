@@ -39,13 +39,12 @@ namespace Project.Access_Data
 
             return DataProvider.ExecuteNonQuery(sql, System.Data.CommandType.StoredProcedure, Rate,DateStart, DateEnd);
         }
-        public static Discount GetbyDay(DateTime dayStart, DateTime dayEnd)
+        public static Discount GetbyDay(DateTime date)
         {
             string sql = "sp_GetDiscount";
-            SqlParameter DayStart = new SqlParameter("@DayStart", dayStart);
-            SqlParameter DayEnd = new SqlParameter("@DayEnd", dayEnd);
+            SqlParameter DayStart = new SqlParameter("@DayStart", date);
 
-            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, DayStart, DayEnd);
+            SqlDataReader dr = DataProvider.ExecuteQueryWithDataReader(sql, CommandType.StoredProcedure, DayStart);
             if (dr.HasRows)
             {
                 dr.Read();

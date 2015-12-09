@@ -24,6 +24,7 @@ namespace Project.Presentation
         DataTable dt = new DataTable();
         Staff curStaff;
         DateTime date = DateTime.Today;
+        int CustomerID = 1;
         public BillWindow(Staff sta)
         {
             InitializeComponent();
@@ -37,13 +38,22 @@ namespace Project.Presentation
             txtDate.Text = date.ToShortDateString();
             txtBillID.IsEnabled = false;
             txtDate.IsEnabled = false;
-            txtStaff.Text = curStaff.StaffID.ToString();
-            txtDiscount.Text = "1";
+            txtStaff.Text = curStaff.StaffID.ToString();          
             txtCusName.Text = "Ban le";
+            txtCusName.IsEnabled = false;
             txtStaff.IsEnabled = false;
             BillBL.AddBill(new Bill(txtStaff.Text,int.Parse(txtDiscount.Text),DateTime.Parse(txtDate.Text)));
             txtBillID.Text = BillBL.GetMaxID().ToString();
-
+            Discount dis = DiscountBL.GetbyDay(date);
+            if (dis == null)
+            {
+                txtDiscount.Text = "1"; 
+            }
+            else
+            {
+                txtDiscount.Text = dis.CodeID.ToString();
+                txtPercentage = dis.Rate.ToString();
+            }
         }
         public bool isValid()
         {
@@ -79,11 +89,12 @@ namespace Project.Presentation
         {
             if (isValid())
             {
+                double total = 0;
                 int ProductID = 0;
                 int.TryParse(txtAdd.Text, out ProductID);
                 int Quantity = int.Parse(txtQuantity.Text);
                 int BillID = int.Parse(txtBillID.Text);
-                long m = 0;
+                double m = 0;
                 if (ProductBL.GetbyProductID(ProductID))
                 {
                     BillDetail bill = new BillDetail(BillID, ProductID, Quantity);
@@ -113,9 +124,11 @@ namespace Project.Presentation
                 }
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    m += long.Parse(dt.Rows[i][4].ToString());
+                    m += double.Parse(dt.Rows[i][4].ToString());
                 }
-                txtSum.Text = m.ToString();
+                int Discount = int.Parse(txtPercentage.Text);
+                total = m*Discount;
+                txtSum.Text = total.ToString();
             }            
         }
 
@@ -137,7 +150,7 @@ namespace Project.Presentation
                         ProductBL.UpdateQuantity(new BillDetail(int.Parse(txtBillID.Text),
                             int.Parse(dt2.Rows[i][0].ToString()),
                             int.Parse(dt2.Rows[i][1].ToString())));
-                        BillBL.UpdateBill(new Bill(int.Parse(txtBillID.ToString()), int.Parse(txtCusName.ToString()), int.Parse(txtSum.ToString())));                   
+                        BillBL.UpdateBill(new Bill(int.Parse(txtBillID.ToString()), CustomerID, int.Parse(txtSum.ToString())));                   
                     }
                     else
                     {
@@ -147,22 +160,16 @@ namespace Project.Presentation
                 }
                 System.Windows.Forms.MessageBox.Show("Success");
                 this.Close();
-
             }
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            int CusID = 0;
-            if(int.TryParse(txtCusName.ToString(),out CusID))
-            {
-                if (!CustomerBL.GetByID(CusID))
-                {
-                    SearchCustomer frm = new SearchCustomer();
-                    frm.ShowDialog();
-                }
-            }
-
+            SearchCustomer frm = new SearchCustomer();
+            frm.ouCusID+=value =>CustomerID=value ;
+            frm.ouCusName += value => txtCusName.Text=value;
+            frm.SizeToContent = SizeToContent.WidthAndHeight;
+            frm.ShowDialog();          
         }
     }
 }

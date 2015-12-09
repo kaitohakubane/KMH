@@ -49,19 +49,20 @@ namespace Project.Presentation
 
             if (Order.Equals("Customer"))
             {
-                CustomerWindow frm3 = new CustomerWindow(false);
+                CustomerWindow frm3 = new CustomerWindow(false,0);
                 frm3.ShowDialog();
             }
             
             if (Order.Equals("Discount"))
             {
-                DiscountWindow frm4 = new DiscountWindow(false);
+                DateTime td=DateTime.Today;
+                DiscountWindow frm4 = new DiscountWindow(false,0,td);
                 frm4.ShowDialog();
             }
 
             if (Order.Equals("Supplier"))
             {
-                SupplierWindow frm5 = new SupplierWindow(false);
+                SupplierWindow frm5 = new SupplierWindow(false,0);
                 frm5.ShowDialog();
             }
 
