@@ -71,6 +71,8 @@ namespace Project.Presentation
                 dt = DiscountBL.DisplayAllDiscount();
                 dataGrid.ItemsSource = dt.DefaultView;
                 dataGrid.AutoGenerateColumns = true;
+                txtSearch.Visibility = Visibility.Hidden;
+                dpSearch.Visibility = Visibility.Visible;
             }
             if (choice.Equals("Supplier"))
             {
@@ -99,31 +101,34 @@ namespace Project.Presentation
                         else
                         {
                             StaffBL.DeleteStaff(row[0].ToString());
+                            System.Windows.Forms.MessageBox.Show("Deleted!");
                         }
-
                         loadData();
                     }
                     if (choice.Equals("Customer"))
                     {
                         CustomerBL.DeleteCustomer(row[0].GetHashCode());
+                        System.Windows.Forms.MessageBox.Show("Deleted!");
                         loadData();
                     }
                     if (choice.Equals("Product"))
                     {
                         ProductBL.DeleteProduct(row[0].GetHashCode());
+                        System.Windows.Forms.MessageBox.Show("Deleted!");
                         loadData();
                     }
                     if (choice.Equals("Supplier"))
                     {
                         SupplierBL.DeleteSupplier(row[0].GetHashCode());
+                        System.Windows.Forms.MessageBox.Show("Deleted!");
                         loadData();
                     }
                     if (choice.Equals("Discount"))
                     {
                         DiscountBL.DeleteDiscount(row[0].GetHashCode());
+                        System.Windows.Forms.MessageBox.Show("Deleted!");
                         loadData();
-                    }
-                    System.Windows.Forms.MessageBox.Show("Deleted!");
+                    }                    
                 }                     
             }
             catch (Exception g)
@@ -231,8 +236,8 @@ namespace Project.Presentation
             {   DateTime day=DateTime.Today;
                 DateTime.TryParse(dpSearch.Text,out day);
                 tmp = DiscountBL.SearchbyDay(day);
-              if (txtSearch.Text == "")
-                    tmp = DiscountBL.DisplayAllDiscount();
+                if (dpSearch.Text == "")
+                    tmp = DiscountBL.DisplayAllDiscount();                
             }
             if (choice.Equals("Supplier"))
             {
@@ -247,13 +252,136 @@ namespace Project.Presentation
         {            
             dt = SearchData();
             dataGrid.ItemsSource = dt.DefaultView;
-            dataGrid.AutoGenerateColumns = true;
-            
+            dataGrid.AutoGenerateColumns = true;           
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void dpSearch_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            dt = SearchData();
+            dataGrid.ItemsSource = dt.DefaultView;
+            dataGrid.AutoGenerateColumns = true;
+        }
+        private void LoadAddForm(string Order)
+        {
+            if (Order.Equals("Staff"))
+            {
+                StaffWindow frm = new StaffWindow(false);
+                frm.ShowDialog();
+            }
+            if (Order.Equals("Product"))
+            {
+                ProductWindow frm1 = new ProductWindow(false);
+                frm1.ShowDialog();
+            }
+
+            if (Order.Equals("Bill"))
+            {
+                BillWindow frm2 = new BillWindow(curStaff);
+                frm2.ShowDialog();
+            }
+
+            if (Order.Equals("Customer"))
+            {
+                CustomerWindow frm3 = new CustomerWindow(false, 0);
+                frm3.ShowDialog();
+            }
+
+            if (Order.Equals("Discount"))
+            {
+                DateTime td = DateTime.Today;
+                DiscountWindow frm4 = new DiscountWindow(false, 0, td);
+                frm4.ShowDialog();
+            }
+
+            if (Order.Equals("Supplier"))
+            {
+                SupplierWindow frm5 = new SupplierWindow(false, 0);
+                frm5.ShowDialog();
+            }
+
+        }
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            LoadAddForm(choice);
+            loadData();
+        }
+
+        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataRowView row = (DataRowView)dataGrid.SelectedItem;
+            if (row == null)
+                System.Windows.Forms.MessageBox.Show("Please select a Row");
+            else
+            {
+                if (choice.Equals("Staff"))
+                {
+                    StaffWindow sta = new StaffWindow(true);
+                    sta.lblName.Content = "Update Staff";
+                    sta.txtID.Text = row[0].ToString();
+                    sta.txtName.Text = row[1].ToString();
+                    sta.cbxRole.SelectedItem = row[2].ToString();
+                    sta.txtAge.Text = row[3].ToString();
+                    sta.txtSalary.Text = row[4].ToString();
+                    sta.txtPassword.Text = row[5].ToString();
+                    sta.ShowDialog();
+                    loadData();
+                }
+                if (choice.Equals("Customer"))
+                {
+                    int ID = int.Parse(row[0].ToString());
+                    CustomerWindow cus = new CustomerWindow(true, ID);
+                    cus.lblName.Content = "Update Customer";
+                    cus.txtName.Text = row[1].ToString();
+                    cus.txtAddress.Text = row[2].ToString();
+                    cus.txtPhoneNo.Text = row[3].ToString();
+                    cus.ShowDialog();
+                    loadData();
+                }
+                if (choice.Equals("Product"))
+                {
+                    ProductWindow pro = new ProductWindow(true);
+                    pro.lblName.Content = "Update Product";
+                    pro.txtID.Text = row[0].ToString();
+                    pro.txtName.Text = row[1].ToString();
+                    pro.txtSupplierID.Text = row[2].ToString();
+                    pro.txtProducer.Text = row[3].ToString();
+                    pro.txtOrigin.Text = row[4].ToString();
+                    pro.txtInPrice.Text = row[5].ToString();
+                    pro.txtOutPrice.Text = row[6].ToString();
+                    pro.txtQuantity.Text = row[7].ToString();
+                    pro.cbbType.SelectedItem = row[8].ToString();
+                    pro.ShowDialog();
+                    loadData();
+                }
+                if (choice.Equals("Supplier"))
+                {
+                    int ID = int.Parse(row[0].ToString());
+                    SupplierWindow sup = new SupplierWindow(true, ID);
+                    sup.lblName.Content = "Update Supplier";
+                    sup.txtSupName.Text = row[1].ToString();
+                    sup.txtAddress.Text = row[2].ToString();
+                    sup.txtPhone.Text = row[3].ToString();
+                    sup.ShowDialog();
+                    loadData();
+                }
+                if (choice.Equals("Discount"))
+                {
+                    int ID = int.Parse(row[0].ToString());
+                    DiscountWindow dis = new DiscountWindow(true, ID, DateTime.Parse(row[3].ToString()));
+                    dis.lblName.Content = "Update Discount";
+                    dis.txtRate.Text = row[1].ToString();
+                    dis.dpStart.Text = row[2].ToString();
+                    dis.dpEnd.Text = row[3].ToString();
+                    dis.ShowDialog();
+                    loadData();
+                }
+            }
         }
     }
 }

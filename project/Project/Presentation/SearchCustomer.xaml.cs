@@ -24,7 +24,7 @@ namespace Project.Presentation
         public event Action<int> ouCusID;
         public event Action<string> ouCusName;
         DataTable dt = new DataTable();
-        Customer a = null;
+        //Customer a = null;
         
         public SearchCustomer()
         {
@@ -44,11 +44,12 @@ namespace Project.Presentation
                 if (ouCusName != null)
                     ouCusName(row[1].ToString());
             }
+            this.Close();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            StaffWindow frm = new StaffWindow(false);
+            CustomerWindow frm = new CustomerWindow(false,0);
             frm.ShowDialog();
         }
 

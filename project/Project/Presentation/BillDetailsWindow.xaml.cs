@@ -75,13 +75,34 @@ namespace Project.Presentation
             }
         }
         public Boolean isvalid()
-        {int ProID;
-        if (!int.TryParse(txtProID.Text,out ProID) || txtProID.Text == "")
         {
-            System.Windows.Forms.MessageBox.Show("Please choose a Product");
-            return false;
-        }
-        return true;
+            int ProID;
+            if (!int.TryParse(txtProID.Text,out ProID) || txtProID.Text == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Please choose a Product");
+                return false;
+            }
+            int n;
+            if (txtQuantity.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Quantity is not null");
+                txtQuantity.Focus();
+                return false;
+            }
+            if (!int.TryParse(txtQuantity.Text, out n))
+            {
+                System.Windows.Forms.MessageBox.Show("Quantity must be number and not contain spaces!");
+                txtQuantity.Focus();
+                return false;
+            }
+
+            if (int.Parse(txtQuantity.Text) <= 0)
+            {
+                System.Windows.Forms.MessageBox.Show("0<Quantity");
+                txtQuantity.Focus();
+                return false;
+            }
+            return true;
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {

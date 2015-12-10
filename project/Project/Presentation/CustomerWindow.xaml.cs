@@ -21,7 +21,7 @@ namespace Project.Presentation
     public partial class CustomerWindow : Window
     {
         bool isUpdate; int CusID;
-        Customer CurCus=null;
+        //Customer CurCus=null;
         public CustomerWindow(bool Update,int ID)
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace Project.Presentation
         }
         public bool isValid()
         {
-            int n;
+            long n;
             //if (!int.TryParse(txtID.Text, out n))
             //{
             //    System.Windows.Forms.MessageBox.Show("Customer ID must be NUMBER!");
@@ -65,11 +65,13 @@ namespace Project.Presentation
             if (txtPhoneNo.Text.Trim() == "")
             {
                 System.Windows.Forms.MessageBox.Show("Phone number is not null");
+                txtPhoneNo.Focus();
                 return false;
             }
-            if (!int.TryParse(txtPhoneNo.Text, out n))
+            if (!long.TryParse(txtPhoneNo.Text, out n))
             {
-                System.Windows.Forms.MessageBox.Show("Phone number must be number and not contain spaces!");
+                System.Windows.Forms.MessageBox.Show("Phone number not contain Character and Spaces!");
+                txtPhoneNo.Focus();
                 return false;
             }
             if (txtPhoneNo.Text.Trim().Length < 10 || txtPhoneNo.Text.Trim().Length > 11)
@@ -92,7 +94,7 @@ namespace Project.Presentation
                         cus.CusID = CusID;
                         cus.CusName = txtName.Text;
                         cus.CusAddress = txtAddress.Text;
-                        cus.CusPhone = int.Parse(txtPhoneNo.Text);
+                        cus.CusPhone = txtPhoneNo.Text;
                         CustomerBL.UpdateCustomer(cus);
                         System.Windows.Forms.MessageBox.Show("Success");
                         this.Close();
@@ -109,7 +111,7 @@ namespace Project.Presentation
                         Customer cus = new Customer();                        
                         cus.CusName = txtName.Text;
                         cus.CusAddress = txtAddress.Text;
-                        cus.CusPhone = int.Parse(txtPhoneNo.Text);
+                        cus.CusPhone = txtPhoneNo.Text;
                         CustomerBL.AddCustomer(cus);
                         System.Windows.Forms.MessageBox.Show("Success");
                         this.Close();

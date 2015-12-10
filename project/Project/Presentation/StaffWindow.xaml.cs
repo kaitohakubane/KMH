@@ -53,9 +53,9 @@ namespace Project.Presentation
                 txtID.Focus();
                 return false;
             }
-            if (txtID.Text.Trim().Length < 6)
+            if (txtID.Text.Trim().Replace(" ","").Length < 6)
             {
-                System.Windows.Forms.MessageBox.Show("ID must be over 6 character!");
+                System.Windows.Forms.MessageBox.Show("ID must be over 5 character!");
                 txtID.Focus();
                 return false;
             }
@@ -109,7 +109,20 @@ namespace Project.Presentation
                 System.Windows.Forms.MessageBox.Show("Password is not null");
                 txtPassword.Focus();
                 return false;
-            }           
+            }
+            if (txtPasswordConfirm.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Password is not null");
+                txtPassword.Focus();
+                return false;
+            }
+            if(!txtPassword.Text.Equals(txtPasswordConfirm.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Password is not match!");
+                txtPasswordConfirm.Text = "";
+                txtPasswordConfirm.Focus();
+                return false;
+            }
             return true;
         }
         private void btnOK_Click(object sender, RoutedEventArgs e)
@@ -121,6 +134,7 @@ namespace Project.Presentation
                     try
                     {
                         Staff sta = new Staff();
+                        //if(StaffBL.GefbyID(txt))
                         sta.StaffID = txtID.Text.Trim().Replace(" ","");
                         sta.StaffName = txtName.Text.Trim();
                         sta.StaffAge = int.Parse(txtAge.Text);
@@ -132,9 +146,9 @@ namespace Project.Presentation
                         System.Windows.Forms.MessageBox.Show("Success");
                         this.Close();
                     }
-                    catch (Exception h)
+                    catch (Exception )
                     {
-                        System.Windows.Forms.MessageBox.Show("Error " + h.Message);
+                        System.Windows.Forms.MessageBox.Show("ID is exist!");
                     }
                 }
                 else

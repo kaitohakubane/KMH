@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.Presentation"
         mc:Ignorable="d"
-        Title="Staff" Height="328.239" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Staff" Height="346.372" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="/Project;component/Image/wallpaper02.jpg"/>
     </Window.Background>
@@ -17,7 +17,7 @@
         <Label x:Name="label_Copy1" Content="Role:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,141,0,0" Foreground="White"/>
         <Label x:Name="label_Copy2" Content="Salary:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,172,0,0" Foreground="White"/>
         <Label x:Name="label_Copy4" Content="Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,203,0,0" Foreground="White"/>
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="51,248,0,0" Click="btnOK_Click" Foreground="#FF0600FF">
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="47,277,0,0" Click="btnOK_Click" Foreground="#FF0600FF">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00F1FF" Offset="0"/>
@@ -25,7 +25,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="177,248,0,0" Click="btnCancel_Click" Foreground="#FF0600FF">
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="173,277,0,0" Click="btnCancel_Click" Foreground="#FF0600FF">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00F1FF" Offset="0"/>
@@ -39,6 +39,8 @@
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="85,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox x:Name="txtSalary" HorizontalAlignment="Left" Height="23" Margin="85,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <ComboBox x:Name="cbxRole" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Margin="85,144,0,0"/>
-            
+        <TextBox x:Name="txtPasswordConfirm" HorizontalAlignment="Left" Height="23" Margin="85,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <Label x:Name="label_Copy3" Content="Re-Password:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,234,0,0" Foreground="White"/>
+
     </Grid>
 </Window>

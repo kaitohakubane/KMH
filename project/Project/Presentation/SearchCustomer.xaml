@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project.Presentation"
         mc:Ignorable="d"
-        Title="SearchCustomer" Height="329.851" Width="300">
+        Title="SearchCustomer" Height="337.434" Width="296.209">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="206" Margin="0,0,-0.4,0" Width="294"/>
         <Button x:Name="btnOK" Content="Confirm" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="26,260,0,0" Click="btnOK_Click"/>

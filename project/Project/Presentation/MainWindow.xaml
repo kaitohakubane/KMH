@@ -79,6 +79,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Label x:Name="lblcur" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="48"/>
     </Grid>
 
 </Window>

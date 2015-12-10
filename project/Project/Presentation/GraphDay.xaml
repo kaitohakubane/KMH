@@ -50,7 +50,7 @@
             </Grid>
             <DatePicker Name="dpDateStart" HorizontalAlignment="Left" Margin="190,537,0,0" VerticalAlignment="Top"/>
             <DatePicker Name="dpYearChoose" HorizontalAlignment="Left" Margin="415,580,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="button" Content="Back to Mainwindow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="442,629,0,0" Foreground="#FF005FFF">
+            <Button x:Name="button" Content="Back to Mainwindow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="442,629,0,0" Foreground="#FF005FFF" Click="button_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF00F1FF" Offset="0"/>

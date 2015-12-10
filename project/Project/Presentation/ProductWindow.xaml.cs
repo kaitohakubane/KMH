@@ -139,7 +139,7 @@ namespace Project.Presentation
                 txtOutPrice.Focus();
                 return false;
             }
-            if (int.Parse(txtOutPrice.Text) < int.Parse(txtInPrice.Text))
+            if (int.Parse(txtOutPrice.Text) <= int.Parse(txtInPrice.Text))
             {
                 System.Windows.Forms.MessageBox.Show("InPrice have to smaller than OutPrice!");
                 txtOutPrice.Focus();
@@ -239,7 +239,7 @@ namespace Project.Presentation
         {
             this.DialogResult = false;
             this.Close();
-        }        
-        
+        }
+
     }
 }

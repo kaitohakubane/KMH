@@ -30,5 +30,10 @@ namespace Project.Bussiness_Layer
         {
             return DiscountData.GetbyDay(date);
         }
+
+        public static DataTable SearchbyDay(DateTime day)
+        {
+            return DiscountData.SearchbyDay(day);
+                }
     }
 }

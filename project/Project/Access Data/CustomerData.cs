@@ -50,7 +50,7 @@ namespace Project.Access_Data
                 a.CusID = dr.GetInt32(0);
                 a.CusName = dr.GetString(1);
                 a.CusAddress = dr.GetString(2);
-                a.CusPhone = dr.GetInt32(3);
+                a.CusPhone = dr.GetString(3);
                 return a;
             }
             else

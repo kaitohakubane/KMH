@@ -10,13 +10,13 @@ namespace Project.Entity
         private int mCusID;
         private string mCusName;
         private string mCusAddress;
-        private int mCusPhone;
+        private string mCusPhone;
         private bool misActive;
         public Customer()
         {
 
         }
-        public Customer(int mCusID, string mCusName, string mCusAddress, int mCusPhone,bool misActive)
+        public Customer(int mCusID, string mCusName, string mCusAddress, string mCusPhone,bool misActive)
         {
             this.mCusID = mCusID;
             this.mCusName = mCusName;
@@ -68,7 +68,7 @@ namespace Project.Entity
             }
         }
 
-        public int CusPhone
+        public string CusPhone
         {
             get
             {

@@ -76,7 +76,6 @@ namespace Project.Presentation
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             LoadAddForm(choice);
-
         }
 
         private void btnList_Click(object sender, RoutedEventArgs e)

@@ -16,13 +16,13 @@
         <Label x:Name="label_Copy1" Content="Staff Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,128,0,0" Foreground="White"/>
         <Label x:Name="label_Copy2" Content="Customer Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,159,0,0" Foreground="White"/>
         <DataGrid x:Name="dtgBill" Height="210" Width="515" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="3,0,0,136.4"/>
-        <Label x:Name="label_Copy3" Content="Tổng cộng:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="349,428,0,0" Foreground="White"/>
+        <Label x:Name="label_Copy3" Content="Total" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,465,0,0" Foreground="White"/>
         <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,69,0,0"/>
         <TextBox x:Name="txtDiscount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,100,0,0"/>
         <TextBox x:Name="txtStaff" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,131,0,0"/>
         <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,162,0,0"/>
-        <TextBox x:Name="txtSum" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Margin="434,431,0,0"/>
-        <Button x:Name="btnAdd" Content="Add to bill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="107,506,0,0" Click="btnAdd_Click" Foreground="#FF1300C3">
+        <TextBox x:Name="txtSum" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Margin="431,465,0,0"/>
+        <Button x:Name="btnAdd" Content="Add to bill" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="107,506,0,0" Click="btnAdd_Click" Foreground="#FF0031FF">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00F1FF" Offset="0"/>
@@ -34,9 +34,9 @@
         <TextBox x:Name="txtBillID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="115,41,0,0"/>
         <Label x:Name="label1" Content="Bill ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,38,0,0" Foreground="White"/>
         <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Margin="79,465,0,0"/>
-        <Label x:Name="label2" Content="Sản Phẩm" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,433,0,0" Width="85" Foreground="White"/>
-        <Label x:Name="label2_Copy" Content="Số lượng" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,464,0,0" Width="85" Foreground="White"/>
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="312,506,0,0" Click="btnOK_Click" Foreground="#FF1300C3">
+        <Label x:Name="label2" Content="Product ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,433,0,0" Width="85" Foreground="White"/>
+        <Label x:Name="label2_Copy" Content="Quantity" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,464,0,0" Width="85" Foreground="White"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="312,506,0,0" Click="btnOK_Click" Foreground="#FF0031FF">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF00F1FF" Offset="0"/>
@@ -44,7 +44,21 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnSearch" Content="Search Customer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="343,165,0,0" Click="btnSearch_Click"/>
+        <Button x:Name="btnSearch" Content="Change Customer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="343,165,0,0" Click="btnSearch_Click" Foreground="#FF0031FF">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00F1FF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label3" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Discount" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,428,0,0" Foreground="White">
+            <Label.Background>
+                <ImageBrush/>
+            </Label.Background>
+        </Label>
+        <TextBox x:Name="txtPercentage" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Margin="431,431,0,0"/>
 
     </Grid>
 </Window>

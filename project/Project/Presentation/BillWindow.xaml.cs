@@ -31,11 +31,22 @@ namespace Project.Presentation
             curStaff = sta;
             loadData();
             dtgBill.IsReadOnly = true;
+            txtDiscount.IsEnabled = false;
             txtQuantity.Text = "1";
         }
         public void loadData()
         {
             txtDate.Text = date.ToShortDateString();
+            Discount dis = DiscountBL.GetbyDay(date);
+            if (dis == null)
+            {
+                txtDiscount.Text = "0";
+            }
+            else
+            {
+                txtDiscount.Text = dis.CodeID.ToString();
+                txtPercentage.Text = dis.Rate.ToString();
+            }
             txtBillID.IsEnabled = false;
             txtDate.IsEnabled = false;
             txtStaff.Text = curStaff.StaffID.ToString();          
@@ -44,16 +55,8 @@ namespace Project.Presentation
             txtStaff.IsEnabled = false;
             BillBL.AddBill(new Bill(txtStaff.Text,int.Parse(txtDiscount.Text),DateTime.Parse(txtDate.Text)));
             txtBillID.Text = BillBL.GetMaxID().ToString();
-            Discount dis = DiscountBL.GetbyDay(date);
-            if (dis == null)
-            {
-                txtDiscount.Text = "1"; 
-            }
-            else
-            {
-                txtDiscount.Text = dis.CodeID.ToString();
-                txtPercentage = dis.Rate.ToString();
-            }
+            
+            
         }
         public bool isValid()
         {
@@ -127,7 +130,7 @@ namespace Project.Presentation
                     m += double.Parse(dt.Rows[i][4].ToString());
                 }
                 int Discount = int.Parse(txtPercentage.Text);
-                total = m*Discount;
+                total = m-Discount*m/100;
                 txtSum.Text = total.ToString();
             }            
         }
@@ -150,7 +153,7 @@ namespace Project.Presentation
                         ProductBL.UpdateQuantity(new BillDetail(int.Parse(txtBillID.Text),
                             int.Parse(dt2.Rows[i][0].ToString()),
                             int.Parse(dt2.Rows[i][1].ToString())));
-                        BillBL.UpdateBill(new Bill(int.Parse(txtBillID.ToString()), CustomerID, int.Parse(txtSum.ToString())));                   
+                        BillBL.UpdateBill(new Bill(int.Parse(txtBillID.Text.ToString()), CustomerID, int.Parse(txtSum.Text.ToString())));                   
                     }
                     else
                     {

@@ -48,13 +48,13 @@ namespace Project
 
         private void btnStaff_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Staff",curStaff);
+            ListWindow frm = new ListWindow("Staff",curStaff);
             frm.ShowDialog();
         }
 
         private void btnProduct_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Product",curStaff);
+            ListWindow frm = new ListWindow("Product",curStaff);
             frm.ShowDialog();
         }
 
@@ -66,7 +66,7 @@ namespace Project
 
         private void btnCustomer_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Customer",curStaff);
+            ListWindow frm = new ListWindow("Customer",curStaff);
             frm.ShowDialog();
         }
 
@@ -78,13 +78,13 @@ namespace Project
 
         private void btnDiscount_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Discount",curStaff);
+            ListWindow frm = new ListWindow("Discount",curStaff);
             frm.ShowDialog();
         }
 
         private void btnSupplier_Click(object sender, RoutedEventArgs e)
         {
-            ButtonForm frm = new ButtonForm("Supplier",curStaff);
+            ListWindow frm = new ListWindow("Supplier",curStaff);
             frm.ShowDialog();
         }
 
