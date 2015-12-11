@@ -33,7 +33,10 @@ namespace Project.Presentation
             cbbType.Items.Add("Nuoc ngot");
             cbbType.Items.Add("Banh");
             cbbType.Items.Add("Keo");
-            cbbType.Items.Add("Kem");
+            cbbType.Items.Add("Kem");           
+            cbbType.Items.Add("Bia");
+            cbbType.Items.Add("Dung cu hoc sinh");
+            cbbType.Items.Add("Van phong pham");
             cbbType.Items.Add("Khac");
             if (isUpdate)
             {

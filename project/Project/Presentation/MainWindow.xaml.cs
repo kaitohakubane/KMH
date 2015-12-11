@@ -35,15 +35,20 @@ namespace Project
                 btnStaff.IsEnabled = false;
                 btnPayment.IsEnabled = false;
                 btnCustomer.IsEnabled = false;
-                btnDiscount.IsEnabled = false;                
+                btnDiscount.IsEnabled = false;
+                btnReport.IsEnabled = false;
             }
             if (Power == 3)
             {
                 //Dealer: Show cái j lên thì bỏ vào đây
                 btnStaff.IsEnabled = false;
+                btnDiscount.IsEnabled = false;
+                btnReport.IsEnabled = false;
             }
             NotificationWindow noti = new NotificationWindow();
-
+            noti.Owner = Window.GetWindow(this);
+            noti.Show();
+            
         }
 
         private void btnStaff_Click(object sender, RoutedEventArgs e)

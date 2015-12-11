@@ -33,7 +33,7 @@ namespace Project.Presentation
         }
         public void loadData()
         {
-            cbxRole.Items.Add("Admin");
+            cbxRole.Items.Add("Manager");
             cbxRole.Items.Add("Stock Manager");
             cbxRole.Items.Add("Saler");
             if (isUpdate)

@@ -322,13 +322,20 @@ namespace Project.Presentation
                 if (choice.Equals("Staff"))
                 {
                     StaffWindow sta = new StaffWindow(true);
-                    sta.lblName.Content = "Update Staff";
+                    sta.lblName.Content = "View Staff";
                     sta.txtID.Text = row[0].ToString();
+                    sta.txtID.IsEnabled = false;
                     sta.txtName.Text = row[1].ToString();
+                    sta.txtName.IsEnabled = false;
                     sta.cbxRole.SelectedItem = row[2].ToString();
+                    sta.cbxRole.IsEnabled = false;
                     sta.txtAge.Text = row[3].ToString();
+                    sta.txtAge.IsEnabled = false;
                     sta.txtSalary.Text = row[4].ToString();
+                    sta.txtSalary.IsEnabled = false;
                     sta.txtPassword.Text = row[5].ToString();
+                    sta.txtPassword.IsEnabled = false;
+                    sta.txtPasswordConfirm.Visibility = Visibility.Hidden;
                     sta.ShowDialog();
                     loadData();
                 }
@@ -336,26 +343,38 @@ namespace Project.Presentation
                 {
                     int ID = int.Parse(row[0].ToString());
                     CustomerWindow cus = new CustomerWindow(true, ID);
-                    cus.lblName.Content = "Update Customer";
+                    cus.lblName.Content = "View Customer";
                     cus.txtName.Text = row[1].ToString();
+                    cus.txtName.IsEnabled = false;
                     cus.txtAddress.Text = row[2].ToString();
+                    cus.txtAddress.IsEnabled = false;
                     cus.txtPhoneNo.Text = row[3].ToString();
+                    cus.txtPhoneNo.IsEnabled = false;
                     cus.ShowDialog();
                     loadData();
                 }
                 if (choice.Equals("Product"))
                 {
                     ProductWindow pro = new ProductWindow(true);
-                    pro.lblName.Content = "Update Product";
+                    pro.lblName.Content = "View Product";
                     pro.txtID.Text = row[0].ToString();
+                    pro.txtID.IsEnabled = false;
                     pro.txtName.Text = row[1].ToString();
+                    pro.txtName.IsEnabled = false;
                     pro.txtSupplierID.Text = row[2].ToString();
+                    pro.txtSupplierID.IsEnabled = false;
                     pro.txtProducer.Text = row[3].ToString();
+                    pro.txtProducer.IsEnabled = false;
                     pro.txtOrigin.Text = row[4].ToString();
+                    pro.txtOrigin.IsEnabled = false;
                     pro.txtInPrice.Text = row[5].ToString();
+                    pro.txtInPrice.IsEnabled = false;
                     pro.txtOutPrice.Text = row[6].ToString();
+                    pro.txtOutPrice.IsEnabled = false;
                     pro.txtQuantity.Text = row[7].ToString();
+                    pro.txtQuantity.IsEnabled = false;
                     pro.cbbType.SelectedItem = row[8].ToString();
+                    pro.cbbType.IsEnabled = false;
                     pro.ShowDialog();
                     loadData();
                 }
@@ -363,10 +382,13 @@ namespace Project.Presentation
                 {
                     int ID = int.Parse(row[0].ToString());
                     SupplierWindow sup = new SupplierWindow(true, ID);
-                    sup.lblName.Content = "Update Supplier";
+                    sup.lblName.Content = "View Supplier";
                     sup.txtSupName.Text = row[1].ToString();
+                    sup.txtSupName.IsEnabled = false;
                     sup.txtAddress.Text = row[2].ToString();
+                    sup.txtAddress.IsEnabled = false;
                     sup.txtPhone.Text = row[3].ToString();
+                    sup.txtPhone.IsEnabled = false;
                     sup.ShowDialog();
                     loadData();
                 }
@@ -374,10 +396,13 @@ namespace Project.Presentation
                 {
                     int ID = int.Parse(row[0].ToString());
                     DiscountWindow dis = new DiscountWindow(true, ID, DateTime.Parse(row[3].ToString()));
-                    dis.lblName.Content = "Update Discount";
+                    dis.lblName.Content = "View Discount";
                     dis.txtRate.Text = row[1].ToString();
+                    dis.txtRate.IsEnabled = false;
                     dis.dpStart.Text = row[2].ToString();
+                    dis.dpStart.IsEnabled = false;
                     dis.dpEnd.Text = row[3].ToString();
+                    dis.dpEnd.IsEnabled = false;
                     dis.ShowDialog();
                     loadData();
                 }

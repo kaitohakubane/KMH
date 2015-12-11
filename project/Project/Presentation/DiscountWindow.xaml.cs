@@ -51,9 +51,9 @@ namespace Project.Presentation
                 return false;
             }
 
-            if (int.Parse(txtRate.Text) <= 0)
+            if (int.Parse(txtRate.Text) <= 0 || int.Parse(txtRate.Text) > 100)
             {
-                System.Windows.Forms.MessageBox.Show("0<Rate");
+                System.Windows.Forms.MessageBox.Show("0<Rate<100");
                 txtRate.Focus();
                 return false;
             }
